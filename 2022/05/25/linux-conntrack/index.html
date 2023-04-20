@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://jerryblogs.com/archives/2021/"/>
+  
+  <link rel="canonical" href="http://jerryblogs.com/2022/05/25/linux-conntrack/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,20 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2021 - Jerry的小站</title>
-  <meta name="keywords" content="博客,工具分享">
+  <title>Linux Conntrack为什么会崩溃并避免问题 - Jerry的小站</title>
+  <meta name="keywords" content="Linux,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jerry的小站">
-<meta property="og:url" content="http://jerryblogs.com/archives/2021/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Conntrack为什么会崩溃并避免问题">
+<meta property="og:url" content="http://jerryblogs.com/2022/05/25/linux-conntrack/index.html">
 <meta property="og:site_name" content="Jerry的小站">
-<meta property="og:description" content="一个集博客和工具咨询分享于一体的平台">
+<meta property="og:description" content="文章信息作者：Alex Pollitt原文：https:&#x2F;&#x2F;www.tigera.io&#x2F;blog&#x2F;when-linux-conntrack-is-no-longer-your-friend&#x2F; 连接跟踪（“conntrack”）是Linux内核网络堆栈的核心功能。它允许内核跟踪所有逻辑网络连接或流，从而识别构成每个流的所有数据包，以便可以一致的处理它们。 Conntrack是一个重要的内核特性，它支">
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-05-25T10:31:00.000Z">
+<meta property="article:modified_time" content="2023-04-20T03:38:51.427Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="工具分享">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2403,13 +2404,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+        
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
         
       </ul>
     </div>
@@ -2590,7 +2593,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2631,29 +2634,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=' no_sidebar'>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2021/08/13/docker-signal/">
+<div id="l_main" class=''>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2022/05/25/linux-conntrack/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2662,512 +2645,263 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
   </span>
   
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/08/13/docker-signal/"  itemprop="url">
-        docker内的init进程是否能被SIGKILL或SIGTERM杀死
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        <div class="story post-story"><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>在容器内给容器内的init进程发送SIGTERM信号，init进程会不会被杀死，发送SIGKILL信号呢？在容器外发送信号呢？为什么？</p>
-<p><em>问题来源：极客时间</em></p>
-</div><div class="story post-story"><h2 id="相关理论知识"><a href="#相关理论知识" class="headerlink" title="相关理论知识"></a>相关理论知识</h2><h2 id="信号相关"><a href="#信号相关" class="headerlink" title="信号相关"></a>信号相关</h2><ul>
-<li>SIGKILL和SIGTERM信号都是Linux信号，SIGKILL和SIGSTOP属于不能被忽略和handle的内核信号，主要提供给内核进程和root用户进行特权操作。</li>
-<li>使用kill命令的时候，缺省状态下，kill 1 向init进程发送SIGTREM信号</li>
-<li>Ctrl+C发送的是SIGING信号</li>
-</ul>
-</div><div class="story post-story"><h2 id="编程语言的signal"><a href="#编程语言的signal" class="headerlink" title="编程语言的signal"></a>编程语言的signal</h2><p>很多编程语言对不同的信号做了handle处理，使用C语言需要自己做处理（除了SIGKILL和SIGSTOP之外，他们有内核提供的默认的handle）。下列是Python和Go语言对部分signal的处理：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Python</th>
-<th>Golang</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>SIGQUIT</td>
-<td>执行默认操作，进程退出并将内存中的信息转存到硬盘（核心转储）</td>
-<td>以堆栈转储方式退出</td>
-</tr>
-<tr>
-<td>SIGCHLD</td>
-<td>终止子进程</td>
-<td>子进程退出</td>
-</tr>
-<tr>
-<td>SIGHUP</td>
-<td>在控制终端上检测到挂起或控制进程的终止</td>
-<td>程序退出</td>
-</tr>
-<tr>
-<td>SIGTERM</td>
-<td>终结</td>
-<td>程序退出</td>
-</tr>
-<tr>
-<td>SIGPIPE</td>
-<td>写入到没有读取器的管道，默认忽略</td>
-<td>在标准输出或标准错误上写入损坏的管道将导致程序退出，而在其他的文件描述符上写入不会采取任何操作，但是会抛出EPIPE错误</td>
-</tr>
-<tr>
-<td>SIGING</td>
-<td>引发 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/exceptions.html#KeyboardInterrupt"><code>KeyboardInterrupt</code></a></td>
-<td></td>
-</tr>
-</tbody></table>
-<p>关于signal信号的处理，可以查看下列文档：</p>
-<ul>
-<li><p>Python：<a target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/signal.html?highlight=signal#signal.SIGPIPE">https://docs.python.org/zh-cn/3/library/signal.html?highlight=signal#signal.SIGPIPE</a></p>
-</li>
-<li><p>Golang：<a target="_blank" rel="noopener" href="https://pkg.go.dev/os/signal">https://pkg.go.dev/os/signal</a></p>
-</li>
-</ul>
-</div><div class="story post-story"><h2 id="容器中的init进程"><a href="#容器中的init进程" class="headerlink" title="容器中的init进程"></a>容器中的init进程</h2><ul>
-<li>容器中的init进程是pid为1的进程</li>
-<li>当容器以单进程运行时，init进程为容器内执行的进程</li>
-<li>当容器以多进程运行时，会启动一个管理进程，该进程即为容器的init进程</li>
-<li>在容器内发送SIGKILL命令，内核将会屏蔽掉该信号（与在跟命名空间中一致），防止其他进程杀掉init进程</li>
-<li>在容器外杀掉init进程后，再向容器内添加进程将会导致ENOMEN错误，因为进程已经终止</li>
-<li>init进程是容器内所有孤儿进程的父进程</li>
-</ul>
-<h1 id="当使用kill命令时，内核做了什么（源码分析）"><a href="#当使用kill命令时，内核做了什么（源码分析）" class="headerlink" title="当使用kill命令时，内核做了什么（源码分析）"></a>当使用kill命令时，内核做了什么（源码分析）</h1></div><div class="story post-story"><h2 id="寻找kill系统调用"><a href="#寻找kill系统调用" class="headerlink" title="寻找kill系统调用"></a>寻找kill系统调用</h2><p>Linux系统调用由原本的sys_XXXX换成了SYSCALL_DEFINE，故在&#x2F;kernel&#x2F;signal.c文件下，寻找SYSCALL_DEFINE，找到SYSCALL_DEFINE2(kill, pid_t, pid, int, sig)，代码如下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  sys_kill - send a signal to a process</span></span><br><span class="line"><span class="comment"> *  @pid: the PID of the process</span></span><br><span class="line"><span class="comment"> *  @sig: signal to be sent</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">SYSCALL_DEFINE2(kill, <span class="type">pid_t</span>, pid, <span class="type">int</span>, sig)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">kernel_siginfo</span> <span class="title">info</span>;</span> <span class="comment">// info是signal的结构体</span></span><br><span class="line"></span><br><span class="line">	prepare_kill_siginfo(sig, &amp;info);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> kill_something_info(sig, &amp;info, pid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>关于SYSCALL_DEFINEx，可以在<a target="_blank" rel="noopener" href="https://blog.csdn.net/hxmhyp/article/details/22699669%E6%96%87%E7%AB%A0%E9%87%8C%E9%9D%A2%E7%9C%8B%E5%88%B0%E3%80%82">https://blog.csdn.net/hxmhyp/article/details/22699669文章里面看到。</a></p>
-<p>关于kernel_siginfo，可以看如下代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">kernel_siginfo</span> &#123;</span></span><br><span class="line">	__SIGINFO;</span><br><span class="line">&#125; <span class="type">kernel_siginfo_t</span>;</span><br></pre></td></tr></table></figure>
 
-<p>关于__SIGINFO：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span>				\</span><br><span class="line">	<span class="type">int</span> si_signo; <span class="comment">/* Signal number */</span></span><br><span class="line">	<span class="type">int</span> si_errno；<span class="comment">/* An errno value */</span></span><br><span class="line">	<span class="type">int</span> si_code; <span class="comment">// 产生信号的原因</span></span><br><span class="line">	<span class="class"><span class="keyword">union</span> __<span class="title">sifields</span> _<span class="title">sifields</span>;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>简而言之，__SIGINFO就是标识signal的一些信息。</p>
-<p>接下来我们来看看<code>prepare_kill_siginfo(sig, &amp;info);</code>方法做了什么：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">void</span> <span class="title function_">prepare_kill_siginfo</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info)</span></span><br><span class="line">&#123;</span><br><span class="line">	clear_siginfo(info);</span><br><span class="line">	info-&gt;si_signo = sig; <span class="comment">// 传入的信号</span></span><br><span class="line">	info-&gt;si_errno = <span class="number">0</span>;</span><br><span class="line">	info-&gt;si_code = SI_USER; <span class="comment">// 产生自用户空间</span></span><br><span class="line">	info-&gt;si_pid = task_tgid_vnr(current); <span class="comment">// 主要是从当前namespace 中找到对应的pid号。</span></span><br><span class="line">	info-&gt;si_uid = from_kuid_munged(current_user_ns(), current_uid()); <span class="comment">// 返回0，也就是root用户</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>关于<code>info-&gt;si_code = SI_USER; </code>中的SI_USER，在内核源码<code>\include\uapi\asm-generic\siginfo.h</code>可以看到Linux定义的一些信号相关的信息。下列贴出部分：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * si_code values</span></span><br><span class="line"><span class="comment"> * Digital reserves positive values for kernel-generated signals.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_USER		0		<span class="comment">/* sent by kill, sigsend, raise 由kill、raise等发送的*/</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_KERNEL	0x80		<span class="comment">/* sent by the kernel from somewhere 从内核某处发送 */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_QUEUE	-1		<span class="comment">/* sent by sigqueue */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_TIMER	-2		<span class="comment">/* sent by timer expiration */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_MESGQ	-3		<span class="comment">/* sent by real time mesq state change */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_ASYNCIO	-4		<span class="comment">/* sent by AIO completion */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_SIGIO	-5		<span class="comment">/* sent by queued SIGIO */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_TKILL	-6		<span class="comment">/* sent by tkill system call */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_DETHREAD	-7		<span class="comment">/* sent by execve() killing subsidiary threads */</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_ASYNCNL	-60		<span class="comment">/* sent by glibc async name lookup completion */</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_FROMUSER(siptr)	((siptr)-&gt;si_code &lt;= 0)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SI_FROMKERNEL(siptr)	((siptr)-&gt;si_code &gt; 0)</span></span><br></pre></td></tr></table></figure>
-
-<p>由此可以看到，这里的标识表示SI_USER是由kill发出的。</p>
-<p>接下来可以看task_tgid_vnr(current)；首先是current：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * We don&#x27;t use read_sysreg() as we want the compiler to cache the value where</span></span><br><span class="line"><span class="comment"> * possible.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">static</span> __always_inline <span class="keyword">struct</span> task_struct *<span class="title function_">get_current</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> sp_el0;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">asm</span> (<span class="string">&quot;mrs %0, sp_el0&quot;</span> : <span class="string">&quot;=r&quot;</span> (sp_el0));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">struct</span> task_struct *)sp_el0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> current get_current() <span class="comment">// 获取当前运行的task_struct</span></span></span><br></pre></td></tr></table></figure>
-
-<p>它是获取当前运行的task_struct，我们都知道，在Linux里面task_struct表示一个进程描述符，存储了进程相关的一些信息。</p>
-<p>然后我们看一下task_tgid_vnr方法，一路追踪到底，可以看到：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> __task_pid_nr_ns(<span class="keyword">struct</span> task_struct *task, <span class="keyword">enum</span> pid_type type,</span><br><span class="line">			<span class="keyword">struct</span> pid_namespace *ns)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">pid_t</span> nr = <span class="number">0</span>;  <span class="comment">// pid_t 宏定义 int 变量</span></span><br><span class="line"></span><br><span class="line">	rcu_read_lock(); <span class="comment">// 申请rcu锁</span></span><br><span class="line">	<span class="keyword">if</span> (!ns)</span><br><span class="line">		ns = task_active_pid_ns(current);</span><br><span class="line">	nr = pid_nr_ns(rcu_dereference(*task_pid_ptr(task, type)), ns);</span><br><span class="line">	rcu_read_unlock(); <span class="comment">// 释放rcu锁</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> nr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>task_active_pid_ns方法：\linux\kernel\pid.c</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> pid_namespace *<span class="title function_">task_active_pid_ns</span><span class="params">(<span class="keyword">struct</span> task_struct *tsk)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> ns_of_pid(task_pid(tsk));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>接着继续ns_of_pid方法：\include\linux\pid.h</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> <span class="keyword">struct</span> pid_namespace *<span class="title function_">ns_of_pid</span><span class="params">(<span class="keyword">struct</span> pid *pid)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">pid_namespace</span> *<span class="title">ns</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (pid)</span><br><span class="line">		ns = pid-&gt;numbers[pid-&gt;level].ns;</span><br><span class="line">	<span class="keyword">return</span> ns;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这里返回pid所在的命名空间。</p>
-<p>然后是pid_nr_ns：\include\linux\pid.h</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> <span class="title function_">pid_nr_ns</span><span class="params">(<span class="keyword">struct</span> pid *pid, <span class="keyword">struct</span> pid_namespace *ns)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">upid</span> *<span class="title">upid</span>;</span></span><br><span class="line">	<span class="type">pid_t</span> nr = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pid &amp;&amp; ns-&gt;level &lt;= pid-&gt;level) &#123;</span><br><span class="line">		upid = &amp;pid-&gt;numbers[ns-&gt;level];</span><br><span class="line">		<span class="keyword">if</span> (upid-&gt;ns == ns)</span><br><span class="line">			nr = upid-&gt;nr;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>主要是从当前namespace 中找到对应的pid号。</p>
-<p>OK，所以prepare_kill_siginfo方法获取kernel_siginfo相关的信息并进行初始化。</p>
-<p>接下来我们来看最关键的kill_something_info：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">kill_something_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="type">pid_t</span> pid)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> ret;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pid &gt; <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> kill_proc_info(sig, info, pid);</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>kill_proc_info:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">kill_proc_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="type">pid_t</span> pid)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> error;</span><br><span class="line">	rcu_read_lock();</span><br><span class="line">	error = kill_pid_info(sig, info, find_vpid(pid));</span><br><span class="line">	rcu_read_unlock();</span><br><span class="line">	<span class="keyword">return</span> error;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>首先是find_vpid:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> pid *<span class="title function_">find_vpid</span><span class="params">(<span class="type">int</span> nr)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> find_pid_ns(nr, task_active_pid_ns(current));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>task_active_pid_ns刚刚我们已经讲过，所以这里是返回当前进程所在的命名空间。</p>
-<p>而find_pid_ns作用是找到其所属的struct pid。</p>
-<p>然后我们进入kill_pid_info：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">kill_pid_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="keyword">struct</span> pid *pid)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> error = -ESRCH;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">task_struct</span> *<span class="title">p</span>;</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (;;) &#123;</span><br><span class="line">		rcu_read_lock();</span><br><span class="line">		p = pid_task(pid, PIDTYPE_PID);</span><br><span class="line">		<span class="keyword">if</span> (p)</span><br><span class="line">			error = group_send_sig_info(sig, info, p, PIDTYPE_TGID);</span><br><span class="line">		rcu_read_unlock();</span><br><span class="line">		<span class="keyword">if</span> (likely(!p || error != -ESRCH))</span><br><span class="line">			<span class="keyword">return</span> error;</span><br><span class="line"></span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		 * The task was unhashed in between, try again.  If it</span></span><br><span class="line"><span class="comment">		 * is dead, pid_task() will return NULL, if we race with</span></span><br><span class="line"><span class="comment">		 * de_thread() it will find the new leader.</span></span><br><span class="line"><span class="comment">		 */</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>pid_task：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> task_struct *<span class="title function_">pid_task</span><span class="params">(<span class="keyword">struct</span> pid *pid, <span class="keyword">enum</span> pid_type type)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">task_struct</span> *<span class="title">result</span> =</span> <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (pid) &#123;</span><br><span class="line">		<span class="class"><span class="keyword">struct</span> <span class="title">hlist_node</span> *<span class="title">first</span>;</span></span><br><span class="line">		first = rcu_dereference_check(hlist_first_rcu(&amp;pid-&gt;tasks[type]),</span><br><span class="line">					      lockdep_tasklist_lock_is_held());</span><br><span class="line">		<span class="keyword">if</span> (first)</span><br><span class="line">			result = hlist_entry(first, <span class="keyword">struct</span> task_struct, pid_links[(type)]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>根据一致的struct pid找到struct task_struct。</p>
-<p>group_send_sig_info：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">group_send_sig_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info,</span></span><br><span class="line"><span class="params">			<span class="keyword">struct</span> task_struct *p, <span class="keyword">enum</span> pid_type type)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> ret;</span><br><span class="line"></span><br><span class="line">	rcu_read_lock();</span><br><span class="line">	ret = check_kill_permission(sig, info, p); </span><br><span class="line">    <span class="comment">// 检查是否是有效信号，检测是否来自用户或内核</span></span><br><span class="line">    <span class="comment">// 来自用户需要记录审计日志后返回0，来自内核直接返回0</span></span><br><span class="line">	rcu_read_unlock();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!ret &amp;&amp; sig) <span class="comment">// 如果是有效信号，调用do_send_sig_info</span></span><br><span class="line">		ret = do_send_sig_info(sig, info, p, type);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>我们来看看check_kill_permission的调用链：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Bad permissions for sending the signal</span></span><br><span class="line"><span class="comment"> * - the caller must hold the RCU read lock</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">check_kill_permission</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info,</span></span><br><span class="line"><span class="params">				 <span class="keyword">struct</span> task_struct *t)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">pid</span> *<span class="title">sid</span>;</span></span><br><span class="line">	<span class="type">int</span> error;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!valid_signal(sig))  <span class="comment">// return sig &lt;= _NSIG ? 1 : 0; _NSIG == 64 这里检测是否是一个有效的信号</span></span><br><span class="line">		<span class="keyword">return</span> -EINVAL; <span class="comment">// EINVAL 宏定义 22</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!si_fromuser(info)) <span class="comment">// si_fromuser判断是否是来自用户，是返回True</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	error = audit_signal_info(sig, t); <span class="comment">// 记录审计日志，这里始终返回0</span></span><br><span class="line">	<span class="keyword">if</span> (error)</span><br><span class="line">		<span class="keyword">return</span> error;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!same_thread_group(current, t) &amp;&amp; <span class="comment">// current和当前进程信号是否一致</span></span><br><span class="line">	    !kill_ok_by_cred(t)) &#123;</span><br><span class="line">		<span class="keyword">switch</span> (sig) &#123;</span><br><span class="line">		<span class="keyword">case</span> SIGCONT:</span><br><span class="line">			sid = task_session(t);</span><br><span class="line">			<span class="comment">/*</span></span><br><span class="line"><span class="comment">			 * We don&#x27;t return the error if sid == NULL. The</span></span><br><span class="line"><span class="comment">			 * task was unhashed, the caller must notice this.</span></span><br><span class="line"><span class="comment">			 */</span></span><br><span class="line">			<span class="keyword">if</span> (!sid || sid == task_session(current))</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			fallthrough;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">return</span> -EPERM;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> security_task_kill(t, info, sig, <span class="literal">NULL</span>); <span class="comment">// 返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>si_fromuser：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">bool</span> <span class="title function_">si_fromuser</span><span class="params">(<span class="type">const</span> <span class="keyword">struct</span> kernel_siginfo *info)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> info == SEND_SIG_NOINFO || <span class="comment">// SEND_SIG_NOINFO为SI_USER，这里info.si_code为SI_USER故为True</span></span><br><span class="line">		(!is_si_special(info) &amp;&amp; SI_FROMUSER(info)); </span><br><span class="line">    	<span class="comment">// is_si_special函数关键处为info &lt;= SEND_SIG_PRIV; SEND_SIG_PRIV即SI_KERNEL表示由内核发送</span></span><br><span class="line">    	<span class="comment">// 故is_si_special(info)为True，即!is_si_special(info)为false</span></span><br><span class="line">    	<span class="comment">// SI_FROMUSER为下列宏定义</span></span><br><span class="line">    	<span class="comment">// #define SI_FROMUSER(siptr)	((siptr)-&gt;si_code &lt;= 0)</span></span><br><span class="line">    	<span class="comment">// 故这里SI_FROMUSER(info)为True</span></span><br><span class="line">    	<span class="comment">// 综上所述，si_fromuser判断sig是否来自用户</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>进入audit_signal_info(sig, t)调用：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * audit_signal_info - record signal info for shutting down audit subsystem</span></span><br><span class="line"><span class="comment"> * @sig: signal value</span></span><br><span class="line"><span class="comment"> * @t: task being signaled</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * If the audit subsystem is being terminated, record the task (pid)</span></span><br><span class="line"><span class="comment"> * and uid that is doing that.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">audit_signal_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> task_struct *t)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">kuid_t</span> uid = current_uid(), auid;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (auditd_test_task(t) &amp;&amp; <span class="comment">// auditd_test_task判断是否是注册的审计进程，是返回1，否返回0</span></span><br><span class="line">	    (sig == SIGTERM || sig == SIGHUP ||</span><br><span class="line">	     sig == SIGUSR1 || sig == SIGUSR2)) &#123; <span class="comment">// 如果sig是SIGTERM、SIGHUP或用户自定义的SIGUSR1和SIGUSR2</span></span><br><span class="line">		audit_sig_pid = task_tgid_nr(current);</span><br><span class="line">		auid = audit_get_loginuid(current);</span><br><span class="line">		<span class="keyword">if</span> (uid_valid(auid))</span><br><span class="line">			audit_sig_uid = auid;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			audit_sig_uid = uid;</span><br><span class="line">		security_task_getsecid(current, &amp;audit_sig_sid);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> audit_signal_info_syscall(t); <span class="comment">// 始终返回0</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>auditd_test_task：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * auditd_test_task - Check to see if a given task is an audit daemon</span></span><br><span class="line"><span class="comment"> * @task: the task to check</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Description:</span></span><br><span class="line"><span class="comment"> * Return 1 if the task is a registered audit daemon, 0 otherwise.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">auditd_test_task</span><span class="params">(<span class="keyword">struct</span> task_struct *task)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> rc;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">auditd_connection</span> *<span class="title">ac</span>;</span></span><br><span class="line"></span><br><span class="line">	rcu_read_lock();</span><br><span class="line">	ac = rcu_dereference(auditd_conn); <span class="comment">// </span></span><br><span class="line">	rc = (ac &amp;&amp; ac-&gt;pid == task_tgid(task) ? <span class="number">1</span> : <span class="number">0</span>); </span><br><span class="line">    <span class="comment">// task_tgid通过task_struct获取pid结构体，而ac是Linux audit守护进程，负责将审计记录写入磁盘，使用ausearch或aureport实用程序查看日志。</span></span><br><span class="line">	rcu_read_unlock();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> rc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后回到group_send_sig_info函数，我们聚焦到do_send_sig_info函数：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">do_send_sig_info</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="keyword">struct</span> task_struct *p,</span></span><br><span class="line"><span class="params">			<span class="keyword">enum</span> pid_type type)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">long</span> flags;</span><br><span class="line">	<span class="type">int</span> ret = -ESRCH;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (lock_task_sighand(p, &amp;flags)) &#123; <span class="comment">// 获取信号处理函数锁</span></span><br><span class="line">		ret = send_signal(sig, info, p, type);</span><br><span class="line">		unlock_task_sighand(p, &amp;flags);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>调用send_signal：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> <span class="title function_">send_signal</span><span class="params">(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="keyword">struct</span> task_struct *t,</span></span><br><span class="line"><span class="params">			<span class="keyword">enum</span> pid_type type)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* Should SIGKILL or SIGSTOP be received by a pid namespace init? */</span></span><br><span class="line">    <span class="comment">// pid namespace init是否需要接收SIGKILL or SIGSTOP</span></span><br><span class="line">	<span class="type">bool</span> force = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (info == SEND_SIG_NOINFO) &#123;</span><br><span class="line">		<span class="comment">/* Force if sent from an ancestor pid namespace */</span></span><br><span class="line">        <span class="comment">// 如果来自祖先用户空间，则强制发送</span></span><br><span class="line">		force = !task_pid_nr_ns(current, task_active_pid_ns(t));</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (info == SEND_SIG_PRIV) &#123;</span><br><span class="line">		<span class="comment">/* Don&#x27;t ignore kernel generated signals */</span></span><br><span class="line">        <span class="comment">// 来自内核的信号不会被忽略</span></span><br><span class="line">		force = <span class="literal">true</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span> (has_si_pid_and_uid(info)) &#123;</span><br><span class="line">		<span class="comment">/* SIGKILL and SIGSTOP is special or has ids */</span></span><br><span class="line">		<span class="keyword">struct</span> user_namespace *t_user_ns;</span><br><span class="line"></span><br><span class="line">		rcu_read_lock();</span><br><span class="line">		t_user_ns = task_cred_xxx(t, user_ns);</span><br><span class="line">		<span class="keyword">if</span> (current_user_ns() != t_user_ns) &#123;</span><br><span class="line">			<span class="type">kuid_t</span> uid = make_kuid(current_user_ns(), info-&gt;si_uid);</span><br><span class="line">			info-&gt;si_uid = from_kuid_munged(t_user_ns, uid);</span><br><span class="line">		&#125;</span><br><span class="line">		rcu_read_unlock();</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* A kernel generated signal? */</span></span><br><span class="line">		force = (info-&gt;si_code == SI_KERNEL);</span><br><span class="line"></span><br><span class="line">		<span class="comment">/* From an ancestor pid namespace? */</span></span><br><span class="line">		<span class="keyword">if</span> (!task_pid_nr_ns(current, task_active_pid_ns(t))) &#123;</span><br><span class="line">			info-&gt;si_pid = <span class="number">0</span>;</span><br><span class="line">			force = <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> __send_signal(sig, info, t, type, force);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>task_pid_nr_ns我们刚刚已经讲过了，让我们再讲一遍：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> __task_pid_nr_ns(<span class="keyword">struct</span> task_struct *task, <span class="keyword">enum</span> pid_type type,</span><br><span class="line">			<span class="keyword">struct</span> pid_namespace *ns)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//参数中的 ns = task_active_pid_ns(t)是返回目标进程的namespace</span></span><br><span class="line">    <span class="comment">// 这里的task是current，也就是当前进程的task_struct</span></span><br><span class="line">	<span class="type">pid_t</span> nr = <span class="number">0</span>;  <span class="comment">// pid_t 宏定义 int 变量</span></span><br><span class="line"></span><br><span class="line">	rcu_read_lock(); <span class="comment">// 申请rcu锁</span></span><br><span class="line">	<span class="keyword">if</span> (!ns)</span><br><span class="line">		ns = task_active_pid_ns(current); <span class="comment">// 返回pid也就是调用kill的进程所在的命名空间</span></span><br><span class="line">	nr = pid_nr_ns(rcu_dereference(*task_pid_ptr(task, type)), ns); <span class="comment">// 从当前namespace 中找到对应的pid号</span></span><br><span class="line">	rcu_read_unlock(); <span class="comment">// 释放rcu锁</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> nr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>然后来到pid_nr_ns：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pid_t</span> <span class="title function_">pid_nr_ns</span><span class="params">(<span class="keyword">struct</span> pid *pid, <span class="keyword">struct</span> pid_namespace *ns)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">upid</span> *<span class="title">upid</span>;</span></span><br><span class="line">	<span class="type">pid_t</span> nr = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (pid &amp;&amp; ns-&gt;level &lt;= pid-&gt;level) &#123;</span><br><span class="line">		upid = &amp;pid-&gt;numbers[ns-&gt;level]; <span class="comment">// 获取和目标进程处于同一level的namespace</span></span><br><span class="line">		<span class="keyword">if</span> (upid-&gt;ns == ns) <span class="comment">// 当前进程和目标进程是不是同一个命名空间</span></span><br><span class="line">			nr = upid-&gt;nr;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> nr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在这里，我们使用kill命令发送signal的进程和目标进程之间的关系存在3种情况：</p>
-<ul>
-<li>处于同一个namespace：<ul>
-<li>那么也就是&amp;ns.level&#x3D;&#x3D;&amp;pid.level，而且&amp;pid-&gt;numbers[ns-&gt;level] &#x3D;&#x3D; ns，最终结果返回当前进程pid</li>
-</ul>
-</li>
-<li>当前进程处于目标进程的父namespace：<ul>
-<li>则&amp;pid.level &lt; &amp;ns.level，最终返回0</li>
-</ul>
-</li>
-</ul>
-<p>所以由于pid &gt; 0，结果!task_pid_nr_ns(current, task_active_pid_ns(t))情况如下：</p>
-<ul>
-<li>处于同一个namespace：False</li>
-<li>当前进程处于目标进程的父namespace：True</li>
-</ul>
-<p>所以，如果当前进程处于目标进程的祖先namespace，那这个信号一定会被传递给init进程。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">stateDiagram</span><br><span class="line">    [*] --&gt; SYSCALL_DEFINE2</span><br><span class="line">    SYSCALL_DEFINE2 --&gt; prepare_kill_siginfo</span><br><span class="line">    prepare_kill_siginfo --&gt; task_tgid_vnr</span><br><span class="line">    task_tgid_vnr --&gt; pid_nr_ns</span><br><span class="line">    prepare_kill_siginfo --&gt; kill_something_info</span><br><span class="line">    kill_something_info --&gt; kill_proc_info</span><br><span class="line">    kill_proc_info --&gt; kill_pid_info</span><br><span class="line">    kill_pid_info --&gt; group_send_sig_info</span><br><span class="line">    group_send_sig_info --&gt; kill_pid_info</span><br><span class="line">    group_send_sig_info --&gt; check_kill_permission</span><br><span class="line">    group_send_sig_info --&gt; do_send_sig_info</span><br><span class="line">    check_kill_permission --&gt; security_task_kill</span><br><span class="line">    security_task_kill --&gt; do_send_sig_info</span><br><span class="line">    do_send_sig_info --&gt; send_signal</span><br><span class="line">    send_signal --&gt; task_pid_nr_ns</span><br><span class="line">    send_signal --&gt; has_si_pid_and_uid</span><br><span class="line">    has_si_pid_and_uid --&gt; current_user_ns</span><br><span class="line">    has_si_pid_and_uid --&gt; task_pid_nr_ns</span><br><span class="line">    current_user_ns --&gt; make_kuid</span><br><span class="line">    make_kuid --&gt; from_kuid_munged</span><br><span class="line">    task_pid_nr_ns --&gt; task_active_pid_ns</span><br><span class="line">    send_signal --&gt; __send_signal</span><br><span class="line">    from_kuid_munged --&gt; __send_signal</span><br><span class="line">    task_active_pid_ns --&gt; __send_signal</span><br><span class="line">    __send_signal --&gt; [*]</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="Linux忽略SIGKILL和SIGSTOP发送到init进程"><a href="#Linux忽略SIGKILL和SIGSTOP发送到init进程" class="headerlink" title="Linux忽略SIGKILL和SIGSTOP发送到init进程"></a>Linux忽略SIGKILL和SIGSTOP发送到init进程</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">int</span> __send_signal(<span class="type">int</span> sig, <span class="keyword">struct</span> kernel_siginfo *info, <span class="keyword">struct</span> task_struct *t,</span><br><span class="line">			<span class="keyword">enum</span> pid_type type, <span class="type">bool</span> force)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">sigpending</span> *<span class="title">pending</span>;</span> <span class="comment">// sig的链表，保存了进程上尚未处理的信号</span></span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">sigqueue</span> *<span class="title">q</span>;</span> <span class="comment">// 实时信号可能会排队，使用队列实现</span></span><br><span class="line">	<span class="type">int</span> override_rlimit;</span><br><span class="line">	<span class="type">int</span> ret = <span class="number">0</span>, result;</span><br><span class="line"></span><br><span class="line">	assert_spin_locked(&amp;t-&gt;sighand-&gt;siglock); <span class="comment">// 自旋锁</span></span><br><span class="line"></span><br><span class="line">	result = TRACE_SIGNAL_IGNORED;</span><br><span class="line">	<span class="comment">// 判断该信号SIGKILL或者SIGSTOP是否是发送给init，如果是则忽略</span></span><br><span class="line">	<span class="keyword">if</span> (!prepare_signal(sig, t, force))</span><br><span class="line">		<span class="keyword">goto</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>追踪到prepare_signal函数一直往下：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="type">bool</span> <span class="title function_">sig_task_ignored</span><span class="params">(<span class="keyword">struct</span> task_struct *t, <span class="type">int</span> sig, <span class="type">bool</span> force)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">void</span> __user *handler;</span><br><span class="line"></span><br><span class="line">	handler = sig_handler(t, sig);</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* SIGKILL and SIGSTOP may not be sent to the global init */</span></span><br><span class="line">	<span class="comment">// SIGKILL and SIGSTOP不会被发送到global init进程</span></span><br><span class="line">	<span class="comment">// 如果是SIGKILL and SIGSTOP目标进程是init进程</span></span><br><span class="line">	<span class="keyword">if</span> (unlikely(is_global_init(t) &amp;&amp; sig_kernel_only(sig)))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 这里的flag标志是task_struct的标志，见下面</span></span><br><span class="line">    <span class="comment">// SIGNAL_UNKILLABLE为进程刚被fork，但是还没被执行，所以这里是如果进程刚被创建，但是还没被执行，返回true</span></span><br><span class="line">	<span class="comment">// 如果是默认的handle</span></span><br><span class="line">    <span class="comment">// 不是SIGKILL或者是SIGSTOP并且可以被发送到进程</span></span><br><span class="line">    <span class="comment">// 所以这里标识如果进程刚被fork，发送的信号不是必须被处理的信号，且handle是默认的handle，则不能响应信号</span></span><br><span class="line">    <span class="keyword">if</span> (unlikely(t-&gt;signal-&gt;flags &amp; SIGNAL_UNKILLABLE) &amp;&amp;</span><br><span class="line">	    handler == SIG_DFL &amp;&amp; !(force &amp;&amp; sig_kernel_only(sig)))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/* Only allow kernel generated signals to this kthread */</span></span><br><span class="line">    <span class="comment">// PF_KTHREAD是内核线程</span></span><br><span class="line">	<span class="keyword">if</span> (unlikely((t-&gt;flags &amp; PF_KTHREAD) &amp;&amp;</span><br><span class="line">		     (handler == SIG_KTHREAD_KERNEL) &amp;&amp; !force))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> sig_handler_ignored(handler, sig);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>flag信号：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// flag可能取值如下：</span></span><br><span class="line">PF_FORKNOEXEC 进程刚创建，但还没执行。</span><br><span class="line">PF_SUPERPRIV 超级用户特权。</span><br><span class="line">PF_DUMPCORE dumped core。</span><br><span class="line">PF_SIGNALED 进程被信号(signal)杀出。</span><br><span class="line">PF_EXITING 进程开始关闭</span><br></pre></td></tr></table></figure>
-
-<p>再看sig_handler_ignored：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">bool</span> <span class="title function_">sig_handler_ignored</span><span class="params">(<span class="type">void</span> __user *handler, <span class="type">int</span> sig)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">/* Is it explicitly or implicitly ignored? */</span></span><br><span class="line">	<span class="comment">// 属于可以被忽略的信号</span></span><br><span class="line">	<span class="keyword">return</span> handler == SIG_IGN ||</span><br><span class="line">	<span class="comment">// 默认信号处理程序，也就是说信号是SIGCONT，SIGCHLD，SIGWINCH，SIGURG他们的默认处理信号是忽略</span></span><br><span class="line">	       (handler == SIG_DFL &amp;&amp; sig_kernel_ignore(sig));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> sig_kernel_ignore(sig)		siginmask(sig, SIG_KERNEL_IGNORE_MASK)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_KERNEL_IGNORE_MASK (\</span></span><br><span class="line"><span class="meta">        rt_sigmask(SIGCONT)   |  rt_sigmask(SIGCHLD)   | \</span></span><br><span class="line"><span class="meta">	rt_sigmask(SIGWINCH)  |  rt_sigmask(SIGURG)    )</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>SIGCONT，SIGCHLD，SIGWINCH，SIGURG：</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SIGCHLD：</span><br><span class="line">● 子进程终止时；</span><br><span class="line">● 子进程接收到SIGSTOP信号停止时；</span><br><span class="line">● 子进程处在停止态，接收到SIGCONT信号后被唤醒时。</span><br><span class="line">SIGWINCH:</span><br><span class="line">窗口大小改变时</span><br><span class="line">SIGURG：</span><br><span class="line">有<span class="string">&quot;紧急&quot;</span>数据或out-of-band数据到达socket时产生.</span><br></pre></td></tr></table></figure>
-
-</div><div class="story post-story"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>信号时SIGKILL 或 SIGSTOP目标进程是init进程，该信号会被忽略即不能响应信号</li>
-<li>如果进程刚被fork，发送的信号不是必须被处理的信号，且handle是默认的handle，则不能响应信号</li>
-<li>目标线程是内核线程，并且是默认内核线程处理程序，但是不能被发送，则不能响应信号</li>
-<li>信号是SIGCONT，SIGCHLD，SIGWINCH，SIGURG他们的默认处理信号是忽略</li>
-</ul>
-
-</div>
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-08-13T23:41:47+08:00">2021-08-13</time>
-        
-      </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2021/08/09/docker-namespace/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/08/09/docker-namespace/"  itemprop="url">
-        Docker的命名空间
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        <div class="story post-story"><h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p>Linux内核用命名空间来区分内核资源。不同的进程看到的资源是不同的。</p>
-<p>这里的资源包括pid，hostname，userid，文件名，网络访问和进程间通信</p>
-<p>在Linux内核3.8版本，内核对容器有足够的支持</p>
-</div><div class="story post-story"><h2 id="内核空间的类型"><a href="#内核空间的类型" class="headerlink" title="内核空间的类型"></a>内核空间的类型</h2><p> Linux内核5.6，支持8种命名空间。</p>
-<ul>
-<li>mount：mount命名空间控制挂载点<ul>
-<li>在创建命名空间时，当前的命名空间会复制到新的命名空间。但是已经创建的挂载点不会在明明见之间传播。</li>
-<li>创建此类型的标志clone_NEW</li>
-</ul>
-</li>
-<li>PID：提供独立于其他命名空间的pid集合，不同pid namespace里面的pid可以重复<ul>
-<li>PID命名空间内的进程ID是唯一的，从1开始分配</li>
-<li>PID 1进程的终止将终止该命名空间以及其后代所有进程</li>
-<li>PID namespace的使用需要配置参数CONFIG_PID_NS</li>
-</ul>
-</li>
-<li>Network(net)：网络命名空间虚拟化提供隔离的网络相关的系统隔离资源，如网络设备、IPv4、IPv6协议栈，IP路由表、防火墙规则、&#x2F;proc&#x2F;net目录、&#x2F;sys&#x2F;class&#x2F;net目录、&#x2F;proc&#x2F;sys&#x2F;net下的各种文件、端口号等等。特别的，网络命名空间隔离UNix域抽象套接字命名空间。<ul>
-<li>物理网络设备：当网络命名空间内的进程终止，网络命名空间被释放时，物理网络设备将会回到初始话网络命名空间。</li>
-<li>虚拟网络设备：提供了管道式的，抽象化的，可以在网络命名空间之间使用的隧道，在一个物理网络设备到另一个网络命名空间之间使用的桥梁。当一个namespace被释放，它包含的veth设备将会被销毁。</li>
-<li>使用network namespace需要内核配置CONFIG_NET_NS参数</li>
-</ul>
-</li>
-<li>User：用来区分安全标识符和属性，特别是UserID、GroupID、根目录和keys。</li>
-<li>Cgropu：（Cgroup可以对一组进程做资源控制）</li>
-<li>IPC：隔离了IPC资源，即SystemV IPC对象，POSIX消息队列。需要CONFIG_IPC_NS内核参数</li>
-<li>Time：CONFIG_TIME_NS内核参数。虚拟化CLOCK_MONOTONIC和CLOCK_BOOTTIME。</li>
-<li>UTS：虚拟化hostname和NIS域名。CONFIG_UTS_NS</li>
-</ul>
-</div><div class="story post-story"><h2 id="PID-namespace"><a href="#PID-namespace" class="headerlink" title="PID namespace"></a>PID namespace</h2><h3 id="namespace-init-process"><a href="#namespace-init-process" class="headerlink" title="namespace init process"></a>namespace init process</h3><p>第一个在namespace中创建的进程，是任何在这个pid namespace中的孤儿进程的父进程。</p>
-<p>当init终止，内核通过发送SIGKILL信号终止namespace中所有的子进程，在这种情况下，调用fork将返回ENOMEN错误，因为init进程已经终止。</p>
-<p>内核会帮助init进程屏蔽掉任何其他信号，防止其他进程不小心kill掉init进程导致系统挂掉。可以在父PID namespace中发送SIGKILL信号终止namespace中init进程。<em>通过什么方式屏蔽？</em></p>
-<h3 id="PID-namespace-nest"><a href="#PID-namespace-nest" class="headerlink" title="PID namespace nest"></a>PID namespace nest</h3><p>PID namespace可以嵌套：每一个PID namespace都有一个parent，除了根PID namespace。父PID namespace是使用clone()或unshare()函数创建的进程。从Linux 3.7开始，内核限制最深嵌套是32。</p>
-<p>子PID namespace中的进程对于父PID namespace中的进程是不可见的。进程可以下降到子命名空间，但是不能进入任何一个父命名空间。</p>
-<p>进程的PID命名空间在进程创建时确定，不可更改。</p>
-<h3 id="x2F-proc-和-PID-namespace"><a href="#x2F-proc-和-PID-namespace" class="headerlink" title="&#x2F;proc 和 PID namespace"></a>&#x2F;proc 和 PID namespace</h3><p>对一个PID namespace而言，&#x2F;proc目录只包含当前namespace和它所有子孙后代namespace里的进程的信息。</p>
-</div><div class="story post-story"><h2 id="mount-namespace"><a href="#mount-namespace" class="headerlink" title="mount namespace"></a>mount namespace</h2><p>mount namespace隔离了不同的挂载点，每个挂载的命名空间实例将看到不同的单目录层次结构。使用clone和unshare传递CLONE_NEWS信号能够创建心的mount namespace。</p>
-<p>当一个心得mount namespace创建，将进行如下初始化：</p>
-<ul>
-<li>使用clone创建，将子namespace的挂载点列表是父挂载点列表的复制</li>
-<li>使用unshare创建，新命名空间挂载点列表是调用者之前命名空间挂载点列表的复制</li>
-</ul>
-<h3 id="mount-namespace的限制"><a href="#mount-namespace的限制" class="headerlink" title="mount namespace的限制"></a>mount namespace的限制</h3><ul>
-<li>每一个mount namespace拥有一个user namespace。一个新的mount namespace是另一个namespace的副本，新旧namespace拥有不同的user namespace，那么新的namespace将被赋予更低的特权级别</li>
-<li>当创建一个更低特权级别的mount namespace，共享挂载将会减少到从属挂载，这确保更低特权级别执行的映射不会传播到更高特权级别</li>
-<li>来自更高特权级别的单个单元的挂载将会被加锁，不会被更低优先级别的mount namespace分开。unshare的CLONE_NEWS操作将原有命名空间当中的mount以及其递归的mount作为单个单元进行传播。</li>
-<li>在一个mount namespace作为挂载点且不在其他mount namespace的文件或目录可以被重命名、取消链接和删除（不是挂载点）。</li>
-</ul>
-<h3 id="共享子树"><a href="#共享子树" class="headerlink" title="共享子树"></a>共享子树</h3><p>背景：为了加载一个新的硬盘，使其在所有的mount namespace中可用，需要在所有的mount namespace中执行挂载操作。</p>
-<p>共享子树功能在Linux 2.6.15中引入。该功能允许自动的、在命名空间之前传播的受控的挂载和卸载事件。</p>
-<p>每个挂载点被标记为如下的传播类型：</p>
-<ul>
-<li>MS_SHARED：在一组对等节点之间共享事件。</li>
-<li>MS_PRIVATE：这个挂载点是私有的，挂载和卸载事件不会传播进来或传播出去。</li>
-<li>MS_SLAVE：事件将会在master的共享对等组之间传播，不会传播到其他组。（一组挂载点可以是其他组的slave）</li>
-<li>MS_UNBINDDABLE：类似于私有的mount，这个mount将不能被绑定挂载。</li>
-</ul>
-
-</div>
-      
     
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      <h1 class="title" itemprop="name headline">
+        Linux Conntrack为什么会崩溃并避免问题
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/dreamcoin1998/" rel="nofollow noopener">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Jerry Gao</p>
+  </a>
+</div>
+
+          
         
-        <time itemprop="dateCreated datePublished" datetime="2021-08-09T23:36:40+08:00">2021-08-09</time>
+          
+            
+
+          
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-25T18:31:00+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：May 25, 2022</p>
+  </a>
+</div>
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <div class="story post-story"><h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p><strong>作者</strong>：Alex Pollitt<br><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://www.tigera.io/blog/when-linux-conntrack-is-no-longer-your-friend/">https://www.tigera.io/blog/when-linux-conntrack-is-no-longer-your-friend/</a></p>
+<p>连接跟踪（“conntrack”）是Linux内核网络堆栈的核心功能。它允许内核跟踪所有逻辑网络连接或流，从而识别构成每个流的所有数据包，以便可以一致的处理它们。</p>
+<p>Conntrack是一个重要的内核特性，它支持一些关键的主线用例：</p>
+<ul>
+<li>NAT依赖于连接跟踪信息，因此它可以以相同的方式转换流中的所有数据包。例如当pod访问kubernetes服务时，kube-proxy的负载均衡使用NAT将连接重定向到特定的后端pod。Conntrack记录对于特定连接，发往服务IP的数据包应该全部发送到同一个后端Pod，并且从后端pod返回的数据包未经NAT回到源pod。</li>
+<li>有状态的防火墙，例如Calico，依靠连接跟踪信息来精确将“响应”流量列入白名单。这允许您编写一个网络策略，上面写着“允许我的pod连接到任何远程IP”，而无需编写策略来明确允许响应流量。（否则，将不得不提娜佳更不安全的规则“允许任何IP到我的pod的数据包”）</li>
+</ul>
+<p>此外conntrack通常会提高性能（减少CPU并减少数据包延迟），因为只有流中第一个数据包需要经过完整网络对战处理才能确定如何处理它。有关此操作的一个示例，请参阅“comparing kube-proxy modes”博客。</p>
+<p>可是，conntrack有它自己的限制…</p>
+</div><div class="story post-story"><h2 id="它在哪里崩溃"><a href="#它在哪里崩溃" class="headerlink" title="它在哪里崩溃"></a>它在哪里崩溃</h2><p>conntrack表有一个可配置的最大大小，如果它被填满，连接通常会开始拒绝或丢弃。对于大多数工作负载，表有足够的空间，这永远不会成为问题。但是在某些情况下，需要对conntrack表进行更多的考虑：</p>
+<ul>
+<li>最明显的情况是，服务器处理极高数量的同时活动的连接。例如，如果你的conntrack表配置为128k条目，但是有超过128k的同时连接，肯定会遇到问题。</li>
+<li>稍微不那么明显的情况是，服务器每秒处理非常多的连接数。即使连接是短暂的，Linux也会在很短的超时时间内（默认为120秒）继续跟踪链接。例如如果您的conntrack表配置为128k条目，并且您尝试每秒处理1100个连接，那么即使连接时间非常短暂（128k &#x2F; 120s &#x3D; 1092个连接&#x2F;s）</li>
+</ul>
+<p>有一些小众的工作负载属于这种类型。此外如果你出在一个敌对的环境中，那么用大量的半开放连接来淹没你的服务器，可以作为一种拒绝服务的攻击。在这里两种情况下，通过增加conntrack表的大小或减少conntrack超时，调整conntrack可能足以满足你的需求，但是如果你把调整弄错了，会导致很多痛苦。对于其他情况，你需要绕过conntrack来处理违规的流量。</p>
+</div><div class="story post-story"><h2 id="一个真实的例子"><a href="#一个真实的例子" class="headerlink" title="一个真实的例子"></a>一个真实的例子</h2><p>与我们合作的一个大型Saas供应商有一组运行在裸机服务器上的memcached服务器（没有虚拟化或容器化），每个服务器每秒处理5万多个短时连接。这远远超过了标准Linux配置所能应付的范围。<br>他们曾尝试调整conntrack配置以增加表大小并减少超时，但调整很脆弱，增加的RAM使用是一个重大损失（想想GBytes），而且连接是如此的短暂，以至于conntrack没有提供其通常的性能优势（减少CPU或数据包延迟）。<br>相反，他们转向了Calico。Calico的网络策略允许绕过特定流量的conntrack（使用doNotTrack的标志）。为他们提供了所需的性能，以及Calico带来的额外安全优势。</p>
+</div><div class="story post-story"><h2 id="绕过conntrack的取舍是什么？"><a href="#绕过conntrack的取舍是什么？" class="headerlink" title="绕过conntrack的取舍是什么？"></a>绕过conntrack的取舍是什么？</h2><ul>
+<li>不跟踪网络策略通常是对称的。在saas提供商的案例中，他们的工作负载是内部的，因此使用网络策略，他们可以非常狭隘地将允许访问memcached服务的所有工作负载的往来流量列为白名单</li>
+<li>不跟踪策略对连接的方向是无视的。所以在memcached服务器被攻击的情况下，理论上可以尝试连接到任何memcached客户端，只要它使用正确的源端口。然而，假设你为你的memcached客户端正确定义了网络策略，那么这些链接尝试仍在客户端被拒绝。</li>
+<li>不跟踪网络策略适用于每个数据包，而正常的网络策略只适用于流中的第一个数据包。这可能会增加每个数据包的CPU成本，因为每个数据包都需要被网络策略处理。但是对于短暂的连接，这种额外的处理会被连通性处理的减少所抵消。例如，在saas供应上的案例中，每个连接中的数据包数量非常少，因此将策略应用于每个数据包的额外开销是一个合理的权衡。</li>
+</ul>
+</div><div class="story post-story"><h2 id="进行测试"><a href="#进行测试" class="headerlink" title="进行测试"></a>进行测试</h2><p>我们测试了单个memcached服务器pod和在远程节点上运行的多个客户端pod，因此我们可以每秒驱动非常高的连接。memcached服务器pod主机有8个内核和一个512k的conntrack表。我们测量了以下之间的性能差异：没有网络策略、Calico正常网络策略和Calico不跟踪网络策略。<br>在第一次测试中，我们将连接数限制在每秒4000个，这样我们就可以关注CPU的差异。没有策略和正常策略在性能上没有可衡量的差异，但不跟踪策略使得CPU使用率降低了约20%。</p>
+<p><img src="/../image/notrack.png" class="lazyload" data-srcset="/../image/notrack.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>在第二个测试中，我们推送了我们的客户所能容纳的尽可能多的连接，并测量了memcached服务器每秒能够处理的最大连接数。正如预期那样，无策略和正常策略都在每秒4000多个连接数上达到conntrack表的限制(512k &#x2F; 120s &#x3D; 4396个连接&#x2F;s)。有了不跟踪策略，我们的客户端每秒推送了60000个连接而没有遇到任何问题。我们相信我们可以通过吸引更多的客户来超越这个数字，但是我们觉得这些数字足以说明这篇博客的意义了。</p>
+<p><img src="/../image/maxconnectcount.png" class="lazyload" data-srcset="/../image/maxconnectcount.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</div><div class="story post-story"><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Conntrack是一个重要的内核特性。它做的很出色。许多主线用例都依赖它。然而对于某些小众的场景，conntrack的开销超过了它带来的正常好处。在这些场景中，Calico的网络策略可以用来有选择的绕过conntrack，同时仍然执行网络安全。对于所有的其他流量，conntrack仍然是你的朋友。</p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-20T11:38:51+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：Apr 20, 2023</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2021/08/09/docker-framework/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div>
+  <span hidden itemprop="keywords">Linux</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2022/05/25/linux-conntrack/&title=Linux Conntrack为什么会崩溃并避免问题 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2022/05/25/linux-conntrack/&title=Linux Conntrack为什么会崩溃并避免问题 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2022/05/25/linux-conntrack/&title=Linux Conntrack为什么会崩溃并避免问题 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+        <a class='prev' href='/2022/05/25/docker-vm-compare/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Docker容器和虚拟机的性能评估</p>
+          <p class='content'>文章信息作者：Amit M Potdara, Narayan D Gb, Shivaraj Kengondc, Mohammed Moin Mulla原文链接：https://reader.el...</p>
+        </a>
+      
+      
+        <a class='next' href='/2022/05/25/k8s-network-policy/'>
+          <p class='title'>kubernetes中的网络策略：性能评估和安全分析<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>文章信息作者：Gerald Budigiri; Christoph Baumann; Jan Tobias Mühlberg; Eddy Truyen; Wouter Joosen原文：http...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/05/25/linux-conntrack/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/08/09/docker-framework/"  itemprop="url">
-        Docker的架构
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        <div class="story post-story"><h2 id="Docker的架构"><a href="#Docker的架构" class="headerlink" title="Docker的架构"></a>Docker的架构</h2><p>docker是client-server架构，client通过socket或restful API与docker daemon之间进行数据交互。两者可以跑在同一个系统上，或者使用远程的Docker daemon。后者负责繁重的构建、运行、分发docker 容器。</p>
-<p>docker内部包含三个组件：</p>
-<ul>
-<li>docker images</li>
-<li>docker registers 镜像仓库（私有和公有）</li>
-<li>docker containers</li>
-</ul>
-</div><div class="story post-story"><h2 id="Docker-image如何工作"><a href="#Docker-image如何工作" class="headerlink" title="Docker image如何工作"></a>Docker image如何工作</h2><p>docker image是层次化的只读模板，它利用union file system将不同的层组成一个image，同时允许覆盖单独文件系统的文件和目录，形成统一的文件系统。当image增加层或者更新层，需要重新构建image。</p>
-</div><div class="story post-story"><h2 id="Docker-container-work"><a href="#Docker-container-work" class="headerlink" title="Docker container work"></a>Docker container work</h2><p>当从docker images 运行一个container，它会在image的顶层添加一个读写层（union file system）以使你的应用可以运行。</p>
-<h3 id="当运行一个container，会发生什么？"><a href="#当运行一个container，会发生什么？" class="headerlink" title="当运行一个container，会发生什么？"></a>当运行一个container，会发生什么？</h3><ul>
-<li>pull the image：docker检查镜像是否存在，当镜像不存在，会从docker hub中拉取；当镜像存在，即使用其构建。</li>
-<li>create a new container：一旦image存在，docker使用其创建一个镜像。</li>
-<li>分配一个文件系统并且挂载一个读写层：容器在文件系统之中被创建，并且读写层被添加进image</li>
-<li>分配一个网络&#x2F;网桥接口：分配一个网络&#x2F;网桥接口，允许容器与本机交互</li>
-<li>设置IP地址：从IP池中寻找并分配一个可用的IP地址</li>
-<li>执行指定的进程：运行应用程序</li>
-<li>捕获并且提供应用的输出：连接并且记录标准输入，输出和错误</li>
-</ul>
-<p>当container结束时，停止并且删除contianer</p>
-<h1 id="使用的底层技术"><a href="#使用的底层技术" class="headerlink" title="使用的底层技术"></a>使用的底层技术</h1></div><div class="story post-story"><h2 id="namespace"><a href="#namespace" class="headerlink" title="namespace"></a>namespace</h2><p>Linuex 内核提供了一层隔离，容器的每个方面运行在namespace，并且对它所处的namespace之外没有访问权限</p>
-</div><div class="story post-story"><h2 id="Control-Groups"><a href="#Control-Groups" class="headerlink" title="Control Groups"></a>Control Groups</h2><p>CGroups允许Docker将可用硬件资源共享给容器，并在必要时设置约束和限制，，比如限制特定容器的可用内存。</p>
-</div><div class="story post-story"><h2 id="Union-file-system"><a href="#Union-file-system" class="headerlink" title="Union file system"></a>Union file system</h2><p>Union通过创建层来操作的文件系统。</p>
 
-</div>
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-08-09T01:03:04+08:00">2021-08-09</time>
-        
-      </div>
-      
-    </div>
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2021/08/08/docker-learn/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/08/08/docker-learn/"  itemprop="url">
-        如何阅读docker源码
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        <p>来自docker-dev群组：<a target="_blank" rel="noopener" href="https://groups.google.com/g/docker-dev/c/g0jUDDltp4o">https://groups.google.com/g/docker-dev/c/g0jUDDltp4o</a></p>
-<ul>
-<li>learn go</li>
-<li>figure out how the basic command flags work</li>
-<li>build docker executables with minor changes</li>
-</ul>
-<p>来自StackOverflow：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/22639685/new-to-docker-wonder-how-to-read-dockers-source-code">https://stackoverflow.com/questions/22639685/new-to-docker-wonder-how-to-read-dockers-source-code</a></p>
-<ul>
-<li>理解Cgroup和Linux内核的命名空间</li>
-<li>阅读 <a target="_blank" rel="noopener" href="https://github.com/docker/docker">docker’s github source code repository</a>和<a target="_blank" rel="noopener" href="https://github.com/docker/docker/blob/master/CONTRIBUTING.md">contributing to docker guide</a></li>
-</ul>
+  </article>
 
 
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-08-08T22:00:00+08:00">2021-08-08</time>
-        
-      </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
 
 
-	
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
 
+  
+    
+    
+      
+    
+  
+
 
 <div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%83%E5%9C%A8%E5%93%AA%E9%87%8C%E5%B4%A9%E6%BA%83"><span class="toc-number">2.</span> <span class="toc-text">它在哪里崩溃</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%9C%9F%E5%AE%9E%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">一个真实的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%95%E8%BF%87conntrack%E7%9A%84%E5%8F%96%E8%88%8D%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">绕过conntrack的取舍是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="toc-number">5.</span> <span class="toc-text">进行测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">结论</span></a></li></ol>
+    </div>
+  </section>
+
+  
 
 </div>
 
@@ -3212,13 +2946,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3227,14 +2962,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -4083,7 +3818,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/archives/2021/","name":"2021年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2022/05/25/linux-conntrack/","name":"Linux Conntrack为什么会崩溃并避免问题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Linux Conntrack为什么会崩溃并避免问题","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2022/05/25/linux-conntrack/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2022/05/25/linux-conntrack/","wordCount":0,"datePublished":"2022-05-25T10:31:00.000Z","dateModified":"2023-04-20T03:38:51.427Z","keywords":"Linux","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
