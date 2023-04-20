@@ -32,7 +32,7 @@
   <!-- feed -->
   <!-- 页面元数据 -->
   <title>kubernetes中的网络策略：性能评估和安全分析 - Jerry的小站</title>
-  <meta name="keywords" content="kubernetes,博客,工具分享">
+  <meta name="keywords" content="Kubernetes,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
 <meta property="og:type" content="article">
@@ -43,9 +43,9 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-05-25T10:31:00.000Z">
-<meta property="article:modified_time" content="2023-04-20T03:43:13.532Z">
+<meta property="article:modified_time" content="2023-04-20T13:39:26.155Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="kubernetes">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -717,122 +717,6 @@ button {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   border-bottom: 2px solid var(--color-site-inner);
-}
-.cover-wrapper.dock .menu,
-.cover-wrapper.featured .menu,
-.cover-wrapper.focus .menu {
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
-}
-.cover-wrapper.dock .menu .list-h a,
-.cover-wrapper.featured .menu .list-h a,
-.cover-wrapper.focus .menu .list-h a {
-  -webkit-box-direction: normal;
-  -moz-box-direction: normal;
-  -webkit-box-orient: vertical;
-  -moz-box-orient: vertical;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  align-items: center;
-  padding: 12px;
-  line-height: 24px;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-bottom: none;
-  text-align: center;
-  align-content: flex-end;
-  color: rgba(68,68,68,0.7);
-  font-size: 1.5rem;
-}
-@media screen and (max-width: 500px) {
-  .cover-wrapper.dock .menu .list-h a,
-  .cover-wrapper.featured .menu .list-h a,
-  .cover-wrapper.focus .menu .list-h a {
-    padding: 12px 8px;
-  }
-}
-.cover-wrapper.dock .menu .list-h a i,
-.cover-wrapper.featured .menu .list-h a i,
-.cover-wrapper.focus .menu .list-h a i {
-  margin: 8px;
-}
-.cover-wrapper.dock .menu .list-h a p,
-.cover-wrapper.featured .menu .list-h a p,
-.cover-wrapper.focus .menu .list-h a p {
-  font-size: 0.875rem;
-}
-.cover-wrapper.dock .menu .list-h a.active,
-.cover-wrapper.featured .menu .list-h a.active,
-.cover-wrapper.focus .menu .list-h a.active {
-  background: var(--color-card);
-  backdrop-filter: none;
-}
-.cover-wrapper.dock .menu .list-h a.active i,
-.cover-wrapper.featured .menu .list-h a.active i,
-.cover-wrapper.focus .menu .list-h a.active i,
-.cover-wrapper.dock .menu .list-h a.active i+p,
-.cover-wrapper.featured .menu .list-h a.active i+p,
-.cover-wrapper.focus .menu .list-h a.active i+p {
-  color: #3dd9b6;
-}
-.cover-wrapper.dock .menu .list-h a.active img+p,
-.cover-wrapper.featured .menu .list-h a.active img+p,
-.cover-wrapper.focus .menu .list-h a.active img+p {
-  color: var(--color-text);
-}
-.cover-wrapper.dock .menu .list-h a:hover,
-.cover-wrapper.featured .menu .list-h a:hover,
-.cover-wrapper.focus .menu .list-h a:hover {
-  background: var(--color-card);
-}
-.cover-wrapper.dock .top {
-  margin-bottom: 48px;
-}
-.cover-wrapper.dock .menu {
-  background: rgba(255,255,255,0.5);
-  position: absolute;
-  bottom: 0;
-  max-width: 100%;
-}
-.cover-wrapper.dock .menu .list-h {
-  flex-wrap: nowrap;
-  -webkit-flex-wrap: nowrap;
-  -khtml-flex-wrap: nowrap;
-  -moz-flex-wrap: nowrap;
-  -o-flex-wrap: nowrap;
-  -ms-flex-wrap: nowrap;
-  margin: 4px;
-}
-.cover-wrapper.dock .menu .list-h a+a {
-  margin-left: 4px;
-}
-@media screen and (max-width: 500px) {
-  .cover-wrapper.dock .menu .list-h {
-    overflow-x: scroll;
-  }
-  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar {
-    height: 0;
-    width: 0;
-  }
-  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-track-piece {
-    background: transparent;
-  }
-  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb {
-    background: #3dd9b6;
-    cursor: pointer;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-  }
-  .cover-wrapper.dock .menu .list-h::-webkit-scrollbar-thumb:hover {
-    background: #ff5722;
-  }
-}
-@supports (backdrop-filter: blur(20px)) {
-  .cover-wrapper.dock .menu {
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: saturate(200%) blur(20px);
-  }
 }
 .cover-wrapper #parallax-window {
   position: absolute;
@@ -1928,9 +1812,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		'}'+
 	'</style>'+
     '<div class="kill-ie">'+
-        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
-        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
+        `<span class="kill-t"><b>抱歉，您的瀏覽器無法訪問本站</b></span><br/>`+
+        `<span class="kill-c">微軟已經於2016年終止了對 Internet Explorer (IE) 10 及更早版本的支持，<br/>繼續使用存在極大的安全隱患，請使用當代主流的瀏覽器進行訪問。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解詳情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1958,9 +1842,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
-        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+        <span class="kill-t"><b>抱歉，您的瀏覽器無法訪問本站</b></span><br/>
+        <span class="kill-c">本頁面需要瀏覽器支持（啟用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解詳情 ></strong></a>
     </div>
 </noscript>
 
@@ -1975,9 +1859,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1681962849336),
+    lastupdate: new Date(1682008501418),
     sidebar: {
-      for_page: [],
+      for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc"],
       webinfo: {
         lastupd: {
@@ -1985,7 +1869,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           friendlyShow: true
         },
         runtime: {
-          data: "2020/01/01",
+          data: "2018/02/01",
           unit: "天"
         }
       }
@@ -1995,7 +1879,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       fancybox: {"css":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.css","js":"https://unpkg.com/volantis-static@0.0.1654736714924/libs/@fancyapps/ui/dist/fancybox.umd.js"},
       
       aplayer: {
-        id: 5062959861,
+        id: 2774493345,
         enable:true
       },
       
@@ -2404,7 +2288,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2452,13 +2336,64 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客文章"
+                href="/archives/" title="博客"
                   
                   
                   
                     active-action="action-archives"
                   >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客文章
+                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tag/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tag"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+          
+            
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -2534,13 +2469,64 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客文章"
+                href="/archives/" title="博客"
                   
                   
                   
                     active-action="action-archives"
                   >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客文章
+                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/categories/" title="分类"
+                  
+                  
+                  
+                    active-action="action-categories"
+                  >
+                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/tag/" title="标签"
+                  
+                  
+                  
+                    active-action="action-tag"
+                  >
+                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                </a>
+                
+              </li>
+            
+          
+            
+              
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/about/" title="关于"
+                  
+                  
+                  
+                    active-action="action-about"
+                  >
+                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
                 </a>
                 
               </li>
@@ -2593,7 +2579,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper post dock' style="display: none;">
+      <div id="half" class='cover-wrapper post search' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -2608,6 +2594,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   </div>
   <div class='bottom'>
+    
+      <div class="m_search">
+        <form name="searchform" class="form u-search-form">
+          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <i class="icon fa-solid fa-search fa-fw"></i>
+        </form>
+      </div>
+    
     <div class='menu navigation'>
       <div class='list-h'>
         
@@ -2616,7 +2610,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
               
               active-action="action-archives">
-              <img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/twemoji/assets/svg/1f4f0.svg'><p>博客</p>
+              <p>博客</p>
+            </a>
+          
+            <a href="/about/"
+              
+              
+              active-action="action-about">
+              <p>关于</p>
             </a>
           
         
@@ -2674,6 +2675,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+      </span>
+    
+  </div>
+
 
           
         
@@ -2684,6 +2695,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <p>发布于：May 25, 2022</p>
   </a>
 </div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+
 
           
         
@@ -2806,7 +2829,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </ul>
 </div><div class="story post-story"><h2 id="V-结语"><a href="#V-结语" class="headerlink" title="V.结语"></a>V.结语</h2><p>边缘计算和容器化是多租户5G云环境中无疑重要的技术。然而，安全要求仍然阻碍其广泛采用，特别是在具有高性能和安全要求的5G URLLC边缘应用中，因为大多数安全解决方案都会损害性能。这使得找到一个低开销的容器安全解决方案变得至关重要。在评估了网络策略（k8s的可配置网络隔离安全解决方案）并且没有观察到明显的性能开销之后，我们证明了他们是此类应用程序的合适的安全解决方案。作为一般关注点，交互微服务应部署在同一节点上以确保最高性能，但是这会增加对不同租户的适当隔离的需求。</p>
 </div><div class="story post-story"><h2 id="Acknowledgment"><a href="#Acknowledgment" class="headerlink" title="Acknowledgment"></a>Acknowledgment</h2><p>这项研究的部分资金来自KU Leuven研究基金和弗兰德研究计划网络安全。这项研究已获得欧盟H2020 MSCA-ITN行动5GhOSTS的资助，赠款协议号814035。</p>
-</div><div class="story post-story"><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>[1] Q.-V. Pham et al., “A survey of multi-access edge computing in 5G<br>and beyond: Fundamentals, technology integration, and state-of-the-art,”<br>IEEE Access, 2020.<br>[2] H. Hawilo et al., “Exploring microservices as the architecture of choice<br>for network function virtualization platforms,” IEEE Network, 2019.<br>[3] J. Watada, A. Roy, R. Kadikar, H. Pham, and B. Xu, “Emerging trends,<br>techniques and open issues of containerization,” IEEE Access, 2019.<br>[4] J. Nam, S. Lee, H. Seo, P. Porras, V. Yegneswaran, and S. Shin, “BASTION: A security enforcement network stack for container networks,”<br>in 2020 USENIX Annual Technical Conf. (USENIXATC 20), 2020.<br>[5] S. Sultan, I. Ahmad, and T. Dimitriou, “Container security: Issues,<br>challenges, and the road ahead,” IEEE Access, 2019.<br>[6] M. Souppaya, J. Morello, and K. Scarfone, “Application container<br>security guide (2nd draft),” NIST, Tech. Rep., 2017.<br>[7] E. Reshetova, J. Karhunen, T. Nyman, and N. Asokan, “Security of oslevel virtualization technologies: Tech. report,” arXiv:1407.4245, 2014.<br>[8] A. Grattafiori, “Understanding and hardening linux containers,”<br>Whitepaper, NCC Group, 2016.<br>[9] S. Vaucher, R. Pires, P. Felber, M. Pasin, V. Schiavoni, and C. Fetzer,<br>“SGX-aware container orchestration for heterogeneous clusters,” in 2018<br>IEEE 38th Conf. on Dist. Computing Syst. (ICDCS). IEEE, 2018.<br>[10] S. Arnautov et al., “SCONE: Secure linux containers with intel SGX,”<br>in 12th USENIX OSDI 16, 2016.<br>[11] M. S. I. Shamim, F. A. Bhuiyan, and A. Rahman, “XI commandments<br>of Kubernetes security: A systematization of knowledge related to<br>Kubernetes security practices,” in 2020 IEEE SecDev. IEEE, 2020.<br>[12] A. Balkan, “Kubernetes network policy recipes,” <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a><br>ahmetb&#x2F;kubernetes-network-policy-recipes&#x2F;, [accessed 2021-01-28].<br>[13] S. Qi et al., “Understanding container network interface plugins: design<br>considerations and performance,” in 2020 IEEE Int. Symp. on Local and<br>Metropolitan Area Networks (LANMAN). IEEE, 2020.<br>[14] X. Nguyen, “Network isolation for K8s hard multi-tenancy,” 2020.<br>[Online]. Available: <a target="_blank" rel="noopener" href="https://aaltodoc.aalto.fi/handle/123456789/46078">https://aaltodoc.aalto.fi/handle/123456789/46078</a><br>[15] “Kubernetes namespaces,” <a target="_blank" rel="noopener" href="https://kubernetes.io/blog/2016/08/">https://kubernetes.io/blog/2016/08/</a><br>kubernetes-namespaces-use-cases-insights&#x2F;, [accessed 2020-11-24].<br>[16] “How to stop the next equifax-style megabreach,” <a target="_blank" rel="noopener" href="https://www.wired/">https://www.wired</a>.<br>com&#x2F;story&#x2F;how-to-stop-breaches-equifax&#x2F;, 2017, [accessed 2021-01-14].<br>[17] “About eBPF,” <a target="_blank" rel="noopener" href="https://docs.projectcalico.org/about/about-ebpf/">https://docs.projectcalico.org/about/about-ebpf/</a>, [accessed 2020-12-18].<br>[18] “eBPF datapath,” <a target="_blank" rel="noopener" href="https://docs.cilium.io/en/v1.9/concepts/ebpf/">https://docs.cilium.io/en/v1.9/concepts/ebpf/</a>, 2020,<br>[accessed 2020-12-18].<br>[19] CED, “How it’s built,” <a target="_blank" rel="noopener" href="https://medium.com/the-andela-way/how-itsbuilt-netflix-8f62ab329011/">https://medium.com/the-andela-way/how-itsbuilt-netflix-8f62ab329011/</a>, 2019, [accessed 2020-12-18].<br>[20] “Care and Feeding of Netperf 2.7.X,” <a target="_blank" rel="noopener" href="https://hewlettpackard.github.io/">https://hewlettpackard.github.io/</a><br>netperf&#x2F;doc&#x2F;netperf.html&#x2F;, [accessed 2020-10-23].<br>[21] <a target="_blank" rel="noopener" href="https://github.com/falcosecurity/falco/">https://github.com/falcosecurity/falco/</a>, 2020, [accessed 2021-01-27].<br>[22] C.-W. Tien et al., “KubAnomaly: Anomaly detection for Docker orchestration platform with neural network approaches,” Eng. Reports, 2019.<br>[23] “Kubernetes adoption, security, and market share trends report,”<br><a target="_blank" rel="noopener" href="https://www.stackrox.com/kubernetes-adoption-security-and-marketshare-for-containers/">https://www.stackrox.com/kubernetes-adoption-security-and-marketshare-for-containers/</a>, 2020, [accessed 2020-12-18].<br>[24] F. Truta, “Misconfig. remains #1 cause of data breaches in the cloud,”<br><a target="_blank" rel="noopener" href="https://securityboulevard.com/2020/04/misconfiguration-remains-the-1-">https://securityboulevard.com/2020/04/misconfiguration-remains-the-1-</a><br>cause-of-data-breaches-in-the-cloud&#x2F;, [accessed 2021-01-14].<br>[25] M. Ahmed, “How to enforce Kubernetes network security policies<br>using OPA,” <a target="_blank" rel="noopener" href="https://www.magalix.com/blog/how-to-enforce-kubernetesnetwork-security-policies-using-opa/">https://www.magalix.com/blog/how-to-enforce-kubernetesnetwork-security-policies-using-opa/</a>, 2020, [accessed 2020-11-02].<br>[26] D. Monica, “Least priv. cont. orchestration,” <a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a> ´<br>blog&#x2F;least-privilege-container-orchestration&#x2F;, [accessed 2020-12-17].<br>[27] “Zero-trust networks in Kubernetes, cloud-native applications,”<br><a target="_blank" rel="noopener" href="https://www.stackrox.com/wiki/zero-trust-networks-in-kubernetescloud-native-applications/">https://www.stackrox.com/wiki/zero-trust-networks-in-kubernetescloud-native-applications/</a>, 2020, [accessed 2020-12-17].<br>[28] “Pod security policies,” <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/policy/podsecurity-policy/#host-namespaces/">https://kubernetes.io/docs/concepts/policy/podsecurity-policy/#host-namespaces/</a>, 2020, [accessed 2021-01-27].<br>[29] M. Ahmed, “Enforce pod security policies in Kubernetes using<br>commit d72943c30b7562b19cc450936892fedf7adbdc98<br>Author: dreamcoin1998 <a href="mailto:&#103;&#97;&#x6f;&#x6a;&#117;&#110;&#98;&#105;&#x6e;&#x39;&#x38;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;">&#103;&#97;&#x6f;&#x6a;&#117;&#110;&#98;&#105;&#x6e;&#x39;&#x38;&#x40;&#103;&#x6d;&#97;&#105;&#108;&#x2e;&#x63;&#111;&#109;</a><br>Date:   Wed May 25 18:31:00 2022 +0800</p>
+</div><div class="story post-story"><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>[1] Q.-V. Pham et al., “A survey of multi-access edge computing in 5G<br>and beyond: Fundamentals, technology integration, and state-of-the-art,”<br>IEEE Access, 2020.<br>[2] H. Hawilo et al., “Exploring microservices as the architecture of choice<br>for network function virtualization platforms,” IEEE Network, 2019.<br>[3] J. Watada, A. Roy, R. Kadikar, H. Pham, and B. Xu, “Emerging trends,<br>techniques and open issues of containerization,” IEEE Access, 2019.<br>[4] J. Nam, S. Lee, H. Seo, P. Porras, V. Yegneswaran, and S. Shin, “BASTION: A security enforcement network stack for container networks,”<br>in 2020 USENIX Annual Technical Conf. (USENIXATC 20), 2020.<br>[5] S. Sultan, I. Ahmad, and T. Dimitriou, “Container security: Issues,<br>challenges, and the road ahead,” IEEE Access, 2019.<br>[6] M. Souppaya, J. Morello, and K. Scarfone, “Application container<br>security guide (2nd draft),” NIST, Tech. Rep., 2017.<br>[7] E. Reshetova, J. Karhunen, T. Nyman, and N. Asokan, “Security of oslevel virtualization technologies: Tech. report,” arXiv:1407.4245, 2014.<br>[8] A. Grattafiori, “Understanding and hardening linux containers,”<br>Whitepaper, NCC Group, 2016.<br>[9] S. Vaucher, R. Pires, P. Felber, M. Pasin, V. Schiavoni, and C. Fetzer,<br>“SGX-aware container orchestration for heterogeneous clusters,” in 2018<br>IEEE 38th Conf. on Dist. Computing Syst. (ICDCS). IEEE, 2018.<br>[10] S. Arnautov et al., “SCONE: Secure linux containers with intel SGX,”<br>in 12th USENIX OSDI 16, 2016.<br>[11] M. S. I. Shamim, F. A. Bhuiyan, and A. Rahman, “XI commandments<br>of Kubernetes security: A systematization of knowledge related to<br>Kubernetes security practices,” in 2020 IEEE SecDev. IEEE, 2020.<br>[12] A. Balkan, “Kubernetes network policy recipes,” <a target="_blank" rel="noopener" href="https://github.com/">https://github.com/</a><br>ahmetb&#x2F;kubernetes-network-policy-recipes&#x2F;, [accessed 2021-01-28].<br>[13] S. Qi et al., “Understanding container network interface plugins: design<br>considerations and performance,” in 2020 IEEE Int. Symp. on Local and<br>Metropolitan Area Networks (LANMAN). IEEE, 2020.<br>[14] X. Nguyen, “Network isolation for K8s hard multi-tenancy,” 2020.<br>[Online]. Available: <a target="_blank" rel="noopener" href="https://aaltodoc.aalto.fi/handle/123456789/46078">https://aaltodoc.aalto.fi/handle/123456789/46078</a><br>[15] “Kubernetes namespaces,” <a target="_blank" rel="noopener" href="https://kubernetes.io/blog/2016/08/">https://kubernetes.io/blog/2016/08/</a><br>kubernetes-namespaces-use-cases-insights&#x2F;, [accessed 2020-11-24].<br>[16] “How to stop the next equifax-style megabreach,” <a target="_blank" rel="noopener" href="https://www.wired/">https://www.wired</a>.<br>com&#x2F;story&#x2F;how-to-stop-breaches-equifax&#x2F;, 2017, [accessed 2021-01-14].<br>[17] “About eBPF,” <a target="_blank" rel="noopener" href="https://docs.projectcalico.org/about/about-ebpf/">https://docs.projectcalico.org/about/about-ebpf/</a>, [accessed 2020-12-18].<br>[18] “eBPF datapath,” <a target="_blank" rel="noopener" href="https://docs.cilium.io/en/v1.9/concepts/ebpf/">https://docs.cilium.io/en/v1.9/concepts/ebpf/</a>, 2020,<br>[accessed 2020-12-18].<br>[19] CED, “How it’s built,” <a target="_blank" rel="noopener" href="https://medium.com/the-andela-way/how-itsbuilt-netflix-8f62ab329011/">https://medium.com/the-andela-way/how-itsbuilt-netflix-8f62ab329011/</a>, 2019, [accessed 2020-12-18].<br>[20] “Care and Feeding of Netperf 2.7.X,” <a target="_blank" rel="noopener" href="https://hewlettpackard.github.io/">https://hewlettpackard.github.io/</a><br>netperf&#x2F;doc&#x2F;netperf.html&#x2F;, [accessed 2020-10-23].<br>[21] <a target="_blank" rel="noopener" href="https://github.com/falcosecurity/falco/">https://github.com/falcosecurity/falco/</a>, 2020, [accessed 2021-01-27].<br>[22] C.-W. Tien et al., “KubAnomaly: Anomaly detection for Docker orchestration platform with neural network approaches,” Eng. Reports, 2019.<br>[23] “Kubernetes adoption, security, and market share trends report,”<br><a target="_blank" rel="noopener" href="https://www.stackrox.com/kubernetes-adoption-security-and-marketshare-for-containers/">https://www.stackrox.com/kubernetes-adoption-security-and-marketshare-for-containers/</a>, 2020, [accessed 2020-12-18].<br>[24] F. Truta, “Misconfig. remains #1 cause of data breaches in the cloud,”<br><a target="_blank" rel="noopener" href="https://securityboulevard.com/2020/04/misconfiguration-remains-the-1-">https://securityboulevard.com/2020/04/misconfiguration-remains-the-1-</a><br>cause-of-data-breaches-in-the-cloud&#x2F;, [accessed 2021-01-14].<br>[25] M. Ahmed, “How to enforce Kubernetes network security policies<br>using OPA,” <a target="_blank" rel="noopener" href="https://www.magalix.com/blog/how-to-enforce-kubernetesnetwork-security-policies-using-opa/">https://www.magalix.com/blog/how-to-enforce-kubernetesnetwork-security-policies-using-opa/</a>, 2020, [accessed 2020-11-02].<br>[26] D. Monica, “Least priv. cont. orchestration,” <a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com/</a> ´<br>blog&#x2F;least-privilege-container-orchestration&#x2F;, [accessed 2020-12-17].<br>[27] “Zero-trust networks in Kubernetes, cloud-native applications,”<br><a target="_blank" rel="noopener" href="https://www.stackrox.com/wiki/zero-trust-networks-in-kubernetescloud-native-applications/">https://www.stackrox.com/wiki/zero-trust-networks-in-kubernetescloud-native-applications/</a>, 2020, [accessed 2020-12-17].<br>[28] “Pod security policies,” <a target="_blank" rel="noopener" href="https://kubernetes.io/docs/concepts/policy/podsecurity-policy/#host-namespaces/">https://kubernetes.io/docs/concepts/policy/podsecurity-policy/#host-namespaces/</a>, 2020, [accessed 2021-01-27].<br>[29] M. Ahmed, “Enforce pod security policies in Kubernetes using<br>commit d72943c30b7562b19cc450936892fedf7adbdc98<br>Author: dreamcoin1998 <a href="mailto:&#103;&#97;&#111;&#106;&#117;&#110;&#x62;&#x69;&#x6e;&#57;&#x38;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;">&#103;&#97;&#111;&#106;&#117;&#110;&#x62;&#x69;&#x6e;&#57;&#x38;&#64;&#103;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#111;&#109;</a><br>Date:   Wed May 25 18:31:00 2022 +0800</p>
 <pre><code>增加kubernetes网络策略：性能评估和安全分析翻译
 </code></pre>
 <p>…skipping…<br>OPA,” <a target="_blank" rel="noopener" href="https://www.magalix.com/blog/enforce-pod-security-policies-inkubernetes-using-opa/">https://www.magalix.com/blog/enforce-pod-security-policies-inkubernetes-using-opa/</a>, 2020, [accessed 2021-01-27].<br>[30] “bpf(2) - linux manual page,” <a target="_blank" rel="noopener" href="https://man7.org/linux/man-pages/man2/">https://man7.org/linux/man-pages/man2/</a><br>bpf.2.html&#x2F;, 2020, [accessed 2020-12-21].<br>[31] P. Manfred, “Kernel privilege escalation via improper eBPF program<br>verification,” <a target="_blank" rel="noopener" href="https://www.thezdi.com/">https://www.thezdi.com/</a>, 2020, [accessed 2020-12-17].<br>[32] M. Fleming, “A thorough introduction to ebpf,” <a target="_blank" rel="noopener" href="https://lwn.net/Articles/">https://lwn.net/Articles/</a><br>740157&#x2F;, 2017, [accessed 2020-12-21].<br>[33] “Using eBPF in Kubernetes,” <a target="_blank" rel="noopener" href="https://kubernetes.io/blog/2017/12/usingebpf-in-kubernetes/">https://kubernetes.io/blog/2017/12/usingebpf-in-kubernetes/</a>, 2017, [accessed 2021-01-28].<br>[34] “Customize the manifests,” <a target="_blank" rel="noopener" href="https://docs.projectcalico.org/getting-started/">https://docs.projectcalico.org/getting-started/</a><br>kubernetes&#x2F;installation&#x2F;config-options&#x2F;, 2020, [accessed 2020-12-01].<br>[35] “Configure encryption and authentication,” <a target="_blank" rel="noopener" href="https://docs.projectcalico/">https://docs.projectcalico</a>.<br>org&#x2F;security&#x2F;comms&#x2F;crypto-auth&#x2F;, 2020, [accessed 2020-12-01].<br>[36] A. Gowda and D. Coulter, “Microsoft Docs:Enclave aware containers on<br>Azure ,” <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/confidential-computing/">https://docs.microsoft.com/en-us/azure/confidential-computing/</a><br>enclave-aware-containers&#x2F;, 2020, [accessed 2020-10-30].<br>[37] P.-L. Aublin et al., “TaLoS: Secure and transparent TLS termination<br>inside SGX enclaves,” Imperial College London, Tech. Rep, vol. 5, 2017.</p>
@@ -2835,7 +2858,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-20T11:43:13+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-20T21:39:26+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Apr 20, 2023</p>
@@ -2847,8 +2870,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/kubernetes/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>kubernetes</p></a></div>
-  <span hidden itemprop="keywords">kubernetes</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kubernetes/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Kubernetes</p></a></div>
+  <span hidden itemprop="keywords">Kubernetes</span>
 
 
         
@@ -2918,19 +2941,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/25/linux-conntrack/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Linux Conntrack为什么会崩溃并避免问题</p>
-          <p class='content'>文章信息作者：Alex Pollitt原文：https://www.tigera.io/blog/when-linux-conntrack-is-no-longer-your-friend/
-连...</p>
+        <a class='prev' href='/2022/05/25/docker-vm-compare/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Docker容器和虚拟机的性能评估</p>
+          <p class='content'>文章信息作者：Amit M Potdara, Narayan D Gb, Shivaraj Kengondc, Mohammed Moin Mulla原文链接：https://reader.el...</p>
         </a>
       
       
-        <a class='next' href='/2021/08/13/docker-signal/'>
-          <p class='title'>docker内的init进程是否能被SIGKILL或SIGTERM杀死<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>问题在容器内给容器内的init进程发送SIGTERM信号，init进程会不会被杀死，发送SIGKILL信号呢？在容器外发送信号呢？为什么？
-问题来源：极客时间
-相关理论知识信号相关
-SIGKIL...</p>
+        <a class='next' href='/2022/05/25/linux-conntrack/'>
+          <p class='title'>Linux Conntrack为什么会崩溃并避免问题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>文章信息作者：Alex Pollitt原文：https://www.tigera.io/blog/when-linux-conntrack-is-no-longer-your-friend/
+连...</p>
         </a>
       
     </div>
@@ -3031,6 +3051,10 @@ SIGKIL...</p>
     <!-- pjax占位 -->
   </div>
 
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
   <!-- Custom Files side begin -->
   
   <!-- Custom Files side end -->
@@ -3053,14 +3077,14 @@ SIGKIL...</p>
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -3087,7 +3111,7 @@ SIGKIL...</p>
       list-max-height='320px'
       server='netease'
       type='playlist'
-      id='5062959861'
+      id='2774493345'
       list-folded='true'>
     </meting-js>
   
@@ -3097,7 +3121,7 @@ SIGKIL...</p>
       
     
       
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
+        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> 作為主題，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源碼</a>。</p>
 
       
     
@@ -3400,7 +3424,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
             Metings.forEach((item, index) => {
               const aplayerItem = item.aplayer; if(!aplayerItem) return;
               const rightAplayerCheck = 'true' === 'true'
-                && item.meta.id === '5062959861';
+                && item.meta.id === '2774493345';
               if(rightAplayerCheck && typeof RightMenuAplayer !="undefined") RightMenuAplayer.checkAPlayer();
               if(aplayerItem.events.events.play.every(item => {return item.name !== 'messagePlay'})) {
                 aplayerItem.on('play', function messagePlay() {
@@ -3590,7 +3614,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3909,7 +3933,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2022/05/25/k8s-network-policy/","name":"kubernetes中的网络策略：性能评估和安全分析"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"kubernetes中的网络策略：性能评估和安全分析","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2022/05/25/k8s-network-policy/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2022/05/25/k8s-network-policy/","wordCount":0,"datePublished":"2022-05-25T10:31:00.000Z","dateModified":"2023-04-20T03:43:13.532Z","keywords":"kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2022/05/25/k8s-network-policy/","name":"kubernetes中的网络策略：性能评估和安全分析"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"kubernetes中的网络策略：性能评估和安全分析","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2022/05/25/k8s-network-policy/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2022/05/25/k8s-network-policy/","wordCount":0,"datePublished":"2022-05-25T10:31:00.000Z","dateModified":"2023-04-20T13:39:26.155Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
