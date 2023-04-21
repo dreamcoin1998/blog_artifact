@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2020/10/31/unix-daemon/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2023/04/22/如何编译开发k8s/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,22 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Unix环境高级编程-守护线程 - Jerry的小站</title>
-  <meta name="keywords" content="Linux,Unix,博客,工具分享">
+  <title>如何编译开发k8s - Jerry的小站</title>
+  <meta name="keywords" content="Kubernetes,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unix环境高级编程-守护线程">
-<meta property="og:url" content="http://jerryblogs.com/2020/10/31/unix-daemon/index.html">
+<meta property="og:title" content="如何编译开发k8s">
+<meta property="og:url" content="http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/index.html">
 <meta property="og:site_name" content="Jerry的小站">
-<meta property="og:description" content="概念是生存期长的一种进程，常常在系统引导装入时启动，仅在系统关闭时终止，没有控制终端，所以在后台运行 守护进程的特征系统进程依赖于操作系统实现，父进程ID为0的各进程通常是内核进程，作为系统装入过程的一部分而启动（init进程是个例外，由内核在引导装入时启动用户层次的命令）内核进程是特殊的，通常存在于系统的整个生命周期中，一超级用户权限运行，无控制终端，无命令行。 Linux使用一个名为kthre">
+<meta property="og:description" content="概述 如何获取代码？ 怎么跑起来（编译）？ 如何测试？ 目录结构是什么？  代码地址kubernetes代码地址托管在Github上，代码地址为：https:&#x2F;&#x2F;github.com&#x2F;kubernetes&#x2F;kubernetes 如何编译主要有两种方式进行编译：  本地Go语言环境构建：12345mkdir -p $GOPATH&#x2F;src&#x2F;k8s.iocd $GOPATH&#x2F;src&#x2F;k8s.iogit">
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2020-10-31T12:36:31.000Z">
-<meta property="article:modified_time" content="2023-04-20T18:07:24.712Z">
+<meta property="article:published_time" content="2023-04-21T19:32:47.000Z">
+<meta property="article:modified_time" content="2023-04-21T20:54:28.584Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="Unix">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2638,7 +2637,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-daemon/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/04/22/如何编译开发k8s/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2659,7 +2658,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Unix环境高级编程-守护线程
+        如何编译开发k8s
       </h1>
       <div class='new-meta-box'>
         
@@ -2678,14 +2677,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
+    <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+        <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
       </span>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
+        <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
       </span>
     
   </div>
@@ -2694,10 +2693,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-22T03:32:47+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 31, 2020</p>
+    <p>发布于：Apr 22, 2023</p>
   </a>
 </div>
 
@@ -2725,36 +2724,69 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>是生存期长的一种进程，常常在系统引导装入时启动，仅在系统关闭时终止，没有控制终端，所以在后台运行</p>
-</div><div class="story post-story"><h2 id="守护进程的特征"><a href="#守护进程的特征" class="headerlink" title="守护进程的特征"></a>守护进程的特征</h2><p>系统进程依赖于操作系统实现，父进程ID为0的各进程通常是内核进程，作为系统装入过程的一部分而启动（init进程是个例外，由内核在引导装入时启动用户层次的命令）内核进程是特殊的，通常存在于系统的整个生命周期中，一超级用户权限运行，无控制终端，无命令行。</p>
-<p>Linux使用一个名为kthreadd的内核进程来创建其他的内核进程，所以kthreadd为其他内核进程的父进程。对于需要在内核上下文执行工作但却不被用户层上下文调用的每一个内核组件，通常有自己的内核守护进程。</p>
+    <div class="story post-story"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>如何获取代码？</li>
+<li>怎么跑起来（编译）？</li>
+<li>如何测试？</li>
+<li>目录结构是什么？</li>
+</ul>
+</div><div class="story post-story"><h2 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址"></a>代码地址</h2><p>kubernetes代码地址托管在Github上，代码地址为：<a target="_blank" rel="noopener" href="https://github.com/kubernetes/kubernetes">https://github.com/kubernetes/kubernetes</a></p>
+</div><div class="story post-story"><h2 id="如何编译"><a href="#如何编译" class="headerlink" title="如何编译"></a>如何编译</h2><p>主要有两种方式进行编译：</p>
 <ul>
-<li>kswapd守护进程也叫内核换页守护进程。支持虚拟内存子系统在经过一段时间后将脏页面慢慢写回磁盘来回收这些页面。</li>
-<li>flush守护进程在可用内存达到设置的最小阈值时将脏页面冲洗至磁盘。也定期将脏页面冲洗回磁盘来减少在系统出现故障时发生的数据丢失。多个冲洗守护进程可以同时存在，每个写回的设备都有一个冲洗守护进程。</li>
-<li>sync_supers守护进程定期将文件系统元数据冲洗至磁盘</li>
-<li>jbd守护进程帮助实现了ext4文件系统中的日志功能</li>
-<li>rpcbind守护进程提供将远程调用（RPC）程序号映射为网络端口号的服务。rsyslogd守护进程将系统消息记入日志的任何程序使用</li>
-<li>inetd守护进程侦听网络系统接口，以取得来自网络的对各种网络服务进程的请求</li>
-<li>cron守护进程在定期安排的日期和时间执行命令</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#:~:text=Building%20Kubernetes%20on%20a%20local%20OS/shell%20environment">本地Go语言环境构建</a>：<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p $GOPATH/src/k8s.io</span><br><span class="line">cd $GOPATH/src/k8s.io</span><br><span class="line">git clone https:<span class="comment">//github.com/kubernetes/kubernetes</span></span><br><span class="line">cd kubernetes</span><br><span class="line"><span class="built_in">make</span></span><br></pre></td></tr></table></figure></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubernetes/community/blob/master/contributors/devel/development.md#:~:text=Building%20Kubernetes%20with%20Docker">Docker构建</a>，官方的Kubernetes构建采用此方式<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> git clone https:<span class="comment">//github.com/kubernetes/kubernetes</span></span><br><span class="line"> cd kubernetes</span><br><span class="line"><span class="built_in">make</span> quick-release</span><br></pre></td></tr></table></figure></li>
 </ul>
-<p>大多数进程都以超级用户权限运行，所有的守护进程都没有控制终端，其控制终端设置为问号，内核守护进程以无控制终端方式启动。用户级守护进程是调用了setsid。用户级守护进程的父进程是init进程。</p>
-</div><div class="story post-story"><h2 id="守护进程如何让处理出错记录"><a href="#守护进程如何让处理出错记录" class="headerlink" title="守护进程如何让处理出错记录"></a>守护进程如何让处理出错记录</h2><p>需要有一个集中的守护进程出错记录设施</p>
-<p>syslog设施得到了广泛的应用，大多数守护进程都是使用这一设施，有以下3种产生日志消息的方法：</p>
+<p>关于向官方提交代码和创建Issue的规范可以查看<a target="_blank" rel="noopener" href="https://github.com/kubernetes/community/blob/master/contributors/devel/development.md">这篇文档</a>。</p>
+<h3 id="Macos本地构建Kubernetes"><a href="#Macos本地构建Kubernetes" class="headerlink" title="Macos本地构建Kubernetes"></a>Macos本地构建Kubernetes</h3><p>博主使用Macos M1进行本地构建。</p>
+<h4 id="安装GUN软件包"><a href="#安装GUN软件包" class="headerlink" title="安装GUN软件包"></a>安装GUN软件包</h4><p>首先安装编译所需的GUN软件包：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find `brew --prefix`/opt -type d -follow -name gnubin -print</span><br></pre></td></tr></table></figure>
+
+<p>设置PATH到.zshrc:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">GNUBINS=&quot;$(find `brew --prefix`/opt -type d -follow -name gnubin -print)&quot;</span><br><span class="line"></span><br><span class="line">for bindir in $&#123;GNUBINS[@]&#125;</span><br><span class="line">do</span><br><span class="line">  export PATH=$bindir:$PATH</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">export PATH</span><br></pre></td></tr></table></figure>
+
+<h4 id="安装etcd"><a href="#安装etcd" class="headerlink" title="安装etcd"></a>安装etcd</h4><p>在本地安装etcd:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install etcd</span><br></pre></td></tr></table></figure>
+
+<h4 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h4><ul>
+<li>支持按需编译所需的模块，通过<code>make WHAT=cmd/&lt;subsystem&gt;</code>的方式，比如：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make WHAT=cmd/kubectl</span><br></pre></td></tr></table></figure></li>
+<li>跨平台编译：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make cross</span><br><span class="line">make cross KUBE_BUILD_PLATFORMS=windows/amd64 # 执行平台</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>编译成功后的产物将在<code>_output/bin/kubectl</code>。</p>
+<p>我们选择编译所有的组件，使用<code>make all</code>在代码根目录下执行</p>
 <ul>
-<li>内核例程调用log函数。任何一个进程都可以打开并读取&#x2F;dev&#x2F;klog设备来读取这些消息。大多数用户守护进程调用syslog函数来产生日志消息，这些消息被发送至&#x2F;dev&#x2F;log</li>
-<li>无论一个用户进程是在此主机上，还是在通过TCP&#x2F;IP网络连接到其他主机上，都可以将日志消息发向UDP端口514。</li>
+<li>需要 bash版本 &gt;&#x3D; 4.2，可以使用<code>brew install bash</code>来更新版本</li>
 </ul>
-<p>通常syslogd守护进程读取所有3种格式的日志消息。此守护进程在启动时读一个配置文件，文件名一般为&#x2F;etc&#x2F;syslog.conf，决定了不同种类的消息应送向何处</p>
-</div><div class="story post-story"><h2 id="单实例守护进程"><a href="#单实例守护进程" class="headerlink" title="单实例守护进程"></a>单实例守护进程</h2><p>为了正常运作，某些进程可能会实现为，在任意时刻只运行该守护进程的一个副本。（对于cron进程来说，如果有多个实例运行，那么每个副本都可能试图开始某个预定的操作，于是造成该操作的重复执行，可能导致出错）文件和记录锁机制为一种方法提供了基础，该方法保证一个守护进程只有一个副本在运行。如果每一个守护进程创建一个有固定名字的文件，并在该文件的整体上加一把写锁，那么只允许创建一把这样的写锁，在此之后创建的写锁的尝试都会失败。</p>
-<p>文件和记录锁提供了一种方便的互斥机制，如果守护基础在一个文件的整体上得到一把写锁，那么在该守护进程终止时，这把锁将被自动删除。简化了复原所需的处理，去除了对以前的守护进程实例需要进程清理的有关操作。</p>
-</div><div class="story post-story"><h2 id="守护进程的惯例"><a href="#守护进程的惯例" class="headerlink" title="守护进程的惯例"></a>守护进程的惯例</h2><ul>
-<li>若使用锁文件，那么该文件通常储存在&#x2F;var&#x2F;run目录下。</li>
-<li>若守护进程支持配置选项，那么该配置通常存放在&#x2F;etc目录下</li>
-<li>守护进程可用命令行启动，但他们通常是由系统初始化脚本之一（&#x2F;etc&#x2F;rc*或者是&#x2F;etc&#x2F;init.d&#x2F;*）启动的</li>
-<li>若一个守护进程有一个配置文件，那么当该守护进程启动时会读取该文件，在此之后一般不会再查看它。当某个管理员更改了配置文件，那么该守护进程可能需要被停止，然后再启动，以使该配置文件更改生效。为避免麻烦，有些守护进程通常将捕捉SIGHUP信号，当他们接收到该信号时，重新读配置文件。</li>
-</ul>
-</div><div class="story post-story"><h2 id="客户进程-服务器进程模型"><a href="#客户进程-服务器进程模型" class="headerlink" title="客户进程-服务器进程模型"></a>客户进程-服务器进程模型</h2><p>在服务进程中调用fork然后exec另一个程序来向客户进程提供服务是很常见的，这些服务进程通常管理着多个文件描述符：通信端点、配置文件、日志文件和类似文件。通常情况下，让子进程中的这些文件描述符保持打开状态并无大碍，他们可能不会被在子进程中执行的程序中所使用，尤其是那些与服务器端无关的程序最坏情况下，保持打开状态会导致安全问题，如更改服务器端或欺骗客户端程序使其认为正在与服务器端通信，从而获取未授权的信息。</p>
-<p>解决此问题的一个方法是对所有被执行程序不需要的文件描述符执行时关闭close-on-exec标志。</p>
+<p>执行完毕之后，可以在<code>_output/bin</code>看到如下输出：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apiextensions-apiserver go-runner               kube-controller-manager kube-scheduler          kubectl-convert         mounter</span><br><span class="line">e2e.test                kube-aggregator         kube-log-runner         kubeadm                 kubelet                 ncpu</span><br><span class="line">ginkgo                  kube-apiserver          kube-proxy              kubectl                 kubemark</span><br></pre></td></tr></table></figure>
+
+</div><div class="story post-story"><h2 id="如何测试"><a href="#如何测试" class="headerlink" title="如何测试"></a>如何测试</h2><p>开发者提交的patch需要经过单元、集成和端到端测试并通过才能被合并。</p>
+<ol>
+<li>提交前验证</li>
+</ol>
+<p>运行以下命令进行提交代码前的一系列验证</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make verify</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>单元测试</li>
+</ol>
+<p>针对一个特定的包进行测试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make test WHAT=./pkg/apis/core/helper GOFLAGS=-v</span><br></pre></td></tr></table></figure>
+
+<p>每次拉取请求都需要通过所有的单元测试，运行以下进行单元测试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make test</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>集成测试</li>
+</ol>
+<p>运行集成测试需要以来etcd，可以运行以下执行集成测试：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make test-integration</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>端到端测试</li>
+</ol>
+<p>端到端测试需要花费很长时间，会启动，测试一个集群，最后删除一个集群：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests-kubetest2.md">https://github.com/kubernetes/community/blob/master/contributors/devel/sig-testing/e2e-tests-kubetest2.md</a></p>
+</div><div class="story post-story"><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>├── api&#x2F;                    # Kubernetes API 定义<br>│   ├── v1&#x2F;                 # Kubernetes API 版本 1<br>│   ├── v1beta1&#x2F;            # Kubernetes API 版本 1beta1<br>│   └── …&#x2F;<br>├── cmd&#x2F;                    # Kubernetes 命令行工具<br>│   ├── kube-apiserver&#x2F;     # Kubernetes API Server<br>│   ├── kube-controller-manager&#x2F; # Kubernetes Controller Manager<br>│   ├── kube-proxy&#x2F;         # Kubernetes Proxy<br>│   ├── kube-scheduler&#x2F;     # Kubernetes Scheduler<br>│   ├── kubeadm&#x2F;            # Kubernetes 初始化工具<br>│   ├── kubectl&#x2F;            # Kubernetes 命令行客户端<br>│   └── …&#x2F;<br>├── pkg&#x2F;                    # Kubernetes 代码库<br>│   ├── apis&#x2F;               # Kubernetes API 实现<br>│   ├── apiserver&#x2F;          # Kubernetes API Server 实现<br>│   ├── client&#x2F;             # Kubernetes 客户端实现<br>│   ├── controller&#x2F;         # Kubernetes 控制器实现<br>│   ├── kubelet&#x2F;            # Kubernetes Kubelet 实现<br>│   ├── proxy&#x2F;              # Kubernetes Proxy 实现<br>│   ├── scheduler&#x2F;          # Kubernetes Scheduler 实现<br>│   ├── util&#x2F;               # Kubernetes 工具库<br>│   └── …&#x2F;<br>├── vendor&#x2F;                 # 第三方依赖<br>├── Godeps&#x2F;                 # 过时的第三方依赖管理<br>├── hack&#x2F;                   # 构建、测试、发布脚本<br>├── docs&#x2F;                   # Kubernetes 文档<br>├── test&#x2F;                   # 测试代码<br>├── examples&#x2F;               # Kubernetes 示例<br>├── LICENSES&#x2F;               # 第三方依赖许可证<br>├── OWNERS                  # Kubernetes 代码库的所有者列表<br>├── README.md               # Kubernetes 代码库说明文档<br>├── go.mod                  # Go 模块文件<br>└── go.sum                  # Go 模块文件</p>
 
 </div>
   </div>
@@ -2780,10 +2812,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-21T02:07:24+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-22T04:54:28+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：Apr 21, 2023</p>
+    <p>本页文档最后更新于：Apr 22, 2023</p>
   </a>
 </div>
 
@@ -2792,8 +2824,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Linux/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Linux</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Unix/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Unix</p></a></div>
-  <span hidden itemprop="keywords">Linux Unix</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kubernetes/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Kubernetes</p></a></div>
+  <span hidden itemprop="keywords">Kubernetes</span>
 
 
         
@@ -2806,7 +2838,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2020/10/31/unix-daemon/&title=Unix环境高级编程-守护线程 - Jerry的小站&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/&title=如何编译开发k8s - Jerry的小站&summary="
           
           >
           
@@ -2818,7 +2850,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2020/10/31/unix-daemon/&title=Unix环境高级编程-守护线程 - Jerry的小站&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/&title=如何编译开发k8s - Jerry的小站&summary="
           
           >
           
@@ -2830,7 +2862,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2020/10/31/unix-daemon/&title=Unix环境高级编程-守护线程 - Jerry的小站&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/&title=如何编译开发k8s - Jerry的小站&summary="
           
           >
           
@@ -2863,16 +2895,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2020/10/31/os-epoll/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>IO多路复用</p>
-          <p class='content'>什么是IO多路复用IO多路复用就是通过一种机制，一个进程可以监视多个文件描述符，一旦某个描述符就绪，能够通知程序进行相应的读写操作。
-但是select、poll、epoll本质上都是同步IO，都...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/10/31/os-what/'>
-          <p class='title'>基础概念<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>BIOS——Basic Input&#x2F;Output System 基本输入输出系统在IBM PC兼容系统上，是一种业界标准的固件接口。[1]。BIOS这个字眼是在1975年第一次在CP&...</p>
+        <a class='next' href='/2023/04/03/Go-Zero%E6%A1%86%E6%9E%B6%E8%A7%A3%E6%9E%90/'>
+          <p class='title'>Go-Zero框架解析<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>服务治理布隆过滤器关注的问题
+布隆过滤器在微服务中能解决什么问题？
+
+布隆过滤器在go-zero中的实现
+
+布隆过滤器在go-zero中如何使用
+
+
+问题解答布隆过滤器在微服务中能解决什么问题？...</p>
         </a>
       
     </div>
@@ -2888,7 +2922,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2020/10/31/unix-daemon/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2953,7 +2987,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E7%89%B9%E5%BE%81"><span class="toc-number">2.</span> <span class="toc-text">守护进程的特征</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E5%A6%82%E4%BD%95%E8%AE%A9%E5%A4%84%E7%90%86%E5%87%BA%E9%94%99%E8%AE%B0%E5%BD%95"><span class="toc-number">3.</span> <span class="toc-text">守护进程如何让处理出错记录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%AE%9E%E4%BE%8B%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">单实例守护进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%83%AF%E4%BE%8B"><span class="toc-number">5.</span> <span class="toc-text">守护进程的惯例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%A2%E6%88%B7%E8%BF%9B%E7%A8%8B-%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%9B%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text">客户进程-服务器进程模型</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%9C%B0%E5%9D%80"><span class="toc-number">2.</span> <span class="toc-text">代码地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91"><span class="toc-number">3.</span> <span class="toc-text">如何编译</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Macos%E6%9C%AC%E5%9C%B0%E6%9E%84%E5%BB%BAKubernetes"><span class="toc-number">3.1.</span> <span class="toc-text">Macos本地构建Kubernetes</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85GUN%E8%BD%AF%E4%BB%B6%E5%8C%85"><span class="toc-number">3.1.1.</span> <span class="toc-text">安装GUN软件包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E8%A3%85etcd"><span class="toc-number">3.1.2.</span> <span class="toc-text">安装etcd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%80%E5%A7%8B%E7%BC%96%E8%AF%91"><span class="toc-number">3.1.3.</span> <span class="toc-text">开始编译</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">如何测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text">目录结构</span></a></li></ol>
     </div>
   </section>
 
@@ -3874,7 +3908,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Linux/Unix环境高级编程/","name":"Unix环境高级编程"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2020/10/31/unix-daemon/","name":"Unix环境高级编程-守护线程"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Unix环境高级编程-守护线程","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2020/10/31/unix-daemon/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2020/10/31/unix-daemon/","wordCount":0,"datePublished":"2020-10-31T12:36:31.000Z","dateModified":"2023-04-20T18:07:24.712Z","articleSection":"Linux","keywords":"Linux,Unix","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/源码分析/","name":"源码分析"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/04/22/如何编译开发k8s/","name":"如何编译开发k8s"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"如何编译开发k8s","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/","wordCount":0,"datePublished":"2023-04-21T19:32:47.000Z","dateModified":"2023-04-21T20:54:28.584Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
