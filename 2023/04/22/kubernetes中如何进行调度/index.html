@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://jerryblogs.com/archives/page/4/"/>
+  
+  <link rel="canonical" href="http://jerryblogs.com/2023/04/22/kubernetes中如何进行调度/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -31,20 +31,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档 - Jerry的小站</title>
-  <meta name="keywords" content="博客,工具分享">
+  <title>kubernetes中如何进行调度 - Jerry的小站</title>
+  <meta name="keywords" content="Kubernetes,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="Jerry的小站">
-<meta property="og:url" content="http://jerryblogs.com/archives/page/4/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kubernetes中如何进行调度">
+<meta property="og:url" content="http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/index.html">
 <meta property="og:site_name" content="Jerry的小站">
-<meta property="og:description" content="一个集博客和工具咨询分享于一体的平台">
+<meta property="og:description" content="概述 K8s中是如何调度的？ K8s中调度的具体实现？  K8s如何调度PodPod的调度主要分为两个阶段，主要是调度周期和绑定周期，调度周期决定Pod被调度到哪一个节点，绑定周期将决策运用到集群。调度周期和绑定周期成为“调度上下文”。 调度周期 发现未被调度的Pod：调度器通过K8s的watch机制来发现集群中新创建且尚未被调度到节点的Pod。kube-scheduler位于集群控制面，是k8s">
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-04-22T10:55:53.000Z">
+<meta property="article:modified_time" content="2023-04-22T19:24:32.691Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="博客">
-<meta property="article:tag" content="工具分享">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2578,7 +2579,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="half" class='cover-wrapper post search' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -2642,586 +2643,351 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-	  <article id="arc" class="post article white-box reveal shadow floatable blur">
-			
-			
-				
-				
-					
-						
-						<h2>2023</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/">
-									<time>04-22</time>
-									
-										kubernetes中如何进行调度
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/">
-									<time>04-22</time>
-									
-										如何编译开发k8s
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/03/Go-Zero%E6%A1%86%E6%9E%B6%E8%A7%A3%E6%9E%90/">
-									<time>04-03</time>
-									
-										Go-Zero框架解析
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/04/03/Grafana/">
-									<time>04-03</time>
-									
-										Grafana
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2023/03/15/PEP-703/">
-									<time>03-15</time>
-									
-										PEP-703
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2022</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/07/24/Github-Action-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
-									<time>07-24</time>
-									
-										Github-Action-经验分享
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/26/k8s-pod-scale/">
-									<time>05-26</time>
-									
-										用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/25/linux-core-module-load/">
-									<time>05-25</time>
-									
-										限制内核模块自动加载
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/25/docker-vm-compare/">
-									<time>05-25</time>
-									
-										Docker容器和虚拟机的性能评估
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/25/k8s-network-policy/">
-									<time>05-25</time>
-									
-										kubernetes中的网络策略：性能评估和安全分析
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2022/05/25/linux-conntrack/">
-									<time>05-25</time>
-									
-										Linux Conntrack为什么会崩溃并避免问题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2021</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/08/13/docker-signal/">
-									<time>08-13</time>
-									
-										docker内的init进程是否能被SIGKILL或SIGTERM杀死
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/08/09/docker-namespace/">
-									<time>08-09</time>
-									
-										Docker的命名空间
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/08/09/docker-framework/">
-									<time>08-09</time>
-									
-										Docker的架构
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2021/08/08/docker-learn/">
-									<time>08-08</time>
-									
-										如何阅读docker源码
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						
-						<h2>2020</h2>
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/">
-									<time>10-31</time>
-									
-										B站面试
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/Docker%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/">
-									<time>10-31</time>
-									
-										Docker的一些问题
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/Python%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/">
-									<time>10-31</time>
-									
-										Python数据模型
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
-									<time>10-31</time>
-									
-										Python数据结构
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/Python%E5%86%85%E5%AD%98%E5%9B%9E%E6%94%B6/">
-									<time>10-31</time>
-									
-										Python内存回收
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/Python%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0/">
-									<time>10-31</time>
-									
-										Python函数参数
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/linux-base-kwnolege/">
-									<time>10-31</time>
-									
-										Unix基础知识
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/linux-note/">
-									<time>10-31</time>
-									
-										Linux笔记
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/linux-scheduler/">
-									<time>10-31</time>
-									
-										Linux调度器
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/os-compilation/">
-									<time>10-31</time>
-									
-										汇编语言
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/os-epoll/">
-									<time>10-31</time>
-									
-										IO多路复用
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/os-what/">
-									<time>10-31</time>
-									
-										基础概念
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-daemon/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-守护线程
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-file-dir/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-文件和目录
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-process/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-进程
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-fileio/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-文件IO
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-thread/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-线程
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/unix-signal/">
-									<time>10-31</time>
-									
-										Unix环境高级编程-信号
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95/">
-									<time>10-31</time>
-									
-										字节面试
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-				
-				
-					
-						<div class='timenode'>
-								<a class="meta" href="/2020/10/31/%E7%BA%A2%E9%BB%91%E6%A0%91/">
-									<time>10-31</time>
-									
-										红黑树
-									
-									
-									
-									
-								</a>
-						</div>
-				
-			
-	  </article>
-	
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/04/22/kubernetes中如何进行调度/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+
+
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  <div class="article-meta" id="top">
+    
+    
+    
+      <h1 class="title" itemprop="name headline">
+        kubernetes中如何进行调度
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' target="_blank" href="https://github.com/dreamcoin1998/" rel="nofollow noopener">
+    <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Jerry Gao</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-22T18:55:53+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Apr 22, 2023</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <div class="story post-story"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>K8s中是如何调度的？</li>
+<li>K8s中调度的具体实现？</li>
+</ul>
+</div><div class="story post-story"><h2 id="K8s如何调度Pod"><a href="#K8s如何调度Pod" class="headerlink" title="K8s如何调度Pod"></a>K8s如何调度Pod</h2><p>Pod的调度主要分为两个阶段，主要是调度周期和绑定周期，调度周期决定Pod被调度到哪一个节点，绑定周期将决策运用到集群。调度周期和绑定周期成为“调度上下文”。</p>
+<h3 id="调度周期"><a href="#调度周期" class="headerlink" title="调度周期"></a>调度周期</h3><ul>
+<li>发现未被调度的Pod：调度器通过K8s的watch机制来发现集群中新创建且尚未被调度到节点的Pod。kube-scheduler位于集群控制面，是k8s的默认调度器，主要负责将一个pod调度到一个节点上。</li>
+<li>选择节点：在选择节点时包含过滤和打分两个步骤来选择合适的节点进行调度。<ul>
+<li>在过滤阶段，调度器会选择一系列符合pod调度需求的节点</li>
+<li>在打分阶段，调度器会对可调度节点队列中的每一个节点进行打分</li>
+<li>最终pod会被调度到分数最高的节点上面</li>
+</ul>
+</li>
+</ul>
+<h3 id="调度框架-调度器插件"><a href="#调度框架-调度器插件" class="headerlink" title="调度框架-调度器插件"></a>调度框架-调度器插件</h3><p>调度框架是k8s调度框架的一种插件架构，提供了一系列API插件来实现大部分的调度功能，这些调度插件被注册后在一个或多个拓展点被调用。</p>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/a2935907046b492bc7ee8b9a10c54fffd6b5a4a0/834e0/images/docs/scheduling-framework-extensions.png" class="lazyload" data-srcset="https://d33wubrfki0l68.cloudfront.net/a2935907046b492bc7ee8b9a10c54fffd6b5a4a0/834e0/images/docs/scheduling-framework-extensions.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>内置调度器插件可以启用或禁用，大部分默认调度器都默认启用。如果要启用调度器，可以修改配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubescheduler.config.k8s.io/v1alpha1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">KubeSchedulerConfiguration</span></span><br><span class="line"><span class="attr">enablePlugins:</span></span><br><span class="line">  <span class="attr">PodTopologySpread:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">disablePlugins:</span></span><br><span class="line">  <span class="attr">NodeAffinity:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>默认配置文件地址为在<code>/etc/kubernetes/scheduler.conf</code>。</p>
+<p>除了默认的插件，可以实现自己的插件，并和默认插件一起配置。你可以访问 <a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/scheduler-plugins">scheduler-plugins</a> 了解更多信息。</p>
+<p>也可以<a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/scheduler-plugins/blob/master/doc/install.md#as-a-single-scheduler-replacing-the-vanilla-default-scheduler">通过KubeSchedulerConfiguration进行配置</a>。</p>
+</div><div class="story post-story"><h2 id="源码分析"><a href="#源码分析" class="headerlink" title="源码分析"></a>源码分析</h2><h3 id="Scheduler结构体"><a href="#Scheduler结构体" class="headerlink" title="Scheduler结构体"></a>Scheduler结构体</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Scheduler监听新的Pod，试图找到适合的节点并且绑定写回api server</span></span><br><span class="line"><span class="keyword">type</span> Scheduler <span class="keyword">struct</span> &#123;</span><br><span class="line">	<span class="comment">// 调度器缓存，通过对其修改可以观察到NodeLister和Algorithm的变化</span></span><br><span class="line">	Cache internalcache.Cache</span><br><span class="line">  <span class="comment">// 调度器使用的拓展器列表</span></span><br><span class="line">	Extenders []framework.Extender</span><br><span class="line">  <span class="comment">// 阻塞并等待下一个待调度的Pod，使用函数而不是通道的原因是，调度一个 Pod 可能需要一定的时间，而我们不希望 Pod 在通道中等待时变得过期</span></span><br><span class="line">	NextPod <span class="function"><span class="keyword">func</span><span class="params">()</span></span> *framework.QueuedPodInfo</span><br><span class="line">  <span class="comment">// 调度失败时调用的处理函数</span></span><br><span class="line">	FailureHandler FailureHandlerFn</span><br><span class="line">  <span class="comment">// 尝试将给定的 Pod 调度到节点列表中的一个节点。如果成功，返回一个包含建议的主机名称的 ScheduleResult 结构体；否则，返回带有失败原因的 FitError</span></span><br><span class="line">	SchedulePod <span class="function"><span class="keyword">func</span><span class="params">(ctx context.Context, fwk framework.Framework, state *framework.CycleState, pod *v1.Pod)</span></span> (ScheduleResult, <span class="type">error</span>)</span><br><span class="line">  <span class="comment">// 用于关闭调度器的通道</span></span><br><span class="line">	StopEverything &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">  <span class="comment">// 用于保存待调度的 Pod 的调度队列</span></span><br><span class="line">	SchedulingQueue internalqueue.SchedulingQueue</span><br><span class="line">  <span class="comment">// 调度配置文件（scheduling profiles）的映射</span></span><br><span class="line">	Profiles profile.Map</span><br><span class="line">  <span class="comment">// 用于与 Kubernetes API 服务器通信的客户端</span></span><br><span class="line">	client clientset.Interface</span><br><span class="line">  <span class="comment">// 节点信息的快照，用于存储节点的状态信息</span></span><br><span class="line">	nodeInfoSnapshot *internalcache.Snapshot</span><br><span class="line">  <span class="comment">// 评分节点的百分比</span></span><br><span class="line">	percentageOfNodesToScore <span class="type">int32</span></span><br><span class="line">  <span class="comment">// 下一个开始节点的索引，用于决定从节点列表中的哪个节点开始调度</span></span><br><span class="line">	nextStartNodeIndex <span class="type">int</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Scheduler启动主循环"><a href="#Scheduler启动主循环" class="headerlink" title="Scheduler启动主循环"></a>Scheduler启动主循环</h3><p>Scheduler结构体定义了一个方法Run，它用来启动结构体的主循环，即启动调度器：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 开始监听和调度Unschedule状态的Pod，阻塞式的，直到上下文关闭</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sched *Scheduler)</span></span> Run(ctx context.Context) &#123;</span><br><span class="line">	sched.SchedulingQueue.Run()</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 我们需要在专用的Goroutine中启动专用的schedulerOne循环，该方法会在函数获取下一项时被SchedulingQueue挂起。</span></span><br><span class="line">  <span class="comment">// 如果没有新的Pod可以调度，将会被挂起，如果这个Goroutine中完成，将阻塞SchedulingQueue的关闭</span></span><br><span class="line">	<span class="keyword">go</span> wait.UntilWithContext(ctx, sched.scheduleOne, <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">	&lt;-ctx.Done()</span><br><span class="line">	sched.SchedulingQueue.Close()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>wait.UntilWithContext</code>函数在指定的上下文中循环执行给定的函数，ctx为传入的context，用来当ctx.Cancle或ctx.Done之后，会执行第10行的代码，即关闭SchedulingQueue。<code>sched.scheduleOne</code>为循环执行的函数，0即为执行一次。</p>
+<p>我们来看下Scheduler.scheduleOne函数：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// scheduleOne 对单个 pod 进行完整的调度工作流程，它在调度算法的主机拟合（host fitting）上进行串行化处理</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sched *Scheduler)</span></span> scheduleOne(ctx context.Context) &#123;</span><br><span class="line">	podInfo := sched.NextPod()</span><br><span class="line">	<span class="comment">// 当 schedulerQueue 被关闭时，pod 可能为 nil</span></span><br><span class="line">	<span class="keyword">if</span> podInfo == <span class="literal">nil</span> || podInfo.Pod == <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	pod := podInfo.Pod</span><br><span class="line">	fwk, err := sched.frameworkForPod(pod)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="comment">// 这种情况不应该发生，因为我们只接受指定与配置文件中的调度器名称匹配的 pod 进行调度</span></span><br><span class="line">		klog.ErrorS(err, <span class="string">&quot;Error occurred&quot;</span>)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> sched.skipPodSchedule(fwk, pod) &#123;</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	klog.V(<span class="number">3</span>).InfoS(<span class="string">&quot;Attempting to schedule pod&quot;</span>, <span class="string">&quot;pod&quot;</span>, klog.KObj(pod))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 同步地尝试为 pod 找到合适的节点。</span></span><br><span class="line">	start := time.Now()</span><br><span class="line">	state := framework.NewCycleState()</span><br><span class="line">	state.SetRecordPluginMetrics(rand.Intn(<span class="number">100</span>) &lt; pluginMetricsSamplePercent)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 初始化一个空的 podsToActivate 结构，它将由插件填充或保持为空。</span></span><br><span class="line">	podsToActivate := framework.NewPodsToActivate()</span><br><span class="line">	state.Write(framework.PodsToActivateKey, podsToActivate)</span><br><span class="line"></span><br><span class="line">	schedulingCycleCtx, cancel := context.WithCancel(ctx)</span><br><span class="line">	<span class="keyword">defer</span> cancel()</span><br><span class="line"></span><br><span class="line">	scheduleResult, assumedPodInfo, status := sched.schedulingCycle(schedulingCycleCtx, state, fwk, podInfo, start, podsToActivate)</span><br><span class="line">	<span class="keyword">if</span> !status.IsSuccess() &#123;</span><br><span class="line">		sched.FailureHandler(schedulingCycleCtx, fwk, assumedPodInfo, status, scheduleResult.nominatingInfo, start)</span><br><span class="line">		<span class="keyword">return</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 异步地将 pod 绑定到其节点（我们可以这样做是因为上面的假设步骤）。</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		bindingCycleCtx, cancel := context.WithCancel(ctx)</span><br><span class="line">		<span class="keyword">defer</span> cancel()</span><br><span class="line"></span><br><span class="line">		metrics.SchedulerGoroutines.WithLabelValues(metrics.Binding).Inc()</span><br><span class="line">		<span class="keyword">defer</span> metrics.SchedulerGoroutines.WithLabelValues(metrics.Binding).Dec()</span><br><span class="line">		metrics.Goroutines.WithLabelValues(metrics.Binding).Inc()</span><br><span class="line">		<span class="keyword">defer</span> metrics.Goroutines.WithLabelValues(metrics.Binding).Dec()</span><br><span class="line"></span><br><span class="line">		status := sched.bindingCycle(bindingCycleCtx, state, fwk, scheduleResult, assumedPodInfo, start, podsToActivate)</span><br><span class="line">		<span class="keyword">if</span> !status.IsSuccess() &#123;</span><br><span class="line">			sched.handleBindingCycleError(bindingCycleCtx, state, fwk, assumedPodInfo, start, scheduleResult, status)</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><em>host fitting，即主机拟合，是指将一个容器化的应用程序（通常是一个 Pod）调度到集群中的一个合适的节点（即主机）上运行的过程。</em></p>
+<p>这个函数比较长，执行过程主要是：</p>
+<ul>
+<li>1.阻塞式获取下一个Pod，当schedulerQueue被关闭时退出</li>
+<li>2.sched.frameworkForPod方法用来获取Pod中指定的调度器<br>Pod.Spec.SchedulerName用来指定Pod使用的调度器名称，默认是default。Kubernetes可以支持从头开始编写Scheduler，如果是自己实现的Scheduler，就可以在这个字段为Pod指定调度器。</li>
+<li>3.调度是否能被跳过：<ul>
+<li>如果Pod正在被删除即跳过</li>
+<li>如果某个 Pod 在调度队列中被取出进行调度尝试之前，收到了更新事件（如 Pod 的 Spec 发生了变化），那么该 Pod 将会被标记为假设状态，并不会进行实际的调度尝试，以避免重复调度。</li>
+</ul>
+</li>
+<li>4.概率性开启调度器插件统计指标的flag标志位<ul>
+<li>插件指标是指在 Kubernetes Scheduler 中使用的调度插件（例如调度算法、优先级函数等）生成的性能指标或统计信息。这些指标通常用于监控和度量调度器的性能、效果和健康状态，以便在需要时进行调优和故障排除。</li>
+<li>在调度循环中，调度器可能会调用多个调度插件来评估节点的可用性、计算权重、比较优先级等。这些插件可能会在执行时生成各种指标，例如调度时间、节点利用率、调度决策等。记录这些插件指标可以帮助管理员和开发人员深入了解调度器的行为和性能，并进行优化和故障排除。</li>
+<li>rand.Intn是 Go 语言标准库 math&#x2F;rand 包中的一个函数，用于生成一个指定范围内的随机整数</li>
+</ul>
+</li>
+<li>5.尝试调度单个Pod，如果调度失败，则调用FailureHandler函数进行处理</li>
+<li>6.调度成功，开启一个新的Goroutine<ul>
+<li>使用Prometheus记录监控指标，metrics.SchedulerGoroutines 和 metrics。Goroutines，用于度量调度器的 Goroutine 数量</li>
+<li>调用sched.bindingCycle将Pod绑定到节点上，绑定失败，则使用sched.handleBindingCycleError处理错误</li>
+</ul>
+</li>
+</ul>
+<h3 id="Scheduler调度"><a href="#Scheduler调度" class="headerlink" title="Scheduler调度"></a>Scheduler调度</h3><p>我们看到上述代码中sched.schedulingCycle用来调度Pod，我们看看代码：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// schedulingCycle尝试调度单个Pod</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sched *Scheduler)</span></span> schedulingCycle(</span><br><span class="line">	ctx context.Context,</span><br><span class="line">	state *framework.CycleState,</span><br><span class="line">	fwk framework.Framework,</span><br><span class="line">	podInfo *framework.QueuedPodInfo,</span><br><span class="line">	start time.Time,</span><br><span class="line">	podsToActivate *framework.PodsToActivate,</span><br><span class="line">) (ScheduleResult, *framework.QueuedPodInfo, *framework.Status) &#123;</span><br><span class="line">	pod := podInfo.Pod</span><br><span class="line">	scheduleResult, err := sched.SchedulePod(ctx, fwk, state, pod)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="keyword">if</span> err == ErrNoNodesAvailable &#123;</span><br><span class="line">			status := framework.NewStatus(framework.UnschedulableAndUnresolvable).WithError(err)</span><br><span class="line">			<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: clearNominatedNode&#125;, podInfo, status</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		fitError, ok := err.(*framework.FitError)</span><br><span class="line">		<span class="keyword">if</span> !ok &#123;</span><br><span class="line">			klog.ErrorS(err, <span class="string">&quot;Error selecting node for pod&quot;</span>, <span class="string">&quot;pod&quot;</span>, klog.KObj(pod))</span><br><span class="line">			<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: clearNominatedNode&#125;, podInfo, framework.AsStatus(err)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// SchedulePod() may have failed because the pod would not fit on any host, so we try to</span></span><br><span class="line">		<span class="comment">// preempt, with the expectation that the next time the pod is tried for scheduling it</span></span><br><span class="line">		<span class="comment">// will fit due to the preemption. It is also possible that a different pod will schedule</span></span><br><span class="line">		<span class="comment">// into the resources that were preempted, but this is harmless.</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> !fwk.HasPostFilterPlugins() &#123;</span><br><span class="line">			klog.V(<span class="number">3</span>).InfoS(<span class="string">&quot;No PostFilter plugins are registered, so no preemption will be performed&quot;</span>)</span><br><span class="line">			<span class="keyword">return</span> ScheduleResult&#123;&#125;, podInfo, framework.NewStatus(framework.Unschedulable).WithError(err)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Run PostFilter plugins to attempt to make the pod schedulable in a future scheduling cycle.</span></span><br><span class="line">		result, status := fwk.RunPostFilterPlugins(ctx, state, pod, fitError.Diagnosis.NodeToStatusMap)</span><br><span class="line">		msg := status.Message()</span><br><span class="line">		fitError.Diagnosis.PostFilterMsg = msg</span><br><span class="line">		<span class="keyword">if</span> status.Code() == framework.Error &#123;</span><br><span class="line">			klog.ErrorS(<span class="literal">nil</span>, <span class="string">&quot;Status after running PostFilter plugins for pod&quot;</span>, <span class="string">&quot;pod&quot;</span>, klog.KObj(pod), <span class="string">&quot;status&quot;</span>, msg)</span><br><span class="line">		&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">			klog.V(<span class="number">5</span>).InfoS(<span class="string">&quot;Status after running PostFilter plugins for pod&quot;</span>, <span class="string">&quot;pod&quot;</span>, klog.KObj(pod), <span class="string">&quot;status&quot;</span>, msg)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">var</span> nominatingInfo *framework.NominatingInfo</span><br><span class="line">		<span class="keyword">if</span> result != <span class="literal">nil</span> &#123;</span><br><span class="line">			nominatingInfo = result.NominatingInfo</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: nominatingInfo&#125;, podInfo, framework.NewStatus(framework.Unschedulable).WithError(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	metrics.SchedulingAlgorithmLatency.Observe(metrics.SinceInSeconds(start))</span><br><span class="line">	<span class="comment">// Tell the cache to assume that a pod now is running on a given node, even though it hasn&#x27;t been bound yet.</span></span><br><span class="line">	<span class="comment">// This allows us to keep scheduling without waiting on binding to occur.</span></span><br><span class="line">	assumedPodInfo := podInfo.DeepCopy()</span><br><span class="line">	assumedPod := assumedPodInfo.Pod</span><br><span class="line">	<span class="comment">// assume modifies `assumedPod` by setting NodeName=scheduleResult.SuggestedHost</span></span><br><span class="line">	err = sched.assume(assumedPod, scheduleResult.SuggestedHost)</span><br><span class="line">	<span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span class="line">		<span class="comment">// This is most probably result of a BUG in retrying logic.</span></span><br><span class="line">		<span class="comment">// We report an error here so that pod scheduling can be retried.</span></span><br><span class="line">		<span class="comment">// This relies on the fact that Error will check if the pod has been bound</span></span><br><span class="line">		<span class="comment">// to a node and if so will not add it back to the unscheduled pods queue</span></span><br><span class="line">		<span class="comment">// (otherwise this would cause an infinite loop).</span></span><br><span class="line">		<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: clearNominatedNode&#125;,</span><br><span class="line">			assumedPodInfo,</span><br><span class="line">			framework.AsStatus(err)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run the Reserve method of reserve plugins.</span></span><br><span class="line">	<span class="keyword">if</span> sts := fwk.RunReservePluginsReserve(ctx, state, assumedPod, scheduleResult.SuggestedHost); !sts.IsSuccess() &#123;</span><br><span class="line">		<span class="comment">// trigger un-reserve to clean up state associated with the reserved Pod</span></span><br><span class="line">		fwk.RunReservePluginsUnreserve(ctx, state, assumedPod, scheduleResult.SuggestedHost)</span><br><span class="line">		<span class="keyword">if</span> forgetErr := sched.Cache.ForgetPod(assumedPod); forgetErr != <span class="literal">nil</span> &#123;</span><br><span class="line">			klog.ErrorS(forgetErr, <span class="string">&quot;Scheduler cache ForgetPod failed&quot;</span>)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: clearNominatedNode&#125;,</span><br><span class="line">			assumedPodInfo,</span><br><span class="line">			sts</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run &quot;permit&quot; plugins.</span></span><br><span class="line">	runPermitStatus := fwk.RunPermitPlugins(ctx, state, assumedPod, scheduleResult.SuggestedHost)</span><br><span class="line">	<span class="keyword">if</span> !runPermitStatus.IsWait() &amp;&amp; !runPermitStatus.IsSuccess() &#123;</span><br><span class="line">		<span class="comment">// trigger un-reserve to clean up state associated with the reserved Pod</span></span><br><span class="line">		fwk.RunReservePluginsUnreserve(ctx, state, assumedPod, scheduleResult.SuggestedHost)</span><br><span class="line">		<span class="keyword">if</span> forgetErr := sched.Cache.ForgetPod(assumedPod); forgetErr != <span class="literal">nil</span> &#123;</span><br><span class="line">			klog.ErrorS(forgetErr, <span class="string">&quot;Scheduler cache ForgetPod failed&quot;</span>)</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">return</span> ScheduleResult&#123;nominatingInfo: clearNominatedNode&#125;,</span><br><span class="line">			assumedPodInfo,</span><br><span class="line">			runPermitStatus</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// At the end of a successful scheduling cycle, pop and move up Pods if needed.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(podsToActivate.Map) != <span class="number">0</span> &#123;</span><br><span class="line">		sched.SchedulingQueue.Activate(podsToActivate.Map)</span><br><span class="line">		<span class="comment">// Clear the entries after activation.</span></span><br><span class="line">		podsToActivate.Map = <span class="built_in">make</span>(<span class="keyword">map</span>[<span class="type">string</span>]*v1.Pod)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> scheduleResult, assumedPodInfo, <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>依然这段代码比较长，但是总体内容比较简单：</p>
+<ul>
+<li>1.使用sched.SchedulePod对Pod进行模拟调度，返回一个scheduleResult，记录了调度结果Node的信息。<br>接下来是一系列错误判断：<ul>
+<li>没有可用的节点</li>
+<li>断言为FitError类型的错误，即选择节点时出现了不符合条件的错误，没有可用节点</li>
+<li>如果没有可用节点，且设置了PostFilterPlugins调度器插件，将实行抢占策略</li>
+<li>运行RunPostFilter插件尝试使pod在未来可以被调度</li>
+</ul>
+</li>
+<li>2.记录metric指标，计算从开始时间 start 到当前时间的运行时延，并将其观测（Observe）到 metrics.SchedulingAlgorithmLatency 指标中</li>
+<li>3.调用<code>sched.assume</code>告诉缓存假定 pod 现在正在给定节点上运行，即使它尚未绑定。这使我们可以继续进行调度，而无需等待绑定发生。</li>
+<li>4.使用reserve插件的RunReservePluginsReserve方法，在pod实际绑定到节点之前，为Pod预留资源、标记节点或其他预留操作<br>预留失败则调用RunReservePluginsUnreserve清理预留状态，然后用sched.Cache.ForgetPod(assumedPod) 方法将 assumedPod 从调度器的缓存中删除，以便后续的调度可以重新考虑这个Pod</li>
+<li>5.接下来，调用了调度器中的许可插件的 RunPermitPlugins 方法。许可插件是调度器的一部分，用于检查是否允许将 Pod 绑定到某个节点</li>
+<li>6.如果存在待激活的Pod，将其放入调度队列中，进行进一步的调度处理，并清空待激活的Pod列表</li>
+<li>最后返回调度结果，Pod信息</li>
+</ul>
+<p><em>“待激活”（Pending Activation）是指已经被调度器选择为将要在某个节点上运行的 Pod，但由于某些原因还没有被激活，即还没有被添加到调度队列中进行实际的调度处理。通常情况下，Pod 需要在被激活后才能被真正调度到节点上运行。</em></p>
+<h3 id="Scheduler绑定到节点"><a href="#Scheduler绑定到节点" class="headerlink" title="Scheduler绑定到节点"></a>Scheduler绑定到节点</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// bindingCycle tries to bind an assumed Pod.</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(sched *Scheduler)</span></span> bindingCycle(</span><br><span class="line">	ctx context.Context,</span><br><span class="line">	state *framework.CycleState,</span><br><span class="line">	fwk framework.Framework,</span><br><span class="line">	scheduleResult ScheduleResult,</span><br><span class="line">	assumedPodInfo *framework.QueuedPodInfo,</span><br><span class="line">	start time.Time,</span><br><span class="line">	podsToActivate *framework.PodsToActivate) *framework.Status &#123;</span><br><span class="line"></span><br><span class="line">	assumedPod := assumedPodInfo.Pod</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run &quot;permit&quot; plugins.</span></span><br><span class="line">	<span class="keyword">if</span> status := fwk.WaitOnPermit(ctx, assumedPod); !status.IsSuccess() &#123;</span><br><span class="line">		<span class="keyword">return</span> status</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run &quot;prebind&quot; plugins.</span></span><br><span class="line">	<span class="keyword">if</span> status := fwk.RunPreBindPlugins(ctx, state, assumedPod, scheduleResult.SuggestedHost); !status.IsSuccess() &#123;</span><br><span class="line">		<span class="keyword">return</span> status</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run &quot;bind&quot; plugins.</span></span><br><span class="line">	<span class="keyword">if</span> status := sched.bind(ctx, fwk, assumedPod, scheduleResult.SuggestedHost, state); !status.IsSuccess() &#123;</span><br><span class="line">		<span class="keyword">return</span> status</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Calculating nodeResourceString can be heavy. Avoid it if klog verbosity is below 2.</span></span><br><span class="line">	klog.V(<span class="number">2</span>).InfoS(<span class="string">&quot;Successfully bound pod to node&quot;</span>, <span class="string">&quot;pod&quot;</span>, klog.KObj(assumedPod), <span class="string">&quot;node&quot;</span>, scheduleResult.SuggestedHost, <span class="string">&quot;evaluatedNodes&quot;</span>, scheduleResult.EvaluatedNodes, <span class="string">&quot;feasibleNodes&quot;</span>, scheduleResult.FeasibleNodes)</span><br><span class="line">	metrics.PodScheduled(fwk.ProfileName(), metrics.SinceInSeconds(start))</span><br><span class="line">	metrics.PodSchedulingAttempts.Observe(<span class="type">float64</span>(assumedPodInfo.Attempts))</span><br><span class="line">	metrics.PodSchedulingDuration.WithLabelValues(getAttemptsLabel(assumedPodInfo)).Observe(metrics.SinceInSeconds(assumedPodInfo.InitialAttemptTimestamp))</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Run &quot;postbind&quot; plugins.</span></span><br><span class="line">	fwk.RunPostBindPlugins(ctx, state, assumedPod, scheduleResult.SuggestedHost)</span><br><span class="line"></span><br><span class="line">	<span class="comment">// At the end of a successful binding cycle, move up Pods if needed.</span></span><br><span class="line">	<span class="keyword">if</span> <span class="built_in">len</span>(podsToActivate.Map) != <span class="number">0</span> &#123;</span><br><span class="line">		sched.SchedulingQueue.Activate(podsToActivate.Map)</span><br><span class="line">		<span class="comment">// Unlike the logic in schedulingCycle(), we don&#x27;t bother deleting the entries</span></span><br><span class="line">		<span class="comment">// as `podsToActivate.Map` is no longer consumed.</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1.首先通过调用 fwk.WaitOnPermit(ctx, assumedPod) 方法等待 “permit” 插件的完成状态。<ul>
+<li>“permit” 插件通常用于在实际进行 Pod 调度之前进行进一步的验证和确认，例如检查节点资源是否满足要求、检查节点的亲和性和反亲和性等条件是否满足等。这些插件可以对 Pod 进行更细粒度的筛选和过滤，以确保 Pod 能够在合适的节点上运行。</li>
+</ul>
+</li>
+<li>2.执行 “prebind” 插件的逻辑，通过调用 fwk.RunPreBindPlugins(ctx, state, assumedPod, scheduleResult.SuggestedHost) 方法运行 “prebind” 插件。<ul>
+<li>“prebind” 插件通常用于在进行 Pod 节点绑定（binding）之前进行一些预处理操作，例如修改 Pod 的标签、注解、亲和性和反亲和性等信息，以及进行其他一些验证和准备工作。这些插件可以在节点绑定之前对 Pod 进行进一步的处理和调整，以确保 Pod 在节点上的调度和运行是合理和符合预期的。</li>
+</ul>
+</li>
+<li>3.调用 sched.bind(ctx, fwk, assumedPod, scheduleResult.SuggestedHost, state) 方法运行 “bind” 插件。<ul>
+<li>根据拓展器插件 &gt; 框架插件的优先级，调用extender.Bind方法，将Pod绑定到节点</li>
+<li>“bind” 插件用于在进行 Pod 节点绑定（binding）时进行实际的节点绑定操作，将 Pod 绑定到指定的节点上，使其在该节点上运行。这些插件通常会处理节点资源的分配、Pod 节点状态的更新、调度事件的记录和报告等操作，以确保节点绑定的正确执行和状态的一致性。</li>
+</ul>
+</li>
+<li>4.执行 “postbind” 插件的逻辑，通过调用 fwk.RunPostBindPlugins(ctx, state, assumedPod, scheduleResult.SuggestedHost) 方法运行 “postbind” 插件。<ul>
+<li>“postbind” 插件用于在进行 Pod 节点绑定（binding）后进行一些后续的操作，例如更新节点状态、记录事件、发送通知等。这些插件通常会处理节点状态的更新、调度事件的记录和报告、通知相关组件等操作，以确保节点绑定后的一致性和完整性</li>
+</ul>
+</li>
+</ul>
+<h3 id="Scheduler总结"><a href="#Scheduler总结" class="headerlink" title="Scheduler总结"></a>Scheduler总结</h3><p><img src="https://i.328888.xyz/2023/04/23/i5g01P.png" class="lazyload" data-srcset="https://i.328888.xyz/2023/04/23/i5g01P.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</div><div class="story post-story"><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/kube-scheduler/">kubernetes调度器</a></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/concepts/scheduling-eviction/scheduling-framework/">调度框架</a></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/reference/scheduling/config/">调度配置</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/kubernetes-sigs/scheduler-plugins">scheduler-plugins调度器插件目录</a></li>
+</ul>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
+  
+  
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-23T03:24:32+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>本页文档最后更新于：Apr 23, 2023</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kubernetes/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Kubernetes</p></a></div>
+  <span hidden itemprop="keywords">Kubernetes</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/&title=kubernetes中如何进行调度 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/&title=kubernetes中如何进行调度 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/&title=kubernetes中如何进行调度 - Jerry的小站&summary="
+          
+          >
+          
+            <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/'>
+          <p class='title'>如何编译开发k8s<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>概述
+如何获取代码？
+怎么跑起来（编译）？
+如何测试？
+目录结构是什么？
+
+代码地址kubernetes代码地址托管在Github上，代码地址为：https://github.com/kuber...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+  
+
+  
+    
+    
+      
+    
   
 
   
@@ -3247,105 +3013,45 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   
 
-  
-    
-    
-      
-
-<section class="widget desktop mobile pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/"><div class="item"><time>2023-04-23</time><span>Kubernetes</span></div><span>kubernetes中如何进行调度</span></a></li><li><a class="widget-last" href="/2022/05/26/k8s-pod-scale/"><div class="item"><time>2023-04-22</time><span>Kubernetes</span></div><span>用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容</span></a></li><li><a class="widget-last" href="/2022/05/25/k8s-network-policy/"><div class="item"><time>2023-04-22</time><span>Kubernetes</span></div><span>kubernetes中的网络策略：性能评估和安全分析</span></a></li><li><a class="widget-last" href="/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/"><div class="item"><time>2023-04-22</time><span>Kubernetes</span></div><span>如何编译开发k8s</span></a></li><li><a class="widget-last" href="/2020/10/31/os-compilation/"><div class="item"><time>2023-04-21</time><span>操作系统</span></div><span>汇编语言</span></a></li></ul>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>点个赞吧</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>35 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2023-04-23 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
 
 <div class="widget-sticky pjax">
+
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#K8s%E5%A6%82%E4%BD%95%E8%B0%83%E5%BA%A6Pod"><span class="toc-number">2.</span> <span class="toc-text">K8s如何调度Pod</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E5%91%A8%E6%9C%9F"><span class="toc-number">2.1.</span> <span class="toc-text">调度周期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E5%BA%A6%E6%A1%86%E6%9E%B6-%E8%B0%83%E5%BA%A6%E5%99%A8%E6%8F%92%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text">调度框架-调度器插件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-number">3.1.</span> <span class="toc-text">Scheduler结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler%E5%90%AF%E5%8A%A8%E4%B8%BB%E5%BE%AA%E7%8E%AF"><span class="toc-number">3.2.</span> <span class="toc-text">Scheduler启动主循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler%E8%B0%83%E5%BA%A6"><span class="toc-number">3.3.</span> <span class="toc-text">Scheduler调度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler%E7%BB%91%E5%AE%9A%E5%88%B0%E8%8A%82%E7%82%B9"><span class="toc-number">3.4.</span> <span class="toc-text">Scheduler绑定到节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Scheduler%E6%80%BB%E7%BB%93"><span class="toc-number">3.5.</span> <span class="toc-text">Scheduler总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">4.</span> <span class="toc-text">参考文档</span></a></li></ol>
+    </div>
+  </section>
+
+  
 
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3373,13 +3079,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -4244,7 +3951,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/archives/","name":"Archive"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/源码分析/","name":"源码分析"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/04/22/kubernetes中如何进行调度/","name":"kubernetes中如何进行调度"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"kubernetes中如何进行调度","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/","wordCount":0,"datePublished":"2023-04-22T10:55:53.000Z","dateModified":"2023-04-22T19:24:32.691Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
