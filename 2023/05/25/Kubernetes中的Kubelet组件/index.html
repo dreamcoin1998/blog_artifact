@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2023/04/03/grafana/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2023/05/25/kubernetes中的kubelet组件/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,21 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>Grafana - Jerry的小站</title>
-  <meta name="keywords" content="运维开发,博客,工具分享">
+  <title>Kubernetes中的Kubelet组件 - Jerry的小站</title>
+  <meta name="keywords" content="Kubernetes,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grafana">
-<meta property="og:url" content="http://jerryblogs.com/2023/04/03/Grafana/index.html">
+<meta property="og:title" content="Kubernetes中的Kubelet组件">
+<meta property="og:url" content="http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/index.html">
 <meta property="og:site_name" content="Jerry的小站">
-<meta property="og:description" content="Grafana 是什么？  怎么做到的？  怎么用？   1. 是什么？对指标、日志和metrics的查询，可视化和告警。  包括sms&#x2F;email等多种告警方式，可以通过钩子自定义告警规则和告警方式  支持dashboard模版，方便重用可视化模版  支持dashboard插件  支持 LDAP and OAuth认证方式   商业版和云版包括社区版没有的功能以及7 * 24 * 36">
+<meta property="og:description" content="概述Kubelet是Kubernetes集群中的核心节点，运行在每一个节点之上，负责管理节点的容器运行时。  节点注册：在启动时将节点注册到控制平面，以便主控制平面知道该节点的存在 容器启动与监控（Container Startup and Monitoring）：kubelet负责启动和监控在节点上运行的容器。它根据从主控制平面接收到的Pod定义，创建并管理相应的容器。它监视容器的运行状态，如果">
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-04-02T17:58:54.000Z">
-<meta property="article:modified_time" content="2023-04-20T18:01:33.904Z">
+<meta property="article:published_time" content="2023-05-24T18:34:14.000Z">
+<meta property="article:modified_time" content="2023-05-24T18:38:35.025Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="运维开发">
+<meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2613,7 +2613,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/04/03/Grafana/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/05/25/Kubernetes中的Kubelet组件/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2634,7 +2634,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        Grafana
+        Kubernetes中的Kubelet组件
       </h1>
       <div class='new-meta-box'>
         
@@ -2653,10 +2653,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/">运维开发</a>
+    <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">运维开发</span></a>
+        <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+      </span>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
       </span>
     
   </div>
@@ -2665,10 +2669,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-04-03T01:58:54+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-25T02:34:14+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Apr 3, 2023</p>
+    <p>发布于：May 25, 2023</p>
   </a>
 </div>
 
@@ -2696,67 +2700,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="Grafana"><a href="#Grafana" class="headerlink" title="Grafana"></a>Grafana</h1><ul>
-<li><p>是什么？</p>
-</li>
-<li><p>怎么做到的？</p>
-</li>
-<li><p>怎么用？</p>
-</li>
-</ul>
-<div class="story post-story"><h2 id="1-是什么？"><a href="#1-是什么？" class="headerlink" title="1. 是什么？"></a>1. 是什么？</h2><p>对指标、日志和metrics的查询，可视化和告警。</p>
+    <div class="story post-story"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Kubelet是Kubernetes集群中的核心节点，运行在每一个节点之上，负责管理节点的容器运行时。</p>
 <ul>
-<li><p>包括sms&#x2F;email等多种告警方式，可以通过钩子自定义告警规则和告警方式</p>
-</li>
-<li><p>支持dashboard模版，方便重用可视化模版</p>
-</li>
-<li><p>支持dashboard插件</p>
-</li>
-<li><p>支持 LDAP and OAuth认证方式</p>
-</li>
+<li>节点注册：在启动时将节点注册到控制平面，以便主控制平面知道该节点的存在</li>
+<li>容器启动与监控（Container Startup and Monitoring）：kubelet负责启动和监控在节点上运行的容器。它根据从主控制平面接收到的Pod定义，创建并管理相应的容器。它监视容器的运行状态，如果容器停止或崩溃，kubelet会重新启动容器以确保其持续运行。</li>
+<li>资源管理（Resource Management）：kubelet负责监视节点的资源使用情况，并根据预设的资源限制和请求来管理容器的资源分配。它会与容器运行时（如Docker、Containerd等）交互，确保容器只使用其分配的资源量。</li>
+<li>存储卷管理（Volume Management）：kubelet负责挂载和管理Pod中定义的存储卷。它会与存储插件进行交互，将存储卷挂载到容器中，并确保存储卷的可用性和一致性。</li>
+<li>安全与准入控制（Security and Admission Control）：kubelet负责执行容器的安全策略和准入控制机制。它会与容器运行时进行交互，确保容器在运行时具备必要的安全特性，并执行一些策略，如限制容器的权限和网络访问等。</li>
+<li>网络管理（Networking）：kubelet负责管理容器的网络设置。它会与网络插件进行交互，为容器分配IP地址，并配置容器间和容器与外部网络的通信。</li>
+<li>节点状态报告（Node Status Reporting）：kubelet会定期向主控制平面报告节点的状态信息，包括节点的资源使用情况、已运行的容器列表等。这样主控制平面就能了解到节点的健康状况和容器的运行情况。</li>
 </ul>
-<p>商业版和云版包括社区版没有的功能以及7 * 24 * 365全天候的grafana核心技术团队的支持。</p>
-</div><div class="story post-story"><h2 id="2-怎么用？"><a href="#2-怎么用？" class="headerlink" title="2.怎么用？"></a>2.怎么用？</h2><h3 id="2-1-如何安装"><a href="#2-1-如何安装" class="headerlink" title="2.1 如何安装"></a>2.1 如何安装</h3><p>最小推荐规格255MB和1CPU。更多的功能需要更多的CPU和内存，需要更多资源的功能包括：</p>
-<ul>
-<li><p>图像的服务端渲染</p>
-</li>
-<li><p>告警</p>
-</li>
-<li><p>数据源代理</p>
-</li>
-</ul>
-<p>需要数据库来保存配置、用户数据等，支持的数据库列表：</p>
-<ul>
-<li><p>sqlite3</p>
-</li>
-<li><p>mysql 5.7+</p>
-</li>
-<li><p>postgresql 10+</p>
-</li>
-</ul>
-<p>默认情况下，在grafana安装时会和sqlite一起安装，并使用grafana。</p>
-<h4 id="Ubuntu-x2F-Debian"><a href="#Ubuntu-x2F-Debian" class="headerlink" title="Ubuntu&#x2F;Debian"></a>Ubuntu&#x2F;Debian</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y apt-transport-https</span><br><span class="line">sudo apt-get install -y software-properties-common wget</span><br><span class="line">sudo wget -q -O /usr/share/keyrings/grafana.key https://apt.grafana.com/gpg.key</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com stable main&quot;</span> | sudo <span class="built_in">tee</span> -a /etc/apt/sources.list.d/grafana.list</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [signed-by=/usr/share/keyrings/grafana.key] https://apt.grafana.com beta main&quot;</span> | sudo <span class="built_in">tee</span> -a /etc/apt/sources.list.d/grafana.list</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install grafana</span><br></pre></td></tr></table></figure>
-
-<h4 id="通过Docker启动"><a href="#通过Docker启动" class="headerlink" title="通过Docker启动"></a>通过Docker启动</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 3000:3000 --name grafana grafana/grafana-oss</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-启动服务"><a href="#2-2-启动服务" class="headerlink" title="2.2 启动服务"></a>2.2 启动服务</h3><h4 id="通过systemd"><a href="#通过systemd" class="headerlink" title="通过systemd"></a>通过systemd</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl daemon-reload</span><br><span class="line">sudo systemctl start grafana-server</span><br><span class="line">sudo systemctl status grafana-server</span><br><span class="line">sudo systemctl <span class="built_in">enable</span> grafana-server.service</span><br></pre></td></tr></table></figure>
-
-<h4 id="通过init-d"><a href="#通过init-d" class="headerlink" title="通过init.d"></a>通过init.d</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo service grafana-server start</span><br><span class="line">sudo service grafana-server status</span><br><span class="line">sudo update-rc.d grafana-server defaults</span><br></pre></td></tr></table></figure>
-
-<h4 id="二进制文件"><a href="#二进制文件" class="headerlink" title="二进制文件"></a>二进制文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./bin/grafana-server web</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-3-配置"><a href="#2-3-配置" class="headerlink" title="2.3 配置"></a>2.3 配置</h3><ul>
-<li><p>配置文件地址</p>
-<ul>
-<li>&#x2F;etc&#x2F;grafana&#x2F;grafana.ini</li>
-</ul>
-</li>
-<li><p>可以通过环境变量配置</p>
-</li>
-<li><p>通过；进行注释</p>
-</li>
-</ul>
-
+</div><div class="story post-story"><h2 id=""><a href="#" class="headerlink" title=""></a></h2>
 </div>
   </div>
   
@@ -2781,10 +2735,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-21T02:01:33+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-25T02:38:35+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：Apr 21, 2023</p>
+    <p>本页文档最后更新于：May 25, 2023</p>
   </a>
 </div>
 
@@ -2793,8 +2747,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>运维开发</p></a></div>
-  <span hidden itemprop="keywords">运维开发</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Kubernetes/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Kubernetes</p></a></div>
+  <span hidden itemprop="keywords">Kubernetes</span>
 
 
         
@@ -2807,7 +2761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/04/03/Grafana/&title=Grafana - Jerry的小站&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/&title=Kubernetes中的Kubelet组件 - Jerry的小站&summary="
           
           >
           
@@ -2819,7 +2773,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/04/03/Grafana/&title=Grafana - Jerry的小站&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/&title=Kubernetes中的Kubelet组件 - Jerry的小站&summary="
           
           >
           
@@ -2831,7 +2785,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/04/03/Grafana/&title=Grafana - Jerry的小站&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/&title=Kubernetes中的Kubelet组件 - Jerry的小站&summary="
           
           >
           
@@ -2864,25 +2818,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/04/03/Go-Zero%E6%A1%86%E6%9E%B6%E8%A7%A3%E6%9E%90/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Go-Zero框架解析</p>
-          <p class='content'>服务治理布隆过滤器关注的问题
-布隆过滤器在微服务中能解决什么问题？
-
-布隆过滤器在go-zero中的实现
-
-布隆过滤器在go-zero中如何使用
-
-
-问题解答布隆过滤器在微服务中能解决什么问题？...</p>
-        </a>
       
-      
-        <a class='next' href='/2023/03/15/PEP-703/'>
-          <p class='title'>PEP-703<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>PEP703中讲到的nogilPEP703由nogil分支作者编写，其中描述了
+        <a class='next' href='/2023/04/25/Kubernetes-Scheduler%E7%9A%84%E6%8F%92%E4%BB%B6/'>
+          <p class='title'>Kubernetes-Scheduler的插件<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>概述
+插件是如何注册的？
+Scheduler中有哪些调度器？
+如何写一个调度器？
 
-biased reference counting（偏向引用计数），描述了引用计数的设计方式，该设计方式避免同一...</p>
+源码解析注册过程根据上一篇文章的代码：
+12345678910111213141516171819202122...</p>
         </a>
       
     </div>
@@ -2898,7 +2843,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2023/04/03/Grafana/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2963,7 +2908,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1. 是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F"><span class="toc-number">2.</span> <span class="toc-text">2.怎么用？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85"><span class="toc-number">2.1.</span> <span class="toc-text">2.1 如何安装</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Ubuntu-x2F-Debian"><span class="toc-number">2.1.1.</span> <span class="toc-text">Ubuntu&#x2F;Debian</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87Docker%E5%90%AF%E5%8A%A8"><span class="toc-number">2.1.2.</span> <span class="toc-text">通过Docker启动</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">2.2.</span> <span class="toc-text">2.2 启动服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87systemd"><span class="toc-number">2.2.1.</span> <span class="toc-text">通过systemd</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87init-d"><span class="toc-number">2.2.2.</span> <span class="toc-text">通过init.d</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.3.</span> <span class="toc-text">二进制文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E9%85%8D%E7%BD%AE"><span class="toc-number">2.3.</span> <span class="toc-text">2.3 配置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text"></span></a></li></ol>
     </div>
   </section>
 
@@ -3884,7 +3829,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/运维开发/","name":"运维开发"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/04/03/Grafana/","name":"Grafana"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Grafana","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/04/03/Grafana/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/04/03/Grafana/","wordCount":0,"datePublished":"2023-04-02T17:58:54.000Z","dateModified":"2023-04-20T18:01:33.904Z","articleSection":"运维开发","keywords":"运维开发","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/源码分析/","name":"源码分析"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/05/25/Kubernetes中的Kubelet组件/","name":"Kubernetes中的Kubelet组件"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Kubernetes中的Kubelet组件","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/","wordCount":0,"datePublished":"2023-05-24T18:34:14.000Z","dateModified":"2023-05-24T18:38:35.025Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
