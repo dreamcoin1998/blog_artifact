@@ -32,7 +32,7 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>歸檔：2020/10 - Jerry的小站</title>
+  <title>归档：2020/10 - Jerry的小站</title>
   <meta name="keywords" content="博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
@@ -1812,9 +1812,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		'}'+
 	'</style>'+
     '<div class="kill-ie">'+
-        `<span class="kill-t"><b>抱歉，您的瀏覽器無法訪問本站</b></span><br/>`+
-        `<span class="kill-c">微軟已經於2016年終止了對 Internet Explorer (IE) 10 及更早版本的支持，<br/>繼續使用存在極大的安全隱患，請使用當代主流的瀏覽器進行訪問。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解詳情 ></strong></a>`+
+        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
+        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
     '</div>');
 </script>
 
@@ -1842,9 +1842,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>抱歉，您的瀏覽器無法訪問本站</b></span><br/>
-        <span class="kill-c">本頁面需要瀏覽器支持（啟用）JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解詳情 ></strong></a>
+        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
+        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
     </div>
 </noscript>
 
@@ -1859,7 +1859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1688038633732),
+    lastupdate: new Date(1688124539312),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2677,7 +2677,156 @@ UEFI——Unified Exte...
       
         <div>
           <a class='readmore' href='/2020/10/31/os-what/' itemprop="url">
-            閱讀全文
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-compilation/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/10/31/os-compilation/"  itemprop="url">
+        汇编语言
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        什么是汇编语言？CPU只负责计算，本身不具备智能。你输入一条指令，他就运行一次，然后停下来，等待下一次指令。这些指令都是二进制的，称为操作码（opcode），比如加法指令就是00000011.编译器的作用就是，把高级语言写好的程序，翻译成一条条的操作码。因为二进制的语言是不可读的，所以，产生了汇编语言。
+汇编语言是二进制指令的文本形式，与二进制指令是一一对应的关系。比如，加法指令000000...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/10/31/os-compilation/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-daemon/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/10/31/unix-daemon/"  itemprop="url">
+        Unix环境高级编程-守护线程
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        概念是生存期长的一种进程，常常在系统引导装入时启动，仅在系统关闭时终止，没有控制终端，所以在后台运行
+守护进程的特征系统进程依赖于操作系统实现，父进程ID为0的各进程通常是内核进程，作为系统装入过程的一部分而启动（init进程是个例外，由内核在引导装入时启动用户层次的命令）内核进程是特殊的，通常存在于系统的整个生命周期中，一超级用户权限运行，无控制终端，无命令行。
+Linux使用一个名为kt...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/10/31/unix-daemon/' itemprop="url">
+            阅读全文
           </a>
         </div>
       
@@ -2756,162 +2905,7 @@ fstatat函数为一个相对于当前打开目录的路径名返回文件统计�
       
         <div>
           <a class='readmore' href='/2020/10/31/unix-file-dir/' itemprop="url">
-            閱讀全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-fileio/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-fileio/"  itemprop="url">
-        Unix环境高级编程-文件IO
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        文件IOopen read write lseek close
-文件描述符文件描述符是一个非负整数。当打开或者创建一个文件时，内核向进程返回一个文件描述符。当读写一个文件时，使用open或者create返回的
-文件描述符变化范围是0~OPEN_MAX-1，早期的Unix文件系统实现采用上限值是19，即允许每个进程最多打开20个文件，但现在很多系统将其上限增加至63.
-在Linux里面，每个进...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/31/unix-fileio/' itemprop="url">
-            閱讀全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-process/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-process/"  itemprop="url">
-        Unix环境高级编程-进程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
-ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
-ID为2的进程是页守护进程，负责虚拟存储器系...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/31/unix-process/' itemprop="url">
-            閱讀全文
+            阅读全文
           </a>
         </div>
       
@@ -2993,7 +2987,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       
         <div>
           <a class='readmore' href='/2020/10/31/unix-signal/' itemprop="url">
-            閱讀全文
+            阅读全文
           </a>
         </div>
       
@@ -3008,7 +3002,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-thread/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-fileio/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3026,17 +3020,18 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-thread/"  itemprop="url">
-        Unix环境高级编程-线程
+      <a href="/2020/10/31/unix-fileio/"  itemprop="url">
+        Unix环境高级编程-文件IO
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        线程线程概念每个线程都包含有表示执行环境所必需的信息，其中包括进程中标识线程的线程ID、一组寄存器值、栈、调度优先级和策略、信号屏蔽字、error变量以及线程私有数据。一个进程的所有信息对线程都是共享的，包括可执行程序的代码、程序的全局内存和堆内存、栈以及文件描述符。
-线程同步互斥量本质上是一把锁，在访问共享资源之前对互斥量进行加锁操作，访问完成后释放互斥量。
-避免死锁死锁系统中若干线程形成...
+        文件IOopen read write lseek close
+文件描述符文件描述符是一个非负整数。当打开或者创建一个文件时，内核向进程返回一个文件描述符。当读写一个文件时，使用open或者create返回的
+文件描述符变化范围是0~OPEN_MAX-1，早期的Unix文件系统实现采用上限值是19，即允许每个进程最多打开20个文件，但现在很多系统将其上限增加至63.
+在Linux里面，每个进...
       
     
   </div>
@@ -3069,81 +3064,8 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/unix-thread/' itemprop="url">
-            閱讀全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/字节面试/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95/"  itemprop="url">
-        字节面试
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        TCP中TIME_WAIT状态如何产生首先调用close()发起主动关闭的一方，在发送最后一个ACK后才会进入time_wait状态，该发送方会保持2MSL事件之后回到初始状态，MSL是数据包在网络空间的最大生存时间。
-2MSL &#x3D; 去向ACK最大生存时间 + 来向FIN最大生存时间
-产生的原因实现TCP全双工连接的可靠释放如果主动关闭的一方不维护这样一个TIME_WAIT状态，那...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">面试经历</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" itemprop="url"><span itemprop="name">面试经历</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/31/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95/' itemprop="url">
-            閱讀全文
+          <a class='readmore' href='/2020/10/31/unix-fileio/' itemprop="url">
+            阅读全文
           </a>
         </div>
       
@@ -3228,7 +3150,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       
         <div>
           <a class='readmore' href='/2020/10/31/%E7%BA%A2%E9%BB%91%E6%A0%91/' itemprop="url">
-            閱讀全文
+            阅读全文
           </a>
         </div>
       
@@ -3243,7 +3165,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-daemon/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/字节面试/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3261,17 +3183,90 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-daemon/"  itemprop="url">
-        Unix环境高级编程-守护线程
+      <a href="/2020/10/31/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95/"  itemprop="url">
+        字节面试
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        概念是生存期长的一种进程，常常在系统引导装入时启动，仅在系统关闭时终止，没有控制终端，所以在后台运行
-守护进程的特征系统进程依赖于操作系统实现，父进程ID为0的各进程通常是内核进程，作为系统装入过程的一部分而启动（init进程是个例外，由内核在引导装入时启动用户层次的命令）内核进程是特殊的，通常存在于系统的整个生命周期中，一超级用户权限运行，无控制终端，无命令行。
-Linux使用一个名为kt...
+        TCP中TIME_WAIT状态如何产生首先调用close()发起主动关闭的一方，在发送最后一个ACK后才会进入time_wait状态，该发送方会保持2MSL事件之后回到初始状态，MSL是数据包在网络空间的最大生存时间。
+2MSL &#x3D; 去向ACK最大生存时间 + 来向FIN最大生存时间
+产生的原因实现TCP全双工连接的可靠释放如果主动关闭的一方不维护这样一个TIME_WAIT状态，那...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">面试经历</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" itemprop="url"><span itemprop="name">面试经历</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/10/31/%E5%AD%97%E8%8A%82%E9%9D%A2%E8%AF%95/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-process/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/10/31/unix-process/"  itemprop="url">
+        Unix环境高级编程-进程
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
+ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
+ID为2的进程是页守护进程，负责虚拟存储器系...
       
     
   </div>
@@ -3304,8 +3299,8 @@ Linux使用一个名为kt...
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/unix-daemon/' itemprop="url">
-            閱讀全文
+          <a class='readmore' href='/2020/10/31/unix-process/' itemprop="url">
+            阅读全文
           </a>
         </div>
       
@@ -3320,7 +3315,7 @@ Linux使用一个名为kt...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/linux-scheduler/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-thread/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3338,24 +3333,17 @@ Linux使用一个名为kt...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/linux-scheduler/"  itemprop="url">
-        Linux调度器
+      <a href="/2020/10/31/unix-thread/"  itemprop="url">
+        Unix环境高级编程-线程
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        调度器介绍一个好的调度算法应该考虑以下几个方面：
-
-公平：保证每个进程得到合理的CPU时间
-高效：使CPU保持忙碌状态，即总是有进程在CPU上执行
-响应时间：使交互应用的响应时间尽可能短
-周转时间：使批处理用户等待输出的时间尽可能短
-吞吐量：使单位时间内处理的进程数量尽可能多
-负载均衡：在多核多处理器系统中提供更高的性能
-
-在整个调度系统中存在两种调度算法，分别是针对实时进程和普通进程，所以...
+        线程线程概念每个线程都包含有表示执行环境所必需的信息，其中包括进程中标识线程的线程ID、一组寄存器值、栈、调度优先级和策略、信号屏蔽字、error变量以及线程私有数据。一个进程的所有信息对线程都是共享的，包括可执行程序的代码、程序的全局内存和堆内存、栈以及文件描述符。
+线程同步互斥量本质上是一把锁，在访问共享资源之前对互斥量进行加锁操作，访问完成后释放互斥量。
+避免死锁死锁系统中若干线程形成...
       
     
   </div>
@@ -3374,18 +3362,22 @@ Linux使用一个名为kt...
         <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
               <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/linux-scheduler/' itemprop="url">
-            閱讀全文
+          <a class='readmore' href='/2020/10/31/unix-thread/' itemprop="url">
+            阅读全文
           </a>
         </div>
       
@@ -3406,7 +3398,7 @@ Linux使用一个名为kt...
         
           <a class="prev" rel="prev" href="/archives/2020/10/">
             <section class="post prev white-box shadow floatable blur" >
-              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一頁&nbsp;
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
             </section>
           </a>
         
@@ -3439,7 +3431,7 @@ Linux使用一个名为kt...
 
 
     <div class='content'>
-      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 14px; color: #999">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
+      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
     </div>
   </section>
 
@@ -3462,7 +3454,7 @@ Linux使用一个名为kt...
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"><div class="item"><time>2023-06-29</time><span>Golang</span></div><span>cobra-一个强大的cli构建工具</span></a></li><li><a class="widget-last" href="/2023/05/25/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-06-29</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/06/26/Chatgpt-go/"><div class="item"><time>2023-06-26</time><span>Chatgpt</span></div><span>一个简单的chatgpt-go库，支持自定义角色和保留上下文</span></a></li><li><a class="widget-last" href="/2023/05/25/Docker%E6%8E%A8%E6%8B%89%E8%87%AA%E5%BB%BA%E4%BB%93%E5%BA%93%E6%AF%94%E8%BE%83%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"><div class="item"><time>2023-05-26</time><span>Docker</span></div><span>Docker推拉自建仓库比较慢的问题</span></a></li><li><a class="widget-last" href="/2023/04/25/Kubernetes-Scheduler%E7%9A%84%E6%8F%92%E4%BB%B6/"><div class="item"><time>2023-05-10</time><span>Kubernetes</span></div><span>Kubernetes-Scheduler的插件</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-06-30</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/"><div class="item"><time>2023-06-30</time><span>Golang</span></div><span>pflag-flag库的直接替代</span></a></li><li><a class="widget-last" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"><div class="item"><time>2023-06-29</time><span>Golang</span></div><span>cobra-一个强大的cli构建工具</span></a></li><li><a class="widget-last" href="/2023/06/26/Chatgpt-go/"><div class="item"><time>2023-06-26</time><span>Chatgpt</span></div><span>一个简单的chatgpt-go库，支持自定义角色和保留上下文</span></a></li><li><a class="widget-last" href="/2023/05/25/Docker%E6%8E%A8%E6%8B%89%E8%87%AA%E5%BB%BA%E4%BB%93%E5%BA%93%E6%AF%94%E8%BE%83%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/"><div class="item"><time>2023-05-26</time><span>Docker</span></div><span>Docker推拉自建仓库比较慢的问题</span></a></li></ul>
   </div>
 </section>
 
@@ -3508,7 +3500,7 @@ Linux使用一个名为kt...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>42 篇</div>
+          <div>43 篇</div>
         </div>
       
 
@@ -3529,7 +3521,7 @@ Linux使用一个名为kt...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-06-29 日</div>
+          <div id="last-update-show">2023-06-30 日</div>
         </div>
       
     </div>
@@ -3632,7 +3624,7 @@ Linux使用一个名为kt...
       
     
       
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> 作為主題，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源碼</a>。</p>
+        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
 
       
     
@@ -4125,7 +4117,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp"];
   let index = 0;
   let IntervalParallax = null;
 
