@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2020/10/31/b站面试/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2023/07/04/docker-checkpoint-容器运行时快照/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -32,21 +32,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>B站面试 - Jerry的小站</title>
-  <meta name="keywords" content="面试经历,博客,工具分享">
+  <title>docker-checkpoint-容器运行时快照 - Jerry的小站</title>
+  <meta name="keywords" content="Docker,博客,工具分享">
   <meta desc name="description" content="一个集博客和工具咨询分享于一体的平台 - Jerry Gao - Jerry的小站">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="B站面试">
-<meta property="og:url" content="http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/index.html">
+<meta property="og:title" content="docker-checkpoint-容器运行时快照">
+<meta property="og:url" content="http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/index.html">
 <meta property="og:site_name" content="Jerry的小站">
-<meta property="og:description" content="redis和rebitMQ的区别 消息队列和任务队列的区别 进程线程协程的区别 docker虚拟化的原理 docker和虚拟机的区别 python协程的实现原理 哈希表的实现原理 如何解决哈希冲突 https的实现 证书的校验过程 async和原生的yield有什么不同 不同的进程之间为什么不能互相访问内存 fork一个子进程之后，操作系统会做什么事情">
+<meta property="og:description" content="介绍checkpoint&#x2F;restore和restore与CRIUcheckpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件集合，使你可以从checkpoint恢复容器的状态。checkpoint基于CRIU实现，CRIU是一个Linux应用程序，在用户空间将一个进程树冻结并将其状态保存到磁盘，使得容器或应用程序可以实时迁移，远">
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2020-10-31T12:36:31.000Z">
-<meta property="article:modified_time" content="2023-04-20T17:37:34.463Z">
+<meta property="article:published_time" content="2023-07-04T04:24:44.000Z">
+<meta property="article:modified_time" content="2023-07-04T11:58:34.683Z">
 <meta property="article:author" content="Jerry Gao">
-<meta property="article:tag" content="面试经历">
+<meta property="article:tag" content="Docker">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2613,7 +2613,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 <div id="l_main" class=''>
   <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/B站面试/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/07/04/docker-checkpoint-容器运行时快照/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2634,7 +2634,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        B站面试
+        docker-checkpoint-容器运行时快照
       </h1>
       <div class='new-meta-box'>
         
@@ -2653,10 +2653,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
   <div class='new-meta-item category'>
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
-    <a class="category-link" href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/">面试经历</a>
+    <a class="category-link" href="/categories/Docker/">Docker</a>
     
       <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-        <a href="/categories/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" itemprop="url"><span itemprop="name">面试经历</span></a>
+        <a href="/categories/Docker/" itemprop="url"><span itemprop="name">Docker</span></a>
       </span>
     
   </div>
@@ -2665,10 +2665,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-04T12:24:44+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Oct 31, 2020</p>
+    <p>发布于：Jul 4, 2023</p>
   </a>
 </div>
 
@@ -2696,21 +2696,120 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>redis和rebitMQ的区别</p>
-<p>消息队列和任务队列的区别</p>
-<p>进程线程协程的区别</p>
-<p>docker虚拟化的原理</p>
-<p>docker和虚拟机的区别</p>
-<p>python协程的实现原理</p>
-<p>哈希表的实现原理</p>
-<p>如何解决哈希冲突</p>
-<p>https的实现</p>
-<p>证书的校验过程</p>
-<p>async和原生的yield有什么不同</p>
-<p>不同的进程之间为什么不能互相访问内存</p>
-<p>fork一个子进程之后，操作系统会做什么事情</p>
+    <div class="story post-story"><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="checkpoint-x2F-restore和restore与CRIU"><a href="#checkpoint-x2F-restore和restore与CRIU" class="headerlink" title="checkpoint&#x2F;restore和restore与CRIU"></a>checkpoint&#x2F;restore和restore与CRIU</h3><p>checkpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件集合，使你可以从checkpoint恢复容器的状态。checkpoint基于<a target="_blank" rel="noopener" href="https://criu.org/Main_Page">CRIU</a>实现，CRIU是一个Linux应用程序，在用户空间将一个进程树冻结并将其状态保存到磁盘，使得容器或应用程序可以实时迁移，远程调试和快照等。CRIU的工作过程是：</p>
+<ul>
+<li>冻结正在运行的应用程序</li>
+<li>将整个进程树的地址空间和状态检查到镜像文件的集合</li>
+<li>从检查点恢复进程树</li>
+<li>从冻结点恢复应用程序</li>
+</ul>
+<h3 id="CRIU与Docker集成的现状以及使用方式"><a href="#CRIU与Docker集成的现状以及使用方式" class="headerlink" title="CRIU与Docker集成的现状以及使用方式"></a>CRIU与Docker集成的现状以及使用方式</h3><p>从Docker1.17开始，CRIU是Docker的实验性功能。</p>
+<ol>
+<li>安装，由于CRIU是Docker的外部依赖，所以在使用Docker checkpoint之前，需要安装CRIU。</li>
+</ol>
+<p>Debian 10</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://github.com/checkpoint-restore/criu/archive/v3.18/criu-3.18.tar.gz</span><br><span class="line">apt install libprotobuf-dev libprotobuf-c-dev protobuf-c-compiler protobuf-compiler python3-protobuf</span><br><span class="line">apt install pkg-config python-ipaddress libbsd-dev libnftables-dev libcap-dev libnet1-dev libaio-dev libgnutls28-dev python3-future iproute2 libnl-3-dev python3-pip</span><br><span class="line">cd ~/criu-3.18 &amp;&amp; make</span><br></pre></td></tr></table></figure>
 
+<p>此时已经编译完成，你可以直接运行<code>~/criu-3.18/criu/criu</code>或者：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt install asciidoc xmlto</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
+<p>完成以后，运行<code>criu -h</code>不报错即安装成功。</p>
+<ol start="2">
+<li>由于checkpoint&#x2F;restore是一个实验性功能，我们需要手动启用：</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;&#123;\&quot;experimental\&quot;: true&#125;&quot; &gt;&gt; /etc/docker/daemon.json</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>运行一个测试容器</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name looper busybox /bin/sh -c &#x27;i=0; while true; do echo $i; i=$(expr $i + 1); sleep 1; done&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>运行<code>docker logs -f 容器ID</code>可以查看i在增加。</p>
+<p>运行</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker checkpoint create looper checkpoint1</span><br></pre></td></tr></table></figure>
+<p>可以看到容器已经停止运行：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@VM-12-4-debian:~# docker ps -a</span><br><span class="line">CONTAINER ID   IMAGE         COMMAND                  CREATED              STATUS                       PORTS     NAMES</span><br><span class="line">04b7a82b2c86   busybox       &quot;/bin/sh -c &#x27;i=0; wh…&quot;   About a minute ago   Exited (137) 5 seconds ago             looper</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>恢复容器</li>
+</ol>
+<p>我们恢复容器的状态：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start --checkpoint=checkpoint1 looper</span><br></pre></td></tr></table></figure>
+
+<p>这时候再次查看容器日志，我们可以发现i没有从0开始，而是从checkpoint的状态继续递增。</p>
+<p>这个时候，如果我们查看<code>/var/lib/docker/containers/&lt;容器ID&gt;/checkpoints</code>，我们可以看到目录下的一堆img文件，这便是criu生成的镜像文件。</p>
+<ol start="5">
+<li><code>--checkpoint-dir</code>选项自定义存储路径</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">新建一个目录来存储restore后的镜像文件</span></span><br><span class="line">mkdir /tmp/ck/</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">创建checkpoint</span></span><br><span class="line">docker checkpoint create --checkpoint-dir=/tmp/ck/ looper checkpoint2</span><br></pre></td></tr></table></figure>
+
+<p>查看<code>/tmp/ck/</code>，我们可以发现，<code>/tmp/ck/checkpoint2/</code>目录下有一堆img文件。</p>
+<ol start="6">
+<li>使用自定义目录恢复容器状态</li>
+</ol>
+<p>我们可以使用<code>--checkpoint-dir</code>选项来指定目录，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker start --checkpoint-dir=/tmp/ck/ --checkpoint=checkpoint2 looper</span><br></pre></td></tr></table></figure>
+
+<ol start="7">
+<li>需要注意的点</li>
+</ol>
+<ul>
+<li>当docker run 添加了–security-opt选项之后，可能会出现如下报错</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error (criu/cr-dump.c:203): 9143 has rseq but kernel lacks get_rseq_conf feature</span><br></pre></td></tr></table></figure>
+
+<p>当不添加<code>--security-opt seccomp:unconfined</code>可以checkout。除此之外，将内核升级到v5.15可以进行checkout。</p>
+<ul>
+<li>Error response from daemon: custom checkpointdir is not supported</li>
+</ul>
+<p>使用自定义checkpointdir发现不支持。可能是你的内核不支持，CRIU支持的必须开启的<a target="_blank" rel="noopener" href="https://criu.org/Linux_kernel">内核Feature</a>。</p>
+<p>一个解决方案是，将checkpointdir目录内容复制到&#x2F;var&#x2F;lib&#x2F;docker&#x2F;containers&#x2F;&lt;容器ID&gt;&#x2F;checkpoints内，在恢复时去除–checkpoint-dir选项，即可启动，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp -r /tmp/ck/* /var/lib/docker/containers/&lt;容器ID&gt;/checkpoints</span><br><span class="line">docker start --checkpoint=checkpoint2 looper3</span><br></pre></td></tr></table></figure>
+
+<p>即可恢复成功。</p>
+</div><div class="story post-story"><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="Checkpoint过程"><a href="#Checkpoint过程" class="headerlink" title="Checkpoint过程"></a>Checkpoint过程</h3><p>该过程严重依赖&#x2F;proc目录，CRIU从&#x2F;proc目录搜集：</p>
+<ul>
+<li>文件描述符信息（通过&#x2F;proc&#x2F;$pid&#x2F;fd和&#x2F;proc&#x2F;$pid&#x2F;fdinfo）</li>
+<li>管道参数</li>
+<li>内存映射（通过&#x2F;proc&#x2F;$pid&#x2F;maps和&#x2F;proc&#x2F;$pid&#x2F;map_files&#x2F;）</li>
+<li>等等</li>
+</ul>
+<h4 id="搜集进程树并冻结它"><a href="#搜集进程树并冻结它" class="headerlink" title="搜集进程树并冻结它"></a>搜集进程树并冻结它</h4><p>进程组组长的pid通过命令行(–tree)获取。通过&#x2F;proc&#x2F;$pid&#x2F;task&#x2F;目录搜集正在运行的线程，并且通过&#x2F;proc&#x2F;$pid&#x2F;task&#x2F;$tid&#x2F;children递归地搜集子线程。使用ptrace的PTRACE_SEIZE命令停止task。</p>
+<h4 id="搜集task资源并且进行存储"><a href="#搜集task资源并且进行存储" class="headerlink" title="搜集task资源并且进行存储"></a>搜集task资源并且进行存储</h4><p>CRIU通过读取所有已经搜集的task的信息，并且将它们写到文件中，主要是通过：</p>
+<ul>
+<li>虚拟内存区域从&#x2F;proc&#x2F;$pid&#x2F;smaps解析，映射文件从&#x2F;proc&#x2F;$pid&#x2F;map_files链接读取</li>
+<li>文件描述符通过&#x2F;proc&#x2F;$pid&#x2F;fd读取</li>
+<li>task的内核参数通过ptrace接口和&#x2F;proc&#x2F;$pid&#x2F;stat读取</li>
+</ul>
+<p>CRIU通过ptrace接口注入寄生代码到task当中，一开始，我们只为CS:IP的mmap系统调用注入了几个字节，任务在启动的时候就有了。然后ptrace允许我们运行一个注入的系统调用，我们分配足够的内存给我们需要转储的寄生虫代码块。之后，寄生代码被复制到dumpee地址空间内的新位置，CS:IP设置分别指向我们的寄生代码。</p>
+<p>从上下文解析来看，CRIU提供更多的信息，比如Credentials和Contents of memory</p>
+<h4 id="清除"><a href="#清除" class="headerlink" title="清除"></a>清除</h4><p>在所有东西都转储之后（比如内存页，只能从dumpee地址空间内写出），我们再次使用trace工具，通过删除所有的寄生代码和恢复原始代码来治愈dumpee。然后CRIU从任务中分离出来，它们继续运行。</p>
+<h3 id="Restore过程"><a href="#Restore过程" class="headerlink" title="Restore过程"></a>Restore过程</h3><p>The restore procedure (aka restorer) is done by CRIU morphing itself into the tasks it restores. On the top-level it consists of 4 steps</p>
+<h4 id="共享资源"><a href="#共享资源" class="headerlink" title="共享资源"></a>共享资源</h4><p>读取img文件并找到哪些进程共享哪些资源，然后共享资源被其中一个进程恢复，其他进程要么在第二阶段继承一个资源，要么以其他方式获取（如会话）。例如，通过unix套接字与SCM_CREDS消息一起发送的共享文件，或通过memfd文件描述符恢复的共享内存区域。</p>
+<h4 id="Fork进程树"><a href="#Fork进程树" class="headerlink" title="Fork进程树"></a>Fork进程树</h4><p>在这一步，CRIU多次调用fork()来重新创建需要恢复的进程。注意，线程不是在这里恢复的，而是在第四步。</p>
+<h4 id="恢复基本任务资源"><a href="#恢复基本任务资源" class="headerlink" title="恢复基本任务资源"></a>恢复基本任务资源</h4><p>这里 CRIU 恢复所有资源，但是</p>
+<ul>
+<li>内存映射精确位置</li>
+<li>定时器</li>
+<li>凭据</li>
+<li>线程</li>
+</ul>
+<p>上述资源是最后恢复的，原因是在这个阶段，CRIU打开文件，准备命名空间，映射（并填充数据）私有内存区域，创建套接字，调用chdir()和chroot()，并做一些其他工作。</p>
+<h4 id="切换到恢复上下文，恢复其余部分并继续"><a href="#切换到恢复上下文，恢复其余部分并继续" class="headerlink" title="切换到恢复上下文，恢复其余部分并继续"></a>切换到恢复上下文，恢复其余部分并继续</h4><p>恢复器blob的原因很简单。由于 criu 会转变为目标进程，因此它必须取消映射其所有内存并放回目标内存。这样做时，内存中应该存在一些代码（执行 munmap 和 mmap 的代码）。因此，引入了恢复程序 blob。这是一小段代码，与 criu 映射和目标映射不相交。在第 2 阶段结束时，criu 跳入该 blob 并恢复内存映射。<br>在同一位置，我们恢复计时器，以免它们过早触发，在这里，我们恢复凭据，让criu执行特权操作（例如 fork-with-pid）和线程，以免它们遭受突然的内存布局更改。</p>
+<p>See also: <a target="_blank" rel="noopener" href="https://criu.org/Restorer_context">restorer context</a>, <a target="_blank" rel="noopener" href="https://criu.org/Tree_after_restore">tree after restore</a></p>
+</div><div class="story post-story"><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/reference/commandline/checkpoint/">docker checkpoint</a></li>
+<li><a target="_blank" rel="noopener" href="https://criu.org/Main_Page">https://criu.org/Main_Page</a></li>
+<li></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/blog/2015/07/how-did-quake-demo-from-dockercon-work/">How did the Quake demo from DockerCon Work?</a></li>
+<li><a target="_blank" rel="noopener" href="https://criu.org/Docker">CRIU in Docker</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/xemul/criu">CRIU Github仓库</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/moby/moby/issues/37344">Error response from daemon: custom checkpointdir is not supported</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/checkpoint-restore/criu/issues/2070">has rseq but kernel lacks get_rseq_conf feature</a></li>
+<li><a target="_blank" rel="noopener" href="https://criu.org/Checkpoint/Restore">design of how Checkpoint and Restore work in CRIU</a></li>
+</ul>
+
+</div>
   </div>
   
   
@@ -2734,10 +2833,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-21T01:37:34+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-04T19:58:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：Apr 21, 2023</p>
+    <p>本页文档最后更新于：Jul 4, 2023</p>
   </a>
 </div>
 
@@ -2746,8 +2845,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>面试经历</p></a></div>
-  <span hidden itemprop="keywords">面试经历</span>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Docker/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Docker</p></a></div>
+  <span hidden itemprop="keywords">Docker</span>
 
 
         
@@ -2760,7 +2859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/&title=B站面试 - Jerry的小站&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/&title=docker-checkpoint-容器运行时快照 - Jerry的小站&summary="
           
           >
           
@@ -2772,7 +2871,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/&title=B站面试 - Jerry的小站&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/&title=docker-checkpoint-容器运行时快照 - Jerry的小站&summary="
           
           >
           
@@ -2784,7 +2883,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/&title=B站面试 - Jerry的小站&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/&title=docker-checkpoint-容器运行时快照 - Jerry的小站&summary="
           
           >
           
@@ -2817,24 +2916,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2021/08/08/docker-learn/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>如何阅读docker源码</p>
-          <p class='content'>来自docker-dev群组：https://groups.google.com/g/docker-dev/c/g0jUDDltp4o
-
-learn go
-figure out how the ...</p>
-        </a>
       
-      
-        <a class='next' href='/2020/10/31/Docker%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/'>
-          <p class='title'>Docker的一些问题<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>ADD和COPY异同相同点：
-
-ADD和COPY都支持将本地目录及文件复制到容器内指定目录和文件
-
-不同点：
-
-ADD支持从URL下载链接文件，不过下载的文件如果需要改变权限还需要另外一层RUN...</p>
+        <a class='next' href='/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/'>
+          <p class='title'>pflag-flag库的直接替代<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>为什么要使用pflagGolang是一门性能十分强大语言。当我们在用Golang开发一个命令行程序的时候，我们经常会用到官方的flag库，但是官方的flag库使用并编译运行过后，你会发现它与我们...</p>
         </a>
       
     </div>
@@ -2850,7 +2935,7 @@ ADD支持从URL下载链接文件，不过下载的文件如果需要改变权�
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2905,9 +2990,19 @@ ADD支持从URL下载链接文件，不过下载的文件如果需要改变权�
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#checkpoint-x2F-restore%E5%92%8Crestore%E4%B8%8ECRIU"><span class="toc-number">1.1.</span> <span class="toc-text">checkpoint&#x2F;restore和restore与CRIU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CRIU%E4%B8%8EDocker%E9%9B%86%E6%88%90%E7%9A%84%E7%8E%B0%E7%8A%B6%E4%BB%A5%E5%8F%8A%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">CRIU与Docker集成的现状以及使用方式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Checkpoint%E8%BF%87%E7%A8%8B"><span class="toc-number">2.1.</span> <span class="toc-text">Checkpoint过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E9%9B%86%E8%BF%9B%E7%A8%8B%E6%A0%91%E5%B9%B6%E5%86%BB%E7%BB%93%E5%AE%83"><span class="toc-number">2.1.1.</span> <span class="toc-text">搜集进程树并冻结它</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%90%9C%E9%9B%86task%E8%B5%84%E6%BA%90%E5%B9%B6%E4%B8%94%E8%BF%9B%E8%A1%8C%E5%AD%98%E5%82%A8"><span class="toc-number">2.1.2.</span> <span class="toc-text">搜集task资源并且进行存储</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E9%99%A4"><span class="toc-number">2.1.3.</span> <span class="toc-text">清除</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Restore%E8%BF%87%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text">Restore过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E8%B5%84%E6%BA%90"><span class="toc-number">2.2.1.</span> <span class="toc-text">共享资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fork%E8%BF%9B%E7%A8%8B%E6%A0%91"><span class="toc-number">2.2.2.</span> <span class="toc-text">Fork进程树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%81%A2%E5%A4%8D%E5%9F%BA%E6%9C%AC%E4%BB%BB%E5%8A%A1%E8%B5%84%E6%BA%90"><span class="toc-number">2.2.3.</span> <span class="toc-text">恢复基本任务资源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%81%A2%E5%A4%8D%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%8C%E6%81%A2%E5%A4%8D%E5%85%B6%E4%BD%99%E9%83%A8%E5%88%86%E5%B9%B6%E7%BB%A7%E7%BB%AD"><span class="toc-number">2.2.4.</span> <span class="toc-text">切换到恢复上下文，恢复其余部分并继续</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">参考文档</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3826,7 +3921,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/面试经历/","name":"面试经历"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2020/10/31/B站面试/","name":"B站面试"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"B站面试","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2020/10/31/B%E7%AB%99%E9%9D%A2%E8%AF%95/","wordCount":0,"datePublished":"2020-10-31T12:36:31.000Z","dateModified":"2023-04-20T17:37:34.463Z","articleSection":"面试经历","keywords":"面试经历","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Docker/","name":"Docker"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/07/04/docker-checkpoint-容器运行时快照/","name":"docker-checkpoint-容器运行时快照"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"docker-checkpoint-容器运行时快照","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/","wordCount":0,"datePublished":"2023-07-04T04:24:44.000Z","dateModified":"2023-07-04T11:58:34.683Z","articleSection":"Docker","keywords":"Docker","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
