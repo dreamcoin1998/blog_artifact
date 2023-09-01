@@ -1859,7 +1859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693555008111),
+    lastupdate: new Date(1693555084073),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2619,7 +2619,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/Python数据结构/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/Python数据模型/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2637,26 +2637,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"  itemprop="url">
-        Python数据结构
+      <a href="/2020/10/31/Python%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/"  itemprop="url">
+        Python数据模型
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        [toc]
-序列构成的数组python标准库用C实现了丰富的序列类型
-
-容器序列
-list、turple和collection.deque，这些序列能够存放不同的数据
-存放的包含任意对象类型的引用
-
-
-扁平序列
-str、bytes、bytearray、memoryview和array.array，这些类型只能容纳一种类型
-一段连续的内存空间，存放的是值，只能存放字符、字节和数值这种基础类型
-...
+        deck[0]或者deck[1]是通过__getitem__来实现的
+迭代通常是隐式的，如果一个集合类型没有实现__contains__方法，那么in会进行一次顺序迭代搜索
+abs是一个内置函数，如果输入的是整数或者是浮点数，他返回输入值的绝对值。如果输入值是复数，返回它的模
+python有一个内置的repr函数，把一个对象以字符串的形式打印出来以方便辨认，字符串表示形式
+__repr__和...
       
     
   </div>
@@ -2685,7 +2678,7 @@ str、bytes、bytearray、memoryview和array.array，这些类型只能容纳一
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/Python%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/Python%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3303,7 +3296,7 @@ fstatat函数为一个相对于当前打开目录的路径名返回文件统计�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-signal/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-process/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3321,22 +3314,17 @@ fstatat函数为一个相对于当前打开目录的路径名返回文件统计�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-signal/"  itemprop="url">
-        Unix环境高级编程-信号
+      <a href="/2020/10/31/unix-process/"  itemprop="url">
+        Unix环境高级编程-进程
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        信号信号是软件中断
-信号概念很多条件产生信号：
-
-当用户按某些键时，引发终端产生的信号（delete或者是Ctrl+C）产生中断信号SIGINT
-硬件异常产生信号；除数为0、无效的内存引用等。由硬件检测到，并通知内核，然后内核为该条件发生时正在运行的进程产生适当的信号。
-进程调用kill函数可将任意信号发送给另一个进程或进程组
-用户可用kill命令将信号发送给其他进程
-当检测到某种软件条件已...
+        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
+ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
+ID为2的进程是页守护进程，负责虚拟存储器系...
       
     
   </div>
@@ -3369,7 +3357,7 @@ fstatat函数为一个相对于当前打开目录的路径名返回文件统计�
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/unix-signal/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/unix-process/' itemprop="url">
             Read More
           </a>
         </div>
@@ -4116,7 +4104,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
   let index = 0;
   let IntervalParallax = null;
 
