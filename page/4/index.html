@@ -1859,7 +1859,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693482512274),
+    lastupdate: new Date(1693555008111),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2850,7 +2850,7 @@ tmpwatch是一个命令或者说一个包
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-what/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/linux-scheduler/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2868,16 +2868,24 @@ tmpwatch是一个命令或者说一个包
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/os-what/"  itemprop="url">
-        基础概念
+      <a href="/2020/10/31/linux-scheduler/"  itemprop="url">
+        Linux调度器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        BIOS——Basic Input&#x2F;Output System 基本输入输出系统在IBM PC兼容系统上，是一种业界标准的固件接口。[1]。BIOS这个字眼是在1975年第一次在CP&#x2F;M操作系统中出现。BIOS是个人计算机启动时加载的第一个软件（实际上自Intel Haswell平台以后，UEFI并不是系统引导时第一个被加载的软件）。
-UEFI——Unified Exte...
+        调度器介绍一个好的调度算法应该考虑以下几个方面：
+
+公平：保证每个进程得到合理的CPU时间
+高效：使CPU保持忙碌状态，即总是有进程在CPU上执行
+响应时间：使交互应用的响应时间尽可能短
+周转时间：使批处理用户等待输出的时间尽可能短
+吞吐量：使单位时间内处理的进程数量尽可能多
+负载均衡：在多核多处理器系统中提供更高的性能
+
+在整个调度系统中存在两种调度算法，分别是针对实时进程和普通进程，所以...
       
     
   </div>
@@ -2896,17 +2904,17 @@ UEFI——Unified Exte...
         <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          <a class="category-link" href="/categories/Linux/">Linux</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
+              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/os-what/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/linux-scheduler/' itemprop="url">
             Read More
           </a>
         </div>
@@ -2994,7 +3002,7 @@ UEFI——Unified Exte...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/linux-scheduler/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-epoll/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3012,24 +3020,17 @@ UEFI——Unified Exte...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/linux-scheduler/"  itemprop="url">
-        Linux调度器
+      <a href="/2020/10/31/os-epoll/"  itemprop="url">
+        IO多路复用
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        调度器介绍一个好的调度算法应该考虑以下几个方面：
-
-公平：保证每个进程得到合理的CPU时间
-高效：使CPU保持忙碌状态，即总是有进程在CPU上执行
-响应时间：使交互应用的响应时间尽可能短
-周转时间：使批处理用户等待输出的时间尽可能短
-吞吐量：使单位时间内处理的进程数量尽可能多
-负载均衡：在多核多处理器系统中提供更高的性能
-
-在整个调度系统中存在两种调度算法，分别是针对实时进程和普通进程，所以...
+        什么是IO多路复用IO多路复用就是通过一种机制，一个进程可以监视多个文件描述符，一旦某个描述符就绪，能够通知程序进行相应的读写操作。
+但是select、poll、epoll本质上都是同步IO，都需要在读写事件就绪后自己负责进行读写，这个读写的过程是阻塞的，而异步IO无需自己负责进行读写，异步IO的实现会负责把数据从内核拷贝到内核空间。
+epoll不同于select和poll的忙轮询和无差别轮...
       
     
   </div>
@@ -3048,17 +3049,89 @@ UEFI——Unified Exte...
         <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
+          <a class="category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+              <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/linux-scheduler/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/os-epoll/' itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-what/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2020/10/31/os-what/"  itemprop="url">
+        基础概念
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        BIOS——Basic Input&#x2F;Output System 基本输入输出系统在IBM PC兼容系统上，是一种业界标准的固件接口。[1]。BIOS这个字眼是在1975年第一次在CP&#x2F;M操作系统中出现。BIOS是个人计算机启动时加载的第一个软件（实际上自Intel Haswell平台以后，UEFI并不是系统引导时第一个被加载的软件）。
+UEFI——Unified Exte...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2020/10/31/os-what/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3151,7 +3224,7 @@ Linux使用一个名为kt...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-epoll/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-file-dir/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3169,90 +3242,19 @@ Linux使用一个名为kt...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/os-epoll/"  itemprop="url">
-        IO多路复用
+      <a href="/2020/10/31/unix-file-dir/"  itemprop="url">
+        Unix环境高级编程-文件和目录
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        什么是IO多路复用IO多路复用就是通过一种机制，一个进程可以监视多个文件描述符，一旦某个描述符就绪，能够通知程序进行相应的读写操作。
-但是select、poll、epoll本质上都是同步IO，都需要在读写事件就绪后自己负责进行读写，这个读写的过程是阻塞的，而异步IO无需自己负责进行读写，异步IO的实现会负责把数据从内核拷贝到内核空间。
-epoll不同于select和poll的忙轮询和无差别轮...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://github.com/dreamcoin1998/'><img src='https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" itemprop="url"><span itemprop="name">操作系统</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/10/31/os-epoll/' itemprop="url">
-            Read More
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-process/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-process/"  itemprop="url">
-        Unix环境高级编程-进程
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
-ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
-ID为2的进程是页守护进程，负责虚拟存储器系...
+        文件和目录描述文件系统的其他特征和文件的性质
+函数 stat、fstat、fstatat和lstat一旦给出pathname，stat函数将返回与此命名文件有关的信息结构。
+fstat函数获得已在描述符fd上打开该文件的有关信息。
+lstat返回该符号链接的有关信息，而不是由该链接引用的文件的信息
+fstatat函数为一个相对于当前打开目录的路径名返回文件统计信息，当AT_SYMLINK_N...
       
     
   </div>
@@ -3285,7 +3287,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/unix-process/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/unix-file-dir/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3301,7 +3303,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-thread/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/unix-signal/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3319,17 +3321,22 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/10/31/unix-thread/"  itemprop="url">
-        Unix环境高级编程-线程
+      <a href="/2020/10/31/unix-signal/"  itemprop="url">
+        Unix环境高级编程-信号
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        线程线程概念每个线程都包含有表示执行环境所必需的信息，其中包括进程中标识线程的线程ID、一组寄存器值、栈、调度优先级和策略、信号屏蔽字、error变量以及线程私有数据。一个进程的所有信息对线程都是共享的，包括可执行程序的代码、程序的全局内存和堆内存、栈以及文件描述符。
-线程同步互斥量本质上是一把锁，在访问共享资源之前对互斥量进行加锁操作，访问完成后释放互斥量。
-避免死锁死锁系统中若干线程形成...
+        信号信号是软件中断
+信号概念很多条件产生信号：
+
+当用户按某些键时，引发终端产生的信号（delete或者是Ctrl+C）产生中断信号SIGINT
+硬件异常产生信号；除数为0、无效的内存引用等。由硬件检测到，并通知内核，然后内核为该条件发生时正在运行的进程产生适当的信号。
+进程调用kill函数可将任意信号发送给另一个进程或进程组
+用户可用kill命令将信号发送给其他进程
+当检测到某种软件条件已...
       
     
   </div>
@@ -3362,7 +3369,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       </div>
       
         <div>
-          <a class='readmore' href='/2020/10/31/unix-thread/' itemprop="url">
+          <a class='readmore' href='/2020/10/31/unix-signal/' itemprop="url">
             Read More
           </a>
         </div>
@@ -3445,7 +3452,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
 
 
   <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-08-31</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/08/09/GKE%E7%9A%84Prometheus/"><div class="item"><time>2023-08-11</time><span>Kubernetes</span></div><span>GKE的Prometheus</span></a></li><li><a class="widget-last" href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/"><div class="item"><time>2023-07-04</time><span>Docker</span></div><span>docker-checkpoint-容器运行时快照</span></a></li><li><a class="widget-last" href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/"><div class="item"><time>2023-06-30</time><span>Golang</span></div><span>pflag-flag库的直接替代</span></a></li><li><a class="widget-last" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"><div class="item"><time>2023-06-29</time><span>Golang</span></div><span>cobra-一个强大的cli构建工具</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-09-01</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/08/09/GKE%E7%9A%84Prometheus/"><div class="item"><time>2023-08-11</time><span>Kubernetes</span></div><span>GKE的Prometheus</span></a></li><li><a class="widget-last" href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/"><div class="item"><time>2023-07-04</time><span>Docker</span></div><span>docker-checkpoint-容器运行时快照</span></a></li><li><a class="widget-last" href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/"><div class="item"><time>2023-06-30</time><span>Golang</span></div><span>pflag-flag库的直接替代</span></a></li><li><a class="widget-last" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/"><div class="item"><time>2023-06-29</time><span>Golang</span></div><span>cobra-一个强大的cli构建工具</span></a></li></ul>
   </div>
 </section>
 
@@ -3512,7 +3519,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-08-31 日</div>
+          <div id="last-update-show">2023-09-01 日</div>
         </div>
       
     </div>
@@ -4109,7 +4116,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp"];
   let index = 0;
   let IntervalParallax = null;
 
