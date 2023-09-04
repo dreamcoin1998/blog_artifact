@@ -44,7 +44,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-09-03T11:57:52.000Z">
-<meta property="article:modified_time" content="2023-09-04T06:23:50.451Z">
+<meta property="article:modified_time" content="2023-09-04T08:22:34.562Z">
 <meta property="article:author" content="Jerry Gao">
 <meta property="article:tag" content="Kubernetes">
 <meta name="twitter:card" content="summary">
@@ -1813,9 +1813,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		'}'+
 	'</style>'+
     '<div class="kill-ie">'+
-        `<span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>`+
-        `<span class="kill-c">微软已经于2016年终止了对 Internet Explorer (IE) 10 及更早版本的支持，<br/>继续使用存在极大的安全隐患，请使用当代主流的浏览器进行访问。</span><br/>`+
-        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>了解详情 ></strong></a>`+
+        `<span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>`+
+        `<span class="kill-c">Microsoft has terminated support for Internet Explorer (IE) 10 and earlier versions in 2016. <br/>There are great security risks to continue using it. Please use contemporary mainstream browsers to access.</span><br/>`+
+        `<a target="_blank" rel="noopener" href="https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/"><strong>Learn more ></strong></a>`+
     '</div>');
 </script>
 
@@ -1843,9 +1843,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>抱歉，您的浏览器无法访问本站</b></span><br/>
-        <span class="kill-c">本页面需要浏览器支持（启用）JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>了解详情 ></strong></a>
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
+        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
     </div>
 </noscript>
 
@@ -1860,7 +1860,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1693815548674),
+    lastupdate: new Date(1693821329521),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2709,9 +2709,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li>kubelet 和容器运行时被配置为使用 systemd cgroup 驱动</li>
 </ul>
-<h3 id="启用Memory-QoS"><a href="#启用Memory-QoS" class="headerlink" title="启用Memory QoS"></a>启用Memory QoS</h3><ol>
-<li>验证是否支持cgroup V2<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stat -fc %T /sys/fs/cgroup/</span><br></pre></td></tr></table></figure></li>
-</ol>
+<h3 id="启用Memory-QoS"><a href="#启用Memory-QoS" class="headerlink" title="启用Memory QoS"></a>启用Memory QoS</h3><h4 id="验证是否支持cgroup-V2"><a href="#验证是否支持cgroup-V2" class="headerlink" title="验证是否支持cgroup V2"></a>验证是否支持cgroup V2</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stat -fc %T /sys/fs/cgroup/</span><br></pre></td></tr></table></figure>
 <ul>
 <li>对于 cgroup v2，输出为 cgroup2fs</li>
 <li>对于 cgroup v1，输出为 tmpfs</li>
@@ -2726,30 +2724,24 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>RHEL 和类似 RHEL 的发行版（从 9 开始）</li>
 </ul>
 <p>要手动启动cgroup v2，如果发行版使用grub引导，则通过修改<code>/etc/default/grub</code>下的<code>GRUB_CMDLINE_LINUX</code>，在其中添加<code>systemd.unified_cgroup_hierarchy=1</code>，然后执行<code>sudo update-grub</code>。</p>
-<ol>
-<li>Containerd版本 &gt;&#x3D; v1.6.0</li>
-</ol>
-<p>在v1.6.0合并了该PR以支持在创建容器时支持对cgroup v2字段的解释</p>
-<ol start="3">
-<li>kubelet配置开启<code>MemoryQoS=true</code></li>
-</ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubelet.config.k8s.io/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">KubeletConfiguration</span></span><br><span class="line"><span class="attr">featureGates:</span></span><br><span class="line">  <span class="attr">MemoryQoS:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="Containerd版本-gt-x3D-v1-6-0"><a href="#Containerd版本-gt-x3D-v1-6-0" class="headerlink" title="Containerd版本 &gt;&#x3D; v1.6.0"></a>Containerd版本 &gt;&#x3D; v1.6.0</h4><p>在v1.6.0合并了该PR以支持在创建容器时支持对cgroup v2字段的解释</p>
+<h4 id="kubelet配置开启MemoryQoS-true"><a href="#kubelet配置开启MemoryQoS-true" class="headerlink" title="kubelet配置开启MemoryQoS=true"></a>kubelet配置开启<code>MemoryQoS=true</code></h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">kubelet.config.k8s.io/v1beta1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">KubeletConfiguration</span></span><br><span class="line"><span class="attr">featureGates:</span></span><br><span class="line">  <span class="attr">MemoryQoS:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-</div><div class="story post-story"><h2 id="迁移到cgroup-v2"><a href="#迁移到cgroup-v2" class="headerlink" title="迁移到cgroup v2"></a>迁移到cgroup v2</h2><ol>
+</div><div class="story post-story"><h2 id="迁移到cgroup-v2"><a href="#迁移到cgroup-v2" class="headerlink" title="迁移到cgroup v2"></a>迁移到cgroup v2</h2><ul>
 <li>升级到一个使用cgroup v2的内核版本。即Linux 内核为 5.8 或更高版本。</li>
-<li>如果有应用基于cgroup v1直接访问cgroup文件系统，需要将这些应用更新到cgroup v2的版本。<ol>
+<li>如果有应用基于cgroup v1直接访问cgroup文件系统，需要将这些应用更新到cgroup v2的版本。<ul>
 <li>一些第三方依赖和监控服务可能有此依赖</li>
 <li>以独立的DaemonSet方式运行的cAdvisor 以监控 Pod 和容器，需要将其更新到v0.43.0版本及以上</li>
-<li>部署Java应用程序，则最好完全支持cgroup v2以及更高的版本<ol>
+<li>部署Java应用程序，则最好完全支持cgroup v2以及更高的版本<ul>
 <li>OpenJDK &#x2F; HotSpot: jdk8u372、11.0.16、15 及更高的版本</li>
 <li>IBM Semeru Runtimes: jdk8u345-b01、11.0.16.0、17.0.4.0、18.0.2.0 及更高的版本</li>
 <li>IBM Java: 8.0.7.15 及更高的版本</li>
-</ol>
+</ul>
 </li>
 <li>正在使用 uber-go&#x2F;automaxprocs 包，则确保版本 &gt;&#x3D; v1.5.1</li>
-</ol>
+</ul>
 </li>
-</ol>
+</ul>
 </div><div class="story post-story"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当Kubelet将容器作为Pod的一部分启动时，Kubelete将CPU和内存限制传递给容器运行时，容器运行时将CPU和内存分配给容器。如果有空余的CPU时间，则会为容器分配他们的request数量，容器使用的CPU不能超过限制。如果容器使用的CPU数量超过了限制，则容器的CPU使用率将收到限制。但是对于内存来讲，容器运行时仅使用内存limit，丢弃request，request仅用于影响调度。当容器使用的内存超过限制，则会调用Linux out of memory Kill。</p>
 <h3 id="Momory-Request"><a href="#Momory-Request" class="headerlink" title="Momory Request"></a>Momory Request</h3><p>对于Memory request来讲，它主要在kube-schedule在调度时使用。在cgroup v1中，没有任何控件来指定cgroup将始终保持最小的内存，因此，容器运行时将不使用Pod的内存request字段来设置内存的最小分配量。</p>
 <p>而在Cgroup v2中，cgroup引入了一个memory.min设置，用于指定cgroup中的进程的最小内存使用量。<strong>Cgroup v2将始终保持内存分配大于memory.min，如果它无法保证，则会调用Linux OOM Kill杀死进程</strong>。即cgroup将会至少保证容器有memory.min的内存量可以使用，否则，它将会Kill掉进程（可能是在Cgroup之外），以保证内存可用。</p>
@@ -2791,6 +2783,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>摘要：只有 Burstable 和 BestEffort QoS 类别中的 Pod 才会设置 memory.high 。Guaranteed QoS Pod 不会设置 memory.high ，因为它们的内存是有保证的。</p>
 </div><div class="story post-story"><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Quality_of_service">维基百科-服务质量QoS</a></li>
+<li><a target="_blank" rel="noopener" href="https://kubernetes.io/zh-cn/docs/concepts/architecture/cgroups/#check-cgroup-version">什么是QoS？</a></li>
+<li></li>
 </ul>
 
 </div>
@@ -2817,7 +2811,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-04T14:23:50+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-09-04T16:22:34+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Sep 4, 2023</p>
@@ -2984,7 +2978,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFQoS%EF%BC%88%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%EF%BC%89%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是QoS（服务质量）？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-QoS%E5%9C%A8Kunernetes%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">2.</span> <span class="toc-text">Memory QoS在Kunernetes的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFMemory-QoS"><span class="toc-number">3.</span> <span class="toc-text">如何开启Memory QoS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E6%B1%82"><span class="toc-number">3.1.</span> <span class="toc-text">要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8Memory-QoS"><span class="toc-number">3.2.</span> <span class="toc-text">启用Memory QoS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%88%B0cgroup-v2"><span class="toc-number">4.</span> <span class="toc-text">迁移到cgroup v2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">5.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Momory-Request"><span class="toc-number">5.1.</span> <span class="toc-text">Momory Request</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Limit"><span class="toc-number">5.2.</span> <span class="toc-text">Memory Limit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-QoS%E6%80%8E%E4%B9%88%E8%BF%90%E8%A1%8C"><span class="toc-number">6.</span> <span class="toc-text">Memory QoS怎么运行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cgroups-v2-%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6%E5%99%A8%E6%8E%A5%E5%8F%A3%E5%92%8C-Kubernetes-%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E6%98%A0%E5%B0%84"><span class="toc-number">6.1.</span> <span class="toc-text">Cgroups v2 内存控制器接口和 Kubernetes 容器资源映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Momory-QoS-%E7%BA%A7%E5%88%AB"><span class="toc-number">6.2.</span> <span class="toc-text">Momory QoS 级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84Pod-QoS%E7%B1%BB%E5%88%AB"><span class="toc-number">7.</span> <span class="toc-text">支持的Pod QoS类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Guaranteed-pods"><span class="toc-number">7.1.</span> <span class="toc-text">Guaranteed pods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Burstable-pods"><span class="toc-number">7.2.</span> <span class="toc-text">Burstable pods</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFQoS%EF%BC%88%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F%EF%BC%89%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">什么是QoS（服务质量）？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-QoS%E5%9C%A8Kunernetes%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">2.</span> <span class="toc-text">Memory QoS在Kunernetes的历史</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%BC%80%E5%90%AFMemory-QoS"><span class="toc-number">3.</span> <span class="toc-text">如何开启Memory QoS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E6%B1%82"><span class="toc-number">3.1.</span> <span class="toc-text">要求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%AF%E7%94%A8Memory-QoS"><span class="toc-number">3.2.</span> <span class="toc-text">启用Memory QoS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%98%AF%E5%90%A6%E6%94%AF%E6%8C%81cgroup-V2"><span class="toc-number">3.2.1.</span> <span class="toc-text">验证是否支持cgroup V2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Containerd%E7%89%88%E6%9C%AC-gt-x3D-v1-6-0"><span class="toc-number">3.2.2.</span> <span class="toc-text">Containerd版本 &gt;&#x3D; v1.6.0</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kubelet%E9%85%8D%E7%BD%AE%E5%BC%80%E5%90%AFMemoryQoS-true"><span class="toc-number">3.2.3.</span> <span class="toc-text">kubelet配置开启MemoryQoS&#x3D;true</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%81%E7%A7%BB%E5%88%B0cgroup-v2"><span class="toc-number">4.</span> <span class="toc-text">迁移到cgroup v2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">5.</span> <span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Momory-Request"><span class="toc-number">5.1.</span> <span class="toc-text">Momory Request</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Limit"><span class="toc-number">5.2.</span> <span class="toc-text">Memory Limit</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Memory-QoS%E6%80%8E%E4%B9%88%E8%BF%90%E8%A1%8C"><span class="toc-number">6.</span> <span class="toc-text">Memory QoS怎么运行</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cgroups-v2-%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6%E5%99%A8%E6%8E%A5%E5%8F%A3%E5%92%8C-Kubernetes-%E5%AE%B9%E5%99%A8%E8%B5%84%E6%BA%90%E6%98%A0%E5%B0%84"><span class="toc-number">6.1.</span> <span class="toc-text">Cgroups v2 内存控制器接口和 Kubernetes 容器资源映射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Momory-QoS-%E7%BA%A7%E5%88%AB"><span class="toc-number">6.2.</span> <span class="toc-text">Momory QoS 级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E7%9A%84Pod-QoS%E7%B1%BB%E5%88%AB"><span class="toc-number">7.</span> <span class="toc-text">支持的Pod QoS类别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Guaranteed-pods"><span class="toc-number">7.1.</span> <span class="toc-text">Guaranteed pods</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Burstable-pods"><span class="toc-number">7.2.</span> <span class="toc-text">Burstable pods</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">8.</span> <span class="toc-text">参考文档</span></a></li></ol>
     </div>
   </section>
 
@@ -3093,7 +3087,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <p>本站使用 <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> 作为主题，您可以在 GitHub 找到<a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">本站源码</a>。</p>
+        <p>Uses <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
 
       
     
@@ -3586,7 +3580,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -3905,7 +3899,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/09/03/内存资源的服务质量/","name":"内存资源的服务质量（QoS）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"内存资源的服务质量（QoS）","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/","wordCount":0,"datePublished":"2023-09-03T11:57:52.000Z","dateModified":"2023-09-04T06:23:50.451Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","sameAs":["https://github.com/volantis-x"],"description":"一个集博客和工具咨询分享于一体的平台"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://jerryblogs.com/","name":"Jerry的小站"}},{"@type":"ListItem","position":2,"item":{"@id":"http://jerryblogs.com/categories/Kubernetes/","name":"Kubernetes"}},{"@type":"ListItem","position":3,"item":{"@id":"http://jerryblogs.com/2023/09/03/内存资源的服务质量/","name":"内存资源的服务质量（QoS）"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Jerry的小站","url":"http://jerryblogs.com/","keywords":["博客","工具分享"],"description":"一个集博客和工具咨询分享于一体的平台","author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/","description":"一个集博客和工具咨询分享于一体的平台"},"publisher":{"@type":"Organization","name":"Jerry的小站","url":"http://jerryblogs.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://jerryblogs.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"内存资源的服务质量（QoS）","description":"一个集博客和工具咨询分享于一体的平台","inLanguage":"zh-Hans","mainEntityOfPage":{"@type":"WebPage","@id":"http://jerryblogs.com/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/"},"author":{"@type":"Person","name":"Jerry Gao","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://jerryblogs.com/"},"publisher":{"@type":"Organization","name":"Jerry的小站","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://jerryblogs.com/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/","wordCount":0,"datePublished":"2023-09-03T11:57:52.000Z","dateModified":"2023-09-04T08:22:34.562Z","articleSection":"Kubernetes","keywords":"Kubernetes","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
