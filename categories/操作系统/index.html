@@ -1865,7 +1865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1695609961439),
+    lastupdate: new Date(1695627263414),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2573,7 +2573,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-epoll/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-compilation/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2591,17 +2591,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2020/10/31/os-epoll/" itemprop="url">
-        IO多路复用
+      <a href="/2020/10/31/os-compilation/" itemprop="url">
+        汇编语言
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        什么是IO多路复用IO多路复用就是通过一种机制，一个进程可以监视多个文件描述符，一旦某个描述符就绪，能够通知程序进行相应的读写操作。
-但是select、poll、epoll本质上都是同步IO，都需要在读写事件就绪后自己负责进行读写，这个读写的过程是阻塞的，而异步IO无需自己负责进行读写，异步IO的实现会负责把数据从内核拷贝到内核空间。
-epoll不同于select和poll的忙轮询和无差别轮...
+        什么是汇编语言？CPU只负责计算，本身不具备智能。你输入一条指令，他就运行一次，然后停下来，等待下一次指令。这些指令都是二进制的，称为操作码（opcode），比如加法指令就是00000011.编译器的作用就是，把高级语言写好的程序，翻译成一条条的操作码。因为二进制的语言是不可读的，所以，产生了汇编语言。
+汇编语言是二进制指令的文本形式，与二进制指令是一一对应的关系。比如，加法指令000000...
       
     
   </div>
@@ -2630,7 +2629,7 @@ epoll不同于select和poll的忙轮询和无差别轮...
       </div>
       
         <div>
-          <a class="readmore" href="/2020/10/31/os-epoll/" itemprop="url">
+          <a class="readmore" href="/2020/10/31/os-compilation/" itemprop="url">
             Read More
           </a>
         </div>
@@ -2718,7 +2717,7 @@ UEFI——Unified Exte...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-compilation/">
+  <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2020/10/31/os-epoll/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2736,16 +2735,17 @@ UEFI——Unified Exte...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2020/10/31/os-compilation/" itemprop="url">
-        汇编语言
+      <a href="/2020/10/31/os-epoll/" itemprop="url">
+        IO多路复用
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        什么是汇编语言？CPU只负责计算，本身不具备智能。你输入一条指令，他就运行一次，然后停下来，等待下一次指令。这些指令都是二进制的，称为操作码（opcode），比如加法指令就是00000011.编译器的作用就是，把高级语言写好的程序，翻译成一条条的操作码。因为二进制的语言是不可读的，所以，产生了汇编语言。
-汇编语言是二进制指令的文本形式，与二进制指令是一一对应的关系。比如，加法指令000000...
+        什么是IO多路复用IO多路复用就是通过一种机制，一个进程可以监视多个文件描述符，一旦某个描述符就绪，能够通知程序进行相应的读写操作。
+但是select、poll、epoll本质上都是同步IO，都需要在读写事件就绪后自己负责进行读写，这个读写的过程是阻塞的，而异步IO无需自己负责进行读写，异步IO的实现会负责把数据从内核拷贝到内核空间。
+epoll不同于select和poll的忙轮询和无差别轮...
       
     
   </div>
@@ -2774,7 +2774,7 @@ UEFI——Unified Exte...
       </div>
       
         <div>
-          <a class="readmore" href="/2020/10/31/os-compilation/" itemprop="url">
+          <a class="readmore" href="/2020/10/31/os-epoll/" itemprop="url">
             Read More
           </a>
         </div>
@@ -3490,7 +3490,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 
