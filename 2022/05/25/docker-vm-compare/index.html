@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+    <head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">
   <meta name="generator" content="Hexo 5.4.2">
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2022/05/25/docker-vm-compare/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2022/05/25/docker-vm-compare/">
   <!-- 渲染优化 -->
-    <meta http-equiv='x-dns-prefetch-control' content='on' />
-      <link rel='dns-prefetch' href='https://unpkg.com'>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+      <link rel="dns-prefetch" href="https://unpkg.com">
       <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
-  <meta name="HandheldFriendly" content="True" >
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
+      <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-32RBK2RSPE"></script>
       <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
 gtag('config', 'G-32RBK2RSPE'); </script>
@@ -30,7 +31,7 @@ gtag('config', 'G-32RBK2RSPE'); </script>
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
-    <link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -1848,9 +1849,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
-        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br>
+        <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
     </div>
 </noscript>
 
@@ -1865,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1695378950214),
+    lastupdate: new Date(1695609961439),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2294,46 +2295,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style="opacity: 0">
+  <div class="container">
+  <div id="wrapper">
+    <div class="nav-sub">
       <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+      <ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" href="/" onclick="return false;" title="comment"></a></li>
         
-          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" href="/" onclick="return false;" title="toc"></a></li>
         
       </ul>
     </div>
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href="/">
           
-            <img no-lazy class='logo' src='/images/favicon.png'/>
+            <img no-lazy class="logo" src="/images/favicon.png">
           
           
           
         </a>
       
 
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
+			<div class="menu navigation">
+				<ul class="nav-list-h m-pc">
           
           
           
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2343,14 +2338,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2360,14 +2349,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2377,14 +2360,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2394,12 +2371,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2408,13 +2381,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2426,12 +2399,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fa-solid fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="Search...">
         </form>
       </div>
       
 
-			<ul class='switcher nav-list-h m-phone'>
+			<ul class="switcher nav-list-h m-phone">
 				
 					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
 				
@@ -2442,14 +2415,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2459,14 +2426,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2476,14 +2437,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2493,14 +2448,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2510,12 +2459,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2524,13 +2469,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2553,12 +2498,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper post search' style="display: ;">
+      <div id="half" class="cover-wrapper post search" style="display: ;">
         
   <div id="parallax-window"></div>
 
-<div class='cover-body'>
-  <div class='top'>
+<div class="cover-body">
+  <div class="top">
     
     
       <p class="title">Jerry Gao</p>
@@ -2567,37 +2512,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="subtitle">一个集博客和工具资讯分享于一体的平台</p>
     
   </div>
-  <div class='bottom'>
+  <div class="bottom">
     
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <input type="text" class="input u-search-input" placeholder="搜一下">
           <i class="icon fa-solid fa-search fa-fw"></i>
         </form>
       </div>
     
-    <div class='menu navigation'>
-      <div class='list-h'>
+    <div class="menu navigation">
+      <div class="list-h">
         
           
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
+            <a href="/archives/" active-action="action-archives">
               <p>博客</p>
             </a>
           
-            <a href="/categories/"
-              
-              
-              active-action="action-categories">
+            <a href="/categories/" active-action="action-categories">
               <p>分类</p>
             </a>
           
-            <a href="/about/"
-              
-              
-              active-action="action-about">
+            <a href="/about/" active-action="action-about">
               <p>关于</p>
             </a>
           
@@ -2616,8 +2552,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+<div id="l_main" class>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2022/05/25/docker-vm-compare/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
@@ -2641,12 +2577,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <h1 class="title" itemprop="name headline">
         Docker容器和虚拟机的性能评估
       </h1>
-      <div class='new-meta-box'>
+      <div class="new-meta-box">
         
           
             
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' target="_blank" href="https://github.com/dreamcoin1998/" rel="nofollow noopener">
+<div class="new-meta-item author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class="author" target="_blank" href="https://github.com/dreamcoin1998/" rel="external nofollow noopener noreferrer">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     <p itemprop="name">Jerry Gao</p>
   </a>
@@ -2656,7 +2592,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
+  <div class="new-meta-item category">
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
     <a class="category-link" href="/categories/Docker/">Docker</a>
     
@@ -2671,7 +2607,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-25T18:35:17+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：May 25, 2022</p>
   </a>
@@ -2701,7 +2637,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p><strong>作者</strong>：Amit M Potdara, Narayan D Gb, Shivaraj Kengondc, Mohammed Moin Mulla<br><strong>原文链接</strong>：<a target="_blank" rel="noopener" href="https://reader.elsevier.com/reader/sd/pii/S1877050920311315">https://reader.elsevier.com/reader/sd/pii/S1877050920311315</a></p>
+    <div class="story post-story"><h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p><strong>作者</strong>：Amit M Potdara, Narayan D Gb, Shivaraj Kengondc, Mohammed Moin Mulla<br><strong>原文链接</strong>：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://reader.elsevier.com/reader/sd/pii/S1877050920311315">https://reader.elsevier.com/reader/sd/pii/S1877050920311315</a></p>
 </div><div class="story post-story"><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>服务器虚拟化是IT企业广泛使用的技术革新。虚拟化提供了一个在云上运行不同操作系统的服务的平台。它有利于在单个基本的物理机甚至于形式为hypervisor或容器里构建多个虚拟机。为了承载许多微服务应用，这个新兴的技术提出了一个模型，该模型由较小的单个部署服务执行的不同操作组成。因此，用于低开销的虚拟化技术的需求正在迅速发展。有许多轻量级的虚拟化技术，docker是其中之一，它是一个开源的平台。这项技术允许开发者和系统管理员使用docker引擎构建、创建和运行应用。本论文使用标准基准测试工具如Sysbench、Phoronix和Apache benchmark，这写工具包含CPU性能，内存吞吐量，存储读写性能，负载测试和运行速度测试。</p>
 </div><div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在近些年，对云计算的关注正在增加。It行业在Xen、HyperV、VMware vSphere，KVM等等的出现上开发了许多技术，这些技术统称为虚拟化技术。要在同一虚拟机上部署多个应用程序，需要组织和隔离应用程序依赖。由于虚拟化，多个应用程序可以在同一个物理硬件上运行。虚拟化技术的缺点是：虚拟机体积大，由于运行多个虚拟机导致性能不稳定，启动过程需要很长时间才能运行，虚拟机无法解决可管理性，软件更新和持续集成持续交付等难题。这些问题导致了一种称为容器化的新进程的出现，进一步导致了操作系统级别的虚拟化，而虚拟化则将吸收带到了硬件级别。容器使用共享相关库和资源的宿主机操作系统。它更有效，因为它没有guest Os。在宿主机内核上，可以处理特定于应用程序的二进制文件和库，从而使执行速度非常快。容器是在Docker平台的帮助下形成的，该平台结合了应用程序及其依赖。这些应用总是在隔离空间中，在操作系统内核之上运行。Docker这种容器化功能可确保环境支持任何相关应用程序。<br>在这项工作中，为了量化和对比虚拟机管理程序的虚拟机和Docker容器上的应用程序，进行了一系列实验。这些测试有助于我们了解两种主要的虚拟化技术（容器和虚拟机管理程序）的性能影响。本文组织如下：第2节给出了背景相关研究和关于技术和平台的简要说明。第3节介绍了用于了解性能比较的方法。第4节中，介绍了基准测试结果。最后，在第5节中提供了结论和未来的工作。</p>
 </div><div class="story post-story"><h2 id="背景研究"><a href="#背景研究" class="headerlink" title="背景研究"></a>背景研究</h2><h3 id="Docker"><a href="#Docker" class="headerlink" title="Docker"></a>Docker</h3><p>容器化是一种技术，它将应用程序、相关依赖项和组织起来以容器的形式构建的系统库。构建和组织的应用程序可以作为容器执行和部署。这个平台被称为Docker，它确保应用可以工作在每个环境。它也自动执行将部署到容器中的应用程序。Docker在容器环境中附加了一个额外的部署引擎层，应用程序在其中执行和虚拟化。为了有效的运行代码，Docker有四个主要部分：Docker容器，Docker Client-Server、Docker镜像和Docker引擎。以下各节将对这些组件进行详细说明。</p>
@@ -2782,14 +2718,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h4 id="运行速度测量"><a href="#运行速度测量" class="headerlink" title="运行速度测量"></a>运行速度测量</h4><p>八位女王的问题将八位女王放在8×8的棋盘上，这样他们都没有互相攻击。该测试测量解决问题所需的时间。Eight queen程序是用python编写的，决定了系统的计算性能。图 9.显示了 Docker 和虚拟机的计算性能。根据执行时间，docker 容器解决问题所需的时间更少，而虚拟机需要更长的时间。<br>八拼图测试：拿4×4板，8块瓷砖和一个空的空间。使用空白空间，排列与最终配置相匹配的图块数量是主要目标。它可以将四个相邻的操作（右，左，下和上）磁贴滑入空白区域 - 该测试测量解决问题所需的时间。Eight拼图程序是用python编写的，决定了系统的计算性能。图 10.显示了 Docker 和虚拟机的计算性能。根据执行时间，docker 容器解决问题所需的时间更少，而虚拟机需要更长的时间。</p>
 <h4 id="t-test分析"><a href="#t-test分析" class="headerlink" title="t-test分析"></a>t-test分析</h4><p>t 检验统计测量用于确定两个组的方法之间是否存在关键区别，这两个组可能在相关特征中连接。在下面的结果演示中，统计推理技术 t-test 已被用于证明 docker 容器的性能显著优于虚拟机。此外，阈值的置信水平α为 0.05。两组数据的概率可以通过取 t 统计量、t 分布值和自由度来确定。<br>在分析部分使用原假设 （H0） 和备择假设 （H1） 约定。在进行检验分析时，考虑原假设为真，这是进一步统计分析的假设。然后，测试的结果可以证明，如果 H0 为真，则假设可能是错误的。<br>需要测试 Docker 容器执行操作所需的时间是否比虚拟机少。样本检验包括 10 个关于查找素数操作的实验。表3显示了为分析部分采集的10个样本。发现执行虚拟机操作所花费的平均时间为 153.5 秒。现在需要检查 Docker 容器的平均时间是否小于虚拟机。t 统计量 （t） 的等式为 。</p>
 </div><div class="story post-story"><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Docker 容器是一种新兴的轻量级虚拟化技术。这项工作评估了两种虚拟化技术，即 Docker 容器和虚拟机。在虚拟机和基于 Docker 容器的主机上，从 CPU 性能、内存吞吐量、磁盘 I&#x2F;O、负载测试和操作速度测量等方面进行性能评估。据观察，Docker容器在每次测试中的表现都优于VM，因为虚拟机中存在QEMU层使其效率低于Docker容器。容器和虚拟机的性能评估是使用Sysbench，Phoronix和apache基准测试等基准测试工具执行的。<br>作为未来的工作，我们计划在Docker中调度容器，同时开发更安全的容器变体，这将减少安全约束。</p>
-</div><div class="story post-story"><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]	Docker.  <a target="_blank" rel="noopener" href="https://docs.docker.com/">https://docs.docker.com/</a> 2019 [Online; Accessed 24-03-2019]<br>[2]	Shivaraj Kengond, DG Narayan and Mohammed Moin Mulla (2018) “Hadoop as a Service in OpenStack” in Emerging Research in Electronics, Computer Science and Technology , pp 223-233.<br>[3]	C. G. Kominos, N. Seyvet and K. Vandikas, (2017) “Bare-metal, virtual machines and containers in OpenStack” 20th Conference on Innovations in Clouds, Internet and Networks (ICIN), Paris, pp. 36-43.<br>[4]	Higgins J., Holmes V and Venters C. (2015) “Orchestrating Docker Containers in the HPC Environment”. In: Kunkel J., Ludwig T. (eds) High Performance Computing. Lecture Notes in Computer Science, vol 9137.pp 506-513<br>[5]	Max Plauth, Lena Feinbube and Andreas Polze, (2017) “A Performance Evaluation of Lightweight Approaches to Virtualization”, CLOUD COMPUTING: The Eighth International Conference on Cloud Computing, GRIDs, and Virtualization.<br>[6]	Kyoung-Taek Seo, Hyun-Seo Hwang, Il-Young Moon, Oh-Young Kwon and Byeong-Jun Kim “Performance Comparison Analysis of Linux Container and Virtual Machine for Building Cloud,” Advanced Science and Technology Letters Vol.66, pp.105-111.<br>[7]	R. Morabito, J. Kjällman and M. Komu, (2015) “Hypervisors vs. Lightweight Virtualization: A Performance Comparison”, IEEE International Conference on Cloud Engineering, Tempe, AZ, pp. 386-393.<br>[8]	Babak Bashari Rad, Harrison John Bhatti and Mohammad Ahmadi (2017) “An Introduction to Docker and Analysis of its Performance” IJCSNS International Journal of Computer Science and Network Security, VOL.17 No.3, pp 228-229.<br>[9]	Kozhirbayev, Zhanibek, and Richard O. Sinnott. (2017) “A performance comparison of container-based technologies for the cloud”, Future Generation Computer Systems, pp: 175-182.<br>[10]	Felter, Wes, et al. (2015) “An updated performance comparison of virtual machines and linux containers”, IEEE international symposium on performance analysis of systems and software (ISPASS). pp:171-172.<br>[11]	Sysbench. <a target="_blank" rel="noopener" href="https://wiki.gentoo.org/wiki/Sysbench">https://wiki.gentoo.org/wiki/Sysbench</a> 2019 [Online; Accessed 24-03-2019]<br>[12]	Phoronix Benchmark tool.  <a target="_blank" rel="noopener" href="https://www.phoronix-test-suite.com/">https://www.phoronix-test-suite.com/</a> 2019 [Online; Accessed 24-03-2019]<br>[13]	Apache Benchmark tool.  <a target="_blank" rel="noopener" href="https://www.tutorialspoint.com/apache_bench/">https://www.tutorialspoint.com/apache_bench/</a>  2019 [Online; Accessed 24-03-2019]</p>
+</div><div class="story post-story"><h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1]	Docker.  <a target="_blank" rel="external nofollow noopener noreferrer" href="https://docs.docker.com/">https://docs.docker.com/</a> 2019 [Online; Accessed 24-03-2019]<br>[2]	Shivaraj Kengond, DG Narayan and Mohammed Moin Mulla (2018) “Hadoop as a Service in OpenStack” in Emerging Research in Electronics, Computer Science and Technology , pp 223-233.<br>[3]	C. G. Kominos, N. Seyvet and K. Vandikas, (2017) “Bare-metal, virtual machines and containers in OpenStack” 20th Conference on Innovations in Clouds, Internet and Networks (ICIN), Paris, pp. 36-43.<br>[4]	Higgins J., Holmes V and Venters C. (2015) “Orchestrating Docker Containers in the HPC Environment”. In: Kunkel J., Ludwig T. (eds) High Performance Computing. Lecture Notes in Computer Science, vol 9137.pp 506-513<br>[5]	Max Plauth, Lena Feinbube and Andreas Polze, (2017) “A Performance Evaluation of Lightweight Approaches to Virtualization”, CLOUD COMPUTING: The Eighth International Conference on Cloud Computing, GRIDs, and Virtualization.<br>[6]	Kyoung-Taek Seo, Hyun-Seo Hwang, Il-Young Moon, Oh-Young Kwon and Byeong-Jun Kim “Performance Comparison Analysis of Linux Container and Virtual Machine for Building Cloud,” Advanced Science and Technology Letters Vol.66, pp.105-111.<br>[7]	R. Morabito, J. Kjällman and M. Komu, (2015) “Hypervisors vs. Lightweight Virtualization: A Performance Comparison”, IEEE International Conference on Cloud Engineering, Tempe, AZ, pp. 386-393.<br>[8]	Babak Bashari Rad, Harrison John Bhatti and Mohammad Ahmadi (2017) “An Introduction to Docker and Analysis of its Performance” IJCSNS International Journal of Computer Science and Network Security, VOL.17 No.3, pp 228-229.<br>[9]	Kozhirbayev, Zhanibek, and Richard O. Sinnott. (2017) “A performance comparison of container-based technologies for the cloud”, Future Generation Computer Systems, pp: 175-182.<br>[10]	Felter, Wes, et al. (2015) “An updated performance comparison of virtual machines and linux containers”, IEEE international symposium on performance analysis of systems and software (ISPASS). pp:171-172.<br>[11]	Sysbench. <a target="_blank" rel="external nofollow noopener noreferrer" href="https://wiki.gentoo.org/wiki/Sysbench">https://wiki.gentoo.org/wiki/Sysbench</a> 2019 [Online; Accessed 24-03-2019]<br>[12]	Phoronix Benchmark tool.  <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.phoronix-test-suite.com/">https://www.phoronix-test-suite.com/</a> 2019 [Online; Accessed 24-03-2019]<br>[13]	Apache Benchmark tool.  <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.tutorialspoint.com/apache_bench/">https://www.tutorialspoint.com/apache_bench/</a>  2019 [Online; Accessed 24-03-2019]</p>
 
 </div>
   </div>
   
   
     
-    <div class='footer'>
+    <div class="footer">
        <!-- 参考资料、相关资料等 -->
       
        <!-- 相关文章 -->
@@ -2804,12 +2740,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
 
 
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
       
         
           <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-20T21:39:18+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Apr 20, 2023</p>
   </a>
@@ -2832,11 +2768,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2844,11 +2776,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2856,11 +2784,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2022/05/25/docker-vm-compare/&title=Docker容器和虚拟机的性能评估 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2891,15 +2815,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/05/25/linux-core-module-load/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>限制内核模块自动加载</p>
-          <p class='content'>概述内核的模块机制允许构建具有广泛软硬件支持的内核，而无需将所有的代码实际加载到任何给定的运行系统中。在一个典型的分配器内核中，所有这些模块的可用性意味着非常多的功能是可用的，但是也可能存在许多...</p>
+        <a class="prev" href="/2022/05/25/linux-core-module-load/">
+          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>限制内核模块自动加载</p>
+          <p class="content">概述内核的模块机制允许构建具有广泛软硬件支持的内核，而无需将所有的代码实际加载到任何给定的运行系统中。在一个典型的分配器内核中，所有这些模块的可用性意味着非常多的功能是可用的，但是也可能存在许多...</p>
         </a>
       
       
-        <a class='next' href='/2022/05/25/k8s-network-policy/'>
-          <p class='title'>kubernetes中的网络策略：性能评估和安全分析<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>文章信息作者：Gerald Budigiri; Christoph Baumann; Jan Tobias Mühlberg; Eddy Truyen; Wouter Joosen原文：http...</p>
+        <a class="next" href="/2022/05/25/k8s-network-policy/">
+          <p class="title">kubernetes中的网络策略：性能评估和安全分析<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">文章信息作者：Gerald Budigiri; Christoph Baumann; Jan Tobias Mühlberg; Eddy Truyen; Wouter Joosen原文：http...</p>
         </a>
       
     </div>
@@ -2917,7 +2841,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <span hidden>
       <meta itemprop="discussionUrl" content="/2022/05/25/docker-vm-compare/index.html#comments">
     </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    <p ct><i class="fa-solid fa-comments"></i> 评论</p>
     
 
     <div id="layoutHelper-comments"></div>
@@ -2930,7 +2854,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 </div>
-<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+<aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
   
 
   
@@ -2949,12 +2873,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   <header>
     
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href="/blog/tags/"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
       <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
     </div>
   </section>
@@ -2970,16 +2894,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+  <section class="widget toc-wrapper desktop mobile " id="toc-div">
     
   <header>
     
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%A0%94%E7%A9%B6"><span class="toc-number">4.</span> <span class="toc-text">背景研究</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker"><span class="toc-number">4.1.</span> <span class="toc-text">Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E5%BC%95%E6%93%8E"><span class="toc-number">4.1.1.</span> <span class="toc-text">Docker引擎</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">4.1.2.</span> <span class="toc-text">Docker客户端-服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E9%95%9C%E5%83%8F"><span class="toc-number">4.1.3.</span> <span class="toc-text">Docker镜像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Docker%E5%AE%B9%E5%99%A8"><span class="toc-number">4.1.4.</span> <span class="toc-text">Docker容器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CDocker%E5%AE%B9%E5%99%A8%E4%B9%8B%E9%97%B4%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-number">4.1.5.</span> <span class="toc-text">虚拟机和Docker容器之间的比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">4.2.</span> <span class="toc-text">相关工作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">方法论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%92%8C%E8%AE%A8%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">结果和讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CPU%E6%80%A7%E8%83%BD"><span class="toc-number">6.1.</span> <span class="toc-text">CPU性能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E8%B4%A8%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">6.1.1.</span> <span class="toc-text">最大质数运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-ZIP-%E5%8E%8B%E7%BC%A9%E6%B5%8B%E8%AF%95"><span class="toc-number">6.1.2.</span> <span class="toc-text">7 ZIP 压缩测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%80%A7%E8%83%BD"><span class="toc-number">6.1.3.</span> <span class="toc-text">内存性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98IO%E6%80%A7%E8%83%BD"><span class="toc-number">6.1.4.</span> <span class="toc-text">磁盘IO性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B4%9F%E8%BD%BD%E6%B5%8B%E8%AF%95"><span class="toc-number">6.1.5.</span> <span class="toc-text">负载测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E9%80%9F%E5%BA%A6%E6%B5%8B%E9%87%8F"><span class="toc-number">6.1.6.</span> <span class="toc-text">运行速度测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t-test%E5%88%86%E6%9E%90"><span class="toc-number">6.1.7.</span> <span class="toc-text">t-test分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">7.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">8.</span> <span class="toc-text">References</span></a></li></ol>
     </div>
   </section>
@@ -3061,7 +2985,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </div>
         
   
-  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+  <footer class="footer clearfix" itemscope itemtype="http://schema.org/WPFooter">
     <br><br>
     
       
@@ -3069,18 +2993,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
   
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.4'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='2774493345'
-      list-folded='true'>
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.4" loop="all" order="random" fixed="false" list-max-height="320px" server="netease" type="playlist" id="2774493345" list-folded="true">
     </meting-js>
   
 
@@ -3089,13 +3002,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <p>Uses <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
+        <p>Uses <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
 
       
     
       
-        <div class='copyright'>
-        <p><a target="_blank" rel="noopener" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
+        <div class="copyright">
+        <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
 
         </div>
       
@@ -3582,7 +3495,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
   let index = 0;
   let IntervalParallax = null;
 

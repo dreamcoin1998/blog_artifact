@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+    <head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">
   <meta name="generator" content="Hexo 5.4.2">
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2022/05/26/k8s-pod-scale/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2022/05/26/k8s-pod-scale/">
   <!-- 渲染优化 -->
-    <meta http-equiv='x-dns-prefetch-control' content='on' />
-      <link rel='dns-prefetch' href='https://unpkg.com'>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+      <link rel="dns-prefetch" href="https://unpkg.com">
       <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
-  <meta name="HandheldFriendly" content="True" >
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
+      <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-32RBK2RSPE"></script>
       <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
 gtag('config', 'G-32RBK2RSPE'); </script>
@@ -30,7 +31,7 @@ gtag('config', 'G-32RBK2RSPE'); </script>
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
-    <link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -1848,9 +1849,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
-        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br>
+        <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
     </div>
 </noscript>
 
@@ -1865,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1695378950214),
+    lastupdate: new Date(1695609961439),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2294,46 +2295,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style="opacity: 0">
+  <div class="container">
+  <div id="wrapper">
+    <div class="nav-sub">
       <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+      <ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" href="/" onclick="return false;" title="comment"></a></li>
         
-          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" href="/" onclick="return false;" title="toc"></a></li>
         
       </ul>
     </div>
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href="/">
           
-            <img no-lazy class='logo' src='/images/favicon.png'/>
+            <img no-lazy class="logo" src="/images/favicon.png">
           
           
           
         </a>
       
 
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
+			<div class="menu navigation">
+				<ul class="nav-list-h m-pc">
           
           
           
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2343,14 +2338,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2360,14 +2349,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2377,14 +2360,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2394,12 +2371,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2408,13 +2381,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2426,12 +2399,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fa-solid fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="Search...">
         </form>
       </div>
       
 
-			<ul class='switcher nav-list-h m-phone'>
+			<ul class="switcher nav-list-h m-phone">
 				
 					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
 				
@@ -2442,14 +2415,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2459,14 +2426,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2476,14 +2437,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2493,14 +2448,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2510,12 +2459,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2524,13 +2469,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2553,12 +2498,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper post search' style="display: ;">
+      <div id="half" class="cover-wrapper post search" style="display: ;">
         
   <div id="parallax-window"></div>
 
-<div class='cover-body'>
-  <div class='top'>
+<div class="cover-body">
+  <div class="top">
     
     
       <p class="title">Jerry Gao</p>
@@ -2567,37 +2512,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="subtitle">一个集博客和工具资讯分享于一体的平台</p>
     
   </div>
-  <div class='bottom'>
+  <div class="bottom">
     
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <input type="text" class="input u-search-input" placeholder="搜一下">
           <i class="icon fa-solid fa-search fa-fw"></i>
         </form>
       </div>
     
-    <div class='menu navigation'>
-      <div class='list-h'>
+    <div class="menu navigation">
+      <div class="list-h">
         
           
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
+            <a href="/archives/" active-action="action-archives">
               <p>博客</p>
             </a>
           
-            <a href="/categories/"
-              
-              
-              active-action="action-categories">
+            <a href="/categories/" active-action="action-categories">
               <p>分类</p>
             </a>
           
-            <a href="/about/"
-              
-              
-              active-action="action-about">
+            <a href="/about/" active-action="action-about">
               <p>关于</p>
             </a>
           
@@ -2616,8 +2552,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+<div id="l_main" class>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2022/05/26/k8s-pod-scale/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
@@ -2641,12 +2577,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <h1 class="title" itemprop="name headline">
         用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容
       </h1>
-      <div class='new-meta-box'>
+      <div class="new-meta-box">
         
           
             
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' target="_blank" href="https://github.com/dreamcoin1998/" rel="nofollow noopener">
+<div class="new-meta-item author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class="author" target="_blank" href="https://github.com/dreamcoin1998/" rel="external nofollow noopener noreferrer">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     <p itemprop="name">Jerry Gao</p>
   </a>
@@ -2656,7 +2592,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
+  <div class="new-meta-item category">
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
     <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E8%AE%BA%E6%96%87%E7%BF%BB%E8%AF%91/">论文翻译</a>
     
@@ -2675,7 +2611,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-05-26T19:31:22+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：May 26, 2022</p>
   </a>
@@ -2705,7 +2641,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p><strong>作者</strong>：Thanh-Tung Nguyen	, Yu-Jin Yeom 1 , Taehong Kim 1,* , Dae-Heon Park 2,*  and Sehan Kim<br><strong>原文</strong>：<a target="_blank" rel="noopener" href="https://pdfs.semanticscholar.org/a6e5/53a4f59d737d802cebdce7e114c5d62f728c.pdf">https://pdfs.semanticscholar.org/a6e5/53a4f59d737d802cebdce7e114c5d62f728c.pdf</a></p>
+    <div class="story post-story"><h2 id="文章信息"><a href="#文章信息" class="headerlink" title="文章信息"></a>文章信息</h2><p><strong>作者</strong>：Thanh-Tung Nguyen	, Yu-Jin Yeom 1 , Taehong Kim 1,* , Dae-Heon Park 2,*  and Sehan Kim<br><strong>原文</strong>：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://pdfs.semanticscholar.org/a6e5/53a4f59d737d802cebdce7e114c5d62f728c.pdf">https://pdfs.semanticscholar.org/a6e5/53a4f59d737d802cebdce7e114c5d62f728c.pdf</a></p>
 </div><div class="story post-story"><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>Kubernetes是一个开源的容器编排平台，通过自动扩缩容机制（水平、垂直和集群自动扩缩容）实现高可用性和可拓展性。其中HPA通过动态拓展和所见资源单元（Pod）的数量来帮助提供不间断的服务，而无需通过重新启动整个系统。Kubernetes监控默认的资源指标，包括主机及其Pod的CPU和内存使用情况。另一方面，有Prometheus等外部软件提供的自定义指标是可定制的，可以监控各种指标。在本文中，我们通过各种实验来研究HPA，以提供有关操作行为的关键知识。我们还讨论了Kubernetes资源指标（KRM）和Prometheus自定义指标（PCM）之间的本质区别，以及他们如何影响HPA的性能。最后，我们为将来使用Kubernetes的研究人员，开发人员和系统管理员提供了有关如何优化HPA性能的更深入的见解和经验教训。</p>
 </div><div class="story post-story"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>近年来，随着云计算和后期边缘计算的快速出现，虚拟化技术已经成为学术研究和工业发展的轰动话题，因为他们使用Amazon Web Services、GCP、Microsoft Azure等云平台能实现大规模的弹性。新兴的虚拟化技术之一是容器化技术，其中配备随时可部署的应用程序组件的轻量级操作系统被打包到一个自给自足的容器中，准备在支持多租户的主机上运行。在主机系统中，不同的容器在同一主机操作系统和同一内核中一起运行，这有助于降低存储要求，并允许他们主机操作系统相比实现接近本机的性能。</p>
 <p>由于容器可以大规模部署，因此对在部署、拓展和管理方面高度自动化的容器编排平台有着巨大的需求。在各种编排平台中，包括Docker Swarm、Amazon Elastic Container Service、Red Hat OpenShift Container Platform，Kubernetes已成为其受欢迎的事实上的标准。他是一个开源平台，可以轻松打包和运行容器化应用程序、工作负载和服务，并提供用于操作可拓展分部署系统的框架，此外，容器化应用程序具有在任何类型的操作系统和云基础架构上运行的可移植性。Kubernetes使用Docker作为基础环境来运行可以指且自给自足的容器，其实例化称为Docker镜像，它提供了一个控制平面，用于管理和安排这些容器在其主机集群（节点）上运行，具体取决于其可用资源和每个容器的特定要求。</p>
@@ -2759,7 +2695,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <ul>
 <li>ClusterIP 在创建时分配给服务，并在此服务的整个生存期内保持不变。只能在内部访问群集 IP。在图 1a 中，服务 A、B 和 C 分配了三个不同的内部 IP 地址，并分别公开了三个服务端口 9897、9898 和 9899。例如，当地址 10.98.32.199：9899（由 Service-C 的集群 IP 和公开的端口组成）在集群内被命中时，流量会自动重定向到 Application-C Pod 容器上的 targetPort 9899，如图 1c 中的关键字选择器在 YAML 文件中指定的那样。根据所选策略选择确切的目标 Pod。</li>
 <li>NodePort 是每个节点上的服务的保留端口，该节点正在运行属于该服务的 Pod。在图 1b 的示例中，NodePort 31197 和服务端口 9897 几乎耦合在一起。当流量到达节点 A 上的 NodePort 31197 时，它将路由到端口 9897 上的服务 A。然后，与前面的示例类似，流量依次路由到 targetPort 9897 上的 Pod A-1 和 A-2。这使得甚至可以从集群外部访问 Pod。例如，如果节点A的外部IP地址130.211.11.131可以从互联网访问，则通过点击地址130.211.11.131：31197，用户实际上是在向Pod A-1和A-2发送请求。但是，很明显，直接访问节点的IP地址并不是一种有效的策略。</li>
-<li>负载平衡由特定云服务提供商提供。当集群部署在 GCP [2]、Azure [3] 或 AWS [1] 等云平台上时，会为其提供负载均衡器，该负载均衡器可通过 URL 在外部轻松访问（<a target="_blank" rel="noopener" href="http://www.my-example-app.com).发往此/">www.my-example-app.com）。发往此</a> URL 的所有流量都将以与上一个示例类似的方式转发到 NodePort 31198 上的群集节点，如图 1a 所示。</li>
+<li>负载平衡由特定云服务提供商提供。当集群部署在 GCP [2]、Azure [3] 或 AWS [1] 等云平台上时，会为其提供负载均衡器，该负载均衡器可通过 URL 在外部轻松访问（<a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.my-example-app.com).发往此/">www.my-example-app.com）。发往此</a> URL 的所有流量都将以与上一个示例类似的方式转发到 NodePort 31198 上的群集节点，如图 1a 所示。</li>
 </ul>
 </div><div class="story post-story"><h2 id="水平自动伸缩"><a href="#水平自动伸缩" class="headerlink" title="水平自动伸缩"></a>水平自动伸缩</h2><p>在 Kubernetes 中，HPA 是一项强大的功能，它可以自动提高 Pod 的数量，从而提高应用程序的整体计算和处理能力，而无需停止应用程序当前正在运行的实例 [11]。成功创建后，这些新 Pod 能够与现有 Pod 共享传入负载。从技术角度来看，HPA是由kube-controller-manager实现的控制回路。默认情况下，每隔 15 秒（也称为同步周期）kube-controller-manager 都会将收集的指标与 HPA 配置中指定的阈值进行比较。图 2a 显示了 HPA 的配置。’’minReplicas’ 和 ‘’maxReplicas’ 是指应该在集群中运行的 pod 的最小和最大数量。在此示例中，minReplicas 和 maxReplicas 分别为 2 和 4。复制控制器是 kube-controller-manager 的一个组件，它跟踪副本集，并确保此应用程序的 Pod 始终在群集中运行不少于 2 个且不超过 4 个。用于此 HPA 的指标是 CPU 使用率。一旦 CPU 利用率的平均值达到预设阈值，HPA 就会通过计算以下内容自动增加 Pod 数：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desiredReplicas = currentReplicas * currentMetricValue / desiredMetricValue</span><br></pre></td></tr></table></figure>
@@ -2818,7 +2754,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h4 id="有和没有就绪探头的HPA性能比较"><a href="#有和没有就绪探头的HPA性能比较" class="headerlink" title="有和没有就绪探头的HPA性能比较"></a>有和没有就绪探头的HPA性能比较</h4><p>设置。在一种情况下设置常规HPA，而在另一种情况下则伴随着准备情况调查。</p>
 <p>目标。我们的目标是调查Readiness Probe的使用及其对失败请求数和响应时间的影响。</p>
 <p>图 9a 显示了 HPA 与使用就绪度探测器 （RP） 和常规 HPA 在失败请求数方面的比较。很明显，在使用RP的情况下，没有失败的请求，因为当额外的 pod 准备就绪时，Kubernetes 服务不会将任何流量路由到它们。只有在它们被认为准备就绪后，它们才能接收和处理传入的请求。因此，我们可以预期，通过使用 RP 可以避免从前面的实验中观察到的失败请求。但是，这是一种权衡，因为一般响应时间明显高于图 9b 中所示的不使用 RP 的情况，因为更多的流量被路由到现有 Pod。</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/dreamcoin1998/container_virtual_learning/blob/main/image/PCM%E4%B8%8D%E5%90%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87.png"></a></p>
+<p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/container_virtual_learning/blob/main/image/PCM%E4%B8%8D%E5%90%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87.png"></a></p>
 <p>Figure 9. Comparison of HPA performances with and without Readiness Probe. (a) The total number of the failed requests. (b) Response time of the successful requests.</p>
 <h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><p>为了总结之前的实验和分析，我们列出了Kubernetes HPA行为的几个关键点。</p>
 <ul>
@@ -2835,20 +2771,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <p>致谢：作者对Linh-An Phan在整个研究中的许多宝贵评论表示高度赞赏，并感谢Dinh-Nguyen Nguyen在早期阶段的支持。</p>
 <p>利益冲突：作者声明没有利益冲突。</p>
 </div><div class="story post-story"><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><ol>
-<li>   Amazon Web Services. Available online: <a target="_blank" rel="noopener" href="https://aws.amazon.com/">https://aws.amazon.com</a> (accessed on 23 June 2020).</li>
-<li>   Google Cloud Platform. Available online: <a target="_blank" rel="noopener" href="https://cloud.google.com/">https://cloud.google.com</a> (accessed on 23 June 2020).</li>
-<li>   Microsoft Azure. Available online: <a target="_blank" rel="noopener" href="https://azure.microsoft.com/">https://azure.microsoft.com</a> (accessed on 23 June 2020).</li>
+<li>   Amazon Web Services. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://aws.amazon.com/">https://aws.amazon.com</a> (accessed on 23 June 2020).</li>
+<li>   Google Cloud Platform. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/">https://cloud.google.com</a> (accessed on 23 June 2020).</li>
+<li>   Microsoft Azure. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://azure.microsoft.com/">https://azure.microsoft.com</a> (accessed on 23 June 2020).</li>
 <li>   Pahl, C.; Brogi, A.; Soldani, J.; Jamshidi, P. Cloud Container Technologies: A State-of-the-Art Review. IEEE Trans. Cloud Comput. 2017, 7, 677–692. [CrossRef]</li>
 <li>   He, S.; Guo, L.; Guo, Y.; Wu, C.; Ghanem, M.; Han, R. Elastic application container: A lightweight approach for cloud resource provisioning. In Proceedings of the 2012 IEEE 26th International Conference on Advanced Information Networking and Applications, Fukuoka, Japan, 26–29 March 2012; pp. 15–22. [CrossRef]</li>
 <li>   Dua, R.; Raja, A.R.; Kakadia, D. Virtualization vs containerization to support PaaS. In Proceedings of the<br>2014 IEEE International Conference on Cloud Engineering, Boston, MA, USA, 11–14 March 2014; pp. 610–614. [CrossRef]</li>
 <li>   Pahl, C. Containerization and the PaaS Cloud. IEEE Cloud Comput. 2015, 2, 24–31. [CrossRef]</li>
-<li>   Docker. Available online: <a target="_blank" rel="noopener" href="https://www.docker.com/">https://www.docker.com</a> (accessed on 23 June 2020).</li>
-<li>   Amazon Elastic Container Service. Available online: <a target="_blank" rel="noopener" href="https://aws.amazon.com/ecs">https://aws.amazon.com/ecs</a> (accessed on 23 June 2020).</li>
-<li>   Red Hat OpenShift Container Platform. Available online: <a target="_blank" rel="noopener" href="https://www.openshift.com/products/containerplatform">https://www.openshift.com/products/containerplatform</a> (accessed on 23 June 2020).</li>
-<li>   Kubernetes. Available online: <a target="_blank" rel="noopener" href="http://www.kubernetes.io/">www.kubernetes.io</a> (accessed on 23 June 2020).</li>
+<li>   Docker. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.docker.com/">https://www.docker.com</a> (accessed on 23 June 2020).</li>
+<li>   Amazon Elastic Container Service. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://aws.amazon.com/ecs">https://aws.amazon.com/ecs</a> (accessed on 23 June 2020).</li>
+<li>   Red Hat OpenShift Container Platform. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.openshift.com/products/containerplatform">https://www.openshift.com/products/containerplatform</a> (accessed on 23 June 2020).</li>
+<li>   Kubernetes. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="http://www.kubernetes.io/">www.kubernetes.io</a> (accessed on 23 June 2020).</li>
 <li>   Chang, C.C.; Yang, S.R.; Yeh, E.H.; Lin, P.; Jeng, J.Y. A Kubernetes-based monitoring platform for dynamic cloud resource provisioning. In Proceedings of the GLOBECOM 2017—2017 IEEE Global Communications Conference, Singapore, 4–8 December 2017; pp. 1–6. [CrossRef]</li>
-<li>   Prometheus. Available online: <a target="_blank" rel="noopener" href="https://prometheus.io/">https://prometheus.io</a> (accessed on 23 June 2020).</li>
-<li>   Cloud Native Computing Foundation. Available online: <a target="_blank" rel="noopener" href="https://www.cncf.io/">https://www.cncf.io</a> (accessed on 23 June 2020).</li>
+<li>   Prometheus. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://prometheus.io/">https://prometheus.io</a> (accessed on 23 June 2020).</li>
+<li>   Cloud Native Computing Foundation. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.cncf.io/">https://www.cncf.io</a> (accessed on 23 June 2020).</li>
 <li>   Thurgood, B.; Lennon, R.G. Cloud computing with Kubernetes cluster elastic scaling. ICPS Proc. 2019, 1–7, doi:10.1145&#x2F;3341325.3341995. [CrossRef]</li>
 <li>   Rattihalli, G.; Govindaraju, M.; Lu, H.; Tiwari, D. Exploring potential for non-disruptive vertical auto scaling and resource estimation in kubernetes. In Proceedings of the IEEE International Conference on Cloud Computing (CLOUD), Milan, Italy, 8–13 July 2019; pp. 33–40. [CrossRef]</li>
 <li>   Song, M.; Zhang, C.; Haihong, E. An auto scaling system for API gateway based on Kubernetes. In Proceedings of the 2018 IEEE 9th International Conference on Software Engineering and Service Science (ICSESS), Beijing, China, 23–25 November 2018; pp. 109–112. [CrossRef]</li>
@@ -2861,16 +2797,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li>   Santos, J.; Wauters, T.; Volckaert, B.; De Turck, F. Towards network-Aware resource provisioning in kubernetes for fog computing applications. In Proceedings of the 2019 IEEE Conference on Network Softwarization (NetSoft), Paris, France, 24–28 June 2019; pp. 351–359. [CrossRef]</li>
 <li>   Santos, J.; Wauters, T.; Volckaert, B.; Turck, F.D. Resource provisioning in fog computing: From theory to practice. Sensors 2019, 19, 1–25. [CrossRef] [PubMed]</li>
 <li>   Zheng, W.S.; Yen, L.H. Auto-scaling in Kubernetes-based Fog Computing platform. In International Computer Symposium; Springer: Singapore, 2018; pp. 338–345. [CrossRef]</li>
-<li>   Heapster. Available online: <a target="_blank" rel="noopener" href="https://github.com/kubernetes-retired/heapster">https://github.com/kubernetes-retired/heapster</a> (accessed on 23 June 2020).</li>
-<li>   InfluxDB. Available online: <a target="_blank" rel="noopener" href="https://www.influxdata.com/">https://www.influxdata.com</a> (accessed on 23 June 2020).</li>
-<li>   Grafana. Available online: <a target="_blank" rel="noopener" href="https://grafana.com/">https://grafana.com</a> (accessed on 23 June 2020).</li>
-<li>   Apache JMeter. Available online: <a target="_blank" rel="noopener" href="https://jmeter.apache.org/">https://jmeter.apache.org</a> (accessed on 23 June 2020).</li>
+<li>   Heapster. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/kubernetes-retired/heapster">https://github.com/kubernetes-retired/heapster</a> (accessed on 23 June 2020).</li>
+<li>   InfluxDB. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.influxdata.com/">https://www.influxdata.com</a> (accessed on 23 June 2020).</li>
+<li>   Grafana. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://grafana.com/">https://grafana.com</a> (accessed on 23 June 2020).</li>
+<li>   Apache JMeter. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://jmeter.apache.org/">https://jmeter.apache.org</a> (accessed on 23 June 2020).</li>
 <li>   Syu, Y.; Wang, C.M. modeling and forecasting http requests-based Cloud workloads using autoregressive artificial Neural Networks. In Proceedings of the 2018 3rd International Conference on Computer and Communication Systems (ICCCS), Nagoya, Japan, 27–30 April 2018; pp. 21–24. [CrossRef]</li>
 <li>   Dickel, H.; Podolskiy, V.; Gerndt, M.	Evaluation of autoscaling metrics for (stateful) IoT gateways.<br>In Proceedings of the 2019 IEEE 12th Conference on Service-Oriented Computing and Applications (SOCA), Kaohsiung, Taiwan, 18–21 November 2019; pp. 17–24. [CrossRef]</li>
-<li>   Prometheus Operator. Available online: <a target="_blank" rel="noopener" href="https://github.com/coreos/prometheus-operator">https://github.com/coreos/prometheus-operator</a> (accessed on 23 June 2020).</li>
-<li>   CAdvisor. Available online: <a target="_blank" rel="noopener" href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a> (accessed on 23 June 2020).</li>
-<li>   Prometheus Adapter. Available online: <a target="_blank" rel="noopener" href="https://github.com/DirectXMan12/k8s-prometheus-adapter">https://github.com/DirectXMan12/k8s-prometheus-adapter</a> (accessed on 23 June 2020).</li>
-<li>   Gatling. Available online: <a target="_blank" rel="noopener" href="https://gatling.io/open-source">https://gatling.io/open-source</a> (accessed on 23 June 2020).</li>
+<li>   Prometheus Operator. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/coreos/prometheus-operator">https://github.com/coreos/prometheus-operator</a> (accessed on 23 June 2020).</li>
+<li>   CAdvisor. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/google/cadvisor">https://github.com/google/cadvisor</a> (accessed on 23 June 2020).</li>
+<li>   Prometheus Adapter. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/DirectXMan12/k8s-prometheus-adapter">https://github.com/DirectXMan12/k8s-prometheus-adapter</a> (accessed on 23 June 2020).</li>
+<li>   Gatling. Available online: <a target="_blank" rel="external nofollow noopener noreferrer" href="https://gatling.io/open-source">https://gatling.io/open-source</a> (accessed on 23 June 2020).</li>
 </ol>
 
 </div>
@@ -2878,7 +2814,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     
-    <div class='footer'>
+    <div class="footer">
        <!-- 参考资料、相关资料等 -->
       
        <!-- 相关文章 -->
@@ -2893,12 +2829,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
 
 
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
       
         
           <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-22T04:56:27+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Apr 22, 2023</p>
   </a>
@@ -2921,11 +2857,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2933,11 +2865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2945,11 +2873,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2022/05/26/k8s-pod-scale/&title=用于弹性容器编排的Kubernetes中的水平Pod自动扩缩容 - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2980,15 +2904,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2022/07/24/Github-Action-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Github-Action-经验分享</p>
-          <p class='content'>Github Action介绍Github Action是github提供的一个CICD平台，可以为托管在其上的项目提供持续集成和持续交付的能力，可用于自动构建、测试和部署。Github Act...</p>
+        <a class="prev" href="/2022/07/24/Github-Action-%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">
+          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Github-Action-经验分享</p>
+          <p class="content">Github Action介绍Github Action是github提供的一个CICD平台，可以为托管在其上的项目提供持续集成和持续交付的能力，可用于自动构建、测试和部署。Github Act...</p>
         </a>
       
       
-        <a class='next' href='/2022/05/25/linux-core-module-load/'>
-          <p class='title'>限制内核模块自动加载<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>概述内核的模块机制允许构建具有广泛软硬件支持的内核，而无需将所有的代码实际加载到任何给定的运行系统中。在一个典型的分配器内核中，所有这些模块的可用性意味着非常多的功能是可用的，但是也可能存在许多...</p>
+        <a class="next" href="/2022/05/25/linux-core-module-load/">
+          <p class="title">限制内核模块自动加载<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">概述内核的模块机制允许构建具有广泛软硬件支持的内核，而无需将所有的代码实际加载到任何给定的运行系统中。在一个典型的分配器内核中，所有这些模块的可用性意味着非常多的功能是可用的，但是也可能存在许多...</p>
         </a>
       
     </div>
@@ -3006,7 +2930,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <span hidden>
       <meta itemprop="discussionUrl" content="/2022/05/26/k8s-pod-scale/index.html#comments">
     </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    <p ct><i class="fa-solid fa-comments"></i> 评论</p>
     
 
     <div id="layoutHelper-comments"></div>
@@ -3019,7 +2943,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 </div>
-<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+<aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
   
 
   
@@ -3038,12 +2962,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   <header>
     
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href="/blog/tags/"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
       <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
     </div>
   </section>
@@ -3059,16 +2983,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+  <section class="widget toc-wrapper desktop mobile " id="toc-div">
     
   <header>
     
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E4%BF%A1%E6%81%AF"><span class="toc-number">1.</span> <span class="toc-text">文章信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-number">2.</span> <span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">3.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Kubernetes-%E7%9A%84%E6%9E%B6%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text">Kubernetes 的架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kubernetes%E9%9B%86%E7%BE%A4"><span class="toc-number">5.1.</span> <span class="toc-text">Kubernetes集群</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%8A%82%E7%82%B9"><span class="toc-number">5.1.1.</span> <span class="toc-text">主节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E8%8A%82%E7%82%B9"><span class="toc-number">5.1.2.</span> <span class="toc-text">工作节点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Kubernetes-%E6%9C%8D%E5%8A%A1"><span class="toc-number">5.2.</span> <span class="toc-text">Kubernetes 服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%B4%E5%B9%B3%E8%87%AA%E5%8A%A8%E4%BC%B8%E7%BC%A9"><span class="toc-number">6.</span> <span class="toc-text">水平自动伸缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Kubernetes-%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87"><span class="toc-number">6.1.</span> <span class="toc-text">Kubernetes 资源指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Prometheus-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87"><span class="toc-number">6.2.</span> <span class="toc-text">Prometheus 自定义指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%B1%E7%BB%AA%E6%80%A7%E6%8E%A2%E5%A4%B4"><span class="toc-number">6.3.</span> <span class="toc-text">就绪性探头</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E8%AF%84%E4%BC%B0"><span class="toc-number">7.</span> <span class="toc-text">性能评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="toc-number">7.1.</span> <span class="toc-text">实验设置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">7.2.</span> <span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%BB%98%E8%AE%A4-Kubernetes-%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87%E7%9A%84-HPA-%E6%80%A7%E8%83%BD"><span class="toc-number">7.2.1.</span> <span class="toc-text">默认 Kubernetes 资源指标的 HPA 性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4-Kubernetes-%E8%B5%84%E6%BA%90%E6%8C%87%E6%A0%87%E5%92%8C%E4%B8%8D%E5%90%8C%E6%8A%93%E5%8F%96%E5%91%A8%E6%9C%9F%E7%9A%84-HPA-%E6%80%A7%E8%83%BD"><span class="toc-number">7.2.2.</span> <span class="toc-text">使用默认 Kubernetes 资源指标和不同抓取周期的 HPA 性能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HPA%E6%80%A7%E8%83%BD%E4%B8%8EPrometheus-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87"><span class="toc-number">7.2.3.</span> <span class="toc-text">HPA性能与Prometheus 自定义指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HPA%E6%80%A7%E8%83%BD%E4%B8%8E%E6%99%AE%E7%BD%97%E7%B1%B3%E4%BF%AE%E6%96%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87%E5%92%8C%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%93%E5%8F%96%E5%91%A8%E6%9C%9F"><span class="toc-number">7.2.4.</span> <span class="toc-text">HPA性能与普罗米修斯自定义指标和不同的抓取周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-worker-%E9%9B%86%E7%BE%A4%E5%92%8C-4-Worker-%E9%9B%86%E7%BE%A4%E4%B8%AD%E7%9A%84-HPA-%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="toc-number">7.2.5.</span> <span class="toc-text">2-worker 集群和 4 Worker 集群中的 HPA 性能比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E6%A0%87%E7%9A%84HPA%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="toc-number">7.2.6.</span> <span class="toc-text">不同自定义指标的HPA性能比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E5%92%8C%E6%B2%A1%E6%9C%89%E5%B0%B1%E7%BB%AA%E6%8E%A2%E5%A4%B4%E7%9A%84HPA%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="toc-number">7.2.7.</span> <span class="toc-text">有和没有就绪探头的HPA性能比较</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-number">7.3.</span> <span class="toc-text">讨论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-number">8.</span> <span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8"><span class="toc-number">9.</span> <span class="toc-text">引用</span></a></li></ol>
     </div>
   </section>
@@ -3150,7 +3074,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </div>
         
   
-  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+  <footer class="footer clearfix" itemscope itemtype="http://schema.org/WPFooter">
     <br><br>
     
       
@@ -3158,18 +3082,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
   
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.4'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='2774493345'
-      list-folded='true'>
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.4" loop="all" order="random" fixed="false" list-max-height="320px" server="netease" type="playlist" id="2774493345" list-folded="true">
     </meting-js>
   
 
@@ -3178,13 +3091,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <p>Uses <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
+        <p>Uses <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
 
       
     
       
-        <div class='copyright'>
-        <p><a target="_blank" rel="noopener" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
+        <div class="copyright">
+        <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
 
         </div>
       
@@ -3671,7 +3584,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
   let index = 0;
   let IntervalParallax = null;
 

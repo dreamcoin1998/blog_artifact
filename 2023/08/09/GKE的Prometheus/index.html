@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-    <head hexo-theme='https://github.com/volantis-x/hexo-theme-volantis/#5.7.7'>
+    <head hexo-theme="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">
   <meta name="generator" content="Hexo 5.4.2">
   <meta name="Volantis" content="5.7.7">
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://jerryblogs.com/2023/08/09/gke的prometheus/"/>
+  <link rel="canonical" href="http://jerryblogs.com/2023/08/09/gke的prometheus/">
   <!-- 渲染优化 -->
-    <meta http-equiv='x-dns-prefetch-control' content='on' />
-      <link rel='dns-prefetch' href='https://unpkg.com'>
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+      <link rel="dns-prefetch" href="https://unpkg.com">
       <link rel="preconnect" href="https://unpkg.com" crossorigin>
   <meta name="renderer" content="webkit">
   <meta name="force-rendering" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta http-equiv="Content-Security-Policy" content=" default-src 'self' https:; block-all-mixed-content; base-uri 'self' https:; form-action 'self' https:; worker-src 'self' https:; connect-src 'self' https: *; img-src 'self' data: https: *; media-src 'self' https: *; font-src 'self' data: https: *; frame-src 'self' https: *; manifest-src 'self' https: *; child-src https:; script-src 'self' https: 'unsafe-inline' *; style-src 'self' https: 'unsafe-inline' *; ">
-  <meta name="HandheldFriendly" content="True" >
+  <meta name="HandheldFriendly" content="True">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <!-- import head_begin begin -->
+      <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-32RBK2RSPE"></script>
       <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
 gtag('config', 'G-32RBK2RSPE'); </script>
@@ -30,7 +31,7 @@ gtag('config', 'G-32RBK2RSPE'); </script>
   <!-- Custom Files headBegin begin-->
   
   <!-- Custom Files headBegin end-->
-    <link rel="shortcut icon" type='image/x-icon' href="/images/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="preload" href="/css/style.css" as="style">
   <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://unpkg.com/volantis-static@0.0.1654736714924/media/fonts/Dosis/Dosis-Medium.ttf" as="font" type="font/ttf" crossorigin="anonymous">
@@ -1848,9 +1849,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 		}
 	</style>
     <div class="kill-noscript">
-        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br/>
-        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br/>
-        <a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
+        <span class="kill-t"><b>Sorry, your browser cannot access this site</b></span><br>
+        <span class="kill-c">This page requires browser support (enable) JavaScript</span><br>
+        <a target="_blank" rel="external nofollow noopener noreferrer" href="https://www.baidu.com/s?wd=启用JavaScript"><strong>Learn more ></strong></a>
     </div>
 </noscript>
 
@@ -1865,7 +1866,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1695378950214),
+    lastupdate: new Date(1695609961439),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2294,46 +2295,40 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
-  <div class='container'>
-  <div id='wrapper'>
-    <div class='nav-sub'>
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style="opacity: 0">
+  <div class="container">
+  <div id="wrapper">
+    <div class="nav-sub">
       <p class="title"></p>
-      <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
-        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self"  href="/" onclick="return false;" title="comment"></a></li>
+      <ul class="switcher nav-list-h m-phone" id="pjax-header-nav-list">
+        <li><a id="s-comment" class="fa-solid fa-comments fa-fw" target="_self" href="/" onclick="return false;" title="comment"></a></li>
         
-          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self"  href="/" onclick="return false;" title="toc"></a></li>
+          <li><a id="s-toc" class="s-toc fa-solid fa-list fa-fw" target="_self" href="/" onclick="return false;" title="toc"></a></li>
         
       </ul>
     </div>
 		<div class="nav-main">
       
         
-        <a class="title flat-box" target="_self" href='/'>
+        <a class="title flat-box" target="_self" href="/">
           
-            <img no-lazy class='logo' src='/images/favicon.png'/>
+            <img no-lazy class="logo" src="/images/favicon.png">
           
           
           
         </a>
       
 
-			<div class='menu navigation'>
-				<ul class='nav-list-h m-pc'>
+			<div class="menu navigation">
+				<ul class="nav-list-h m-pc">
           
           
           
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2343,14 +2338,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2360,14 +2349,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2377,14 +2360,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2394,12 +2371,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2408,13 +2381,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2426,12 +2399,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
           <i class="icon fa-solid fa-search fa-fw"></i>
-          <input type="text" class="input u-search-input" placeholder="Search..." />
+          <input type="text" class="input u-search-input" placeholder="Search...">
         </form>
       </div>
       
 
-			<ul class='switcher nav-list-h m-phone'>
+			<ul class="switcher nav-list-h m-phone">
 				
 					<li><a class="s-search fa-solid fa-search fa-fw" target="_self" href="/" onclick="return false;" title="search"></a></li>
 				
@@ -2442,14 +2415,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/archives/" title="博客"
-                  
-                  
-                  
-                    active-action="action-archives"
-                  >
-                  <i class='fa-duotone fa-book faa-tada fa-fw'></i>博客
+                <a class="menuitem flat-box faa-parent animated-hover" href="/archives/" title="博客" active-action="action-archives">
+                  <i class="fa-duotone fa-book faa-tada fa-fw"></i>博客
                 </a>
                 
               </li>
@@ -2459,14 +2426,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/categories/" title="分类"
-                  
-                  
-                  
-                    active-action="action-categories"
-                  >
-                  <i class='fa-solid fa-folder-open fa-fw'></i>分类
+                <a class="menuitem flat-box faa-parent animated-hover" href="/categories/" title="分类" active-action="action-categories">
+                  <i class="fa-solid fa-folder-open fa-fw"></i>分类
                 </a>
                 
               </li>
@@ -2476,14 +2437,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/tag/" title="标签"
-                  
-                  
-                  
-                    active-action="action-tag"
-                  >
-                  <i class='fa-solid fa-tags fa-fw'></i>标签
+                <a class="menuitem flat-box faa-parent animated-hover" href="/tag/" title="标签" active-action="action-tag">
+                  <i class="fa-solid fa-tags fa-fw"></i>标签
                 </a>
                 
               </li>
@@ -2493,14 +2448,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                href="/about/" title="关于"
-                  
-                  
-                  
-                    active-action="action-about"
-                  >
-                  <i class='fa-solid fa-info-circle fa-fw'></i>关于
+                <a class="menuitem flat-box faa-parent animated-hover" href="/about/" title="关于" active-action="action-about">
+                  <i class="fa-solid fa-info-circle fa-fw"></i>关于
                 </a>
                 
               </li>
@@ -2510,12 +2459,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover"
-                 href="/" onclick="return false;" title="更多"
-                  
-                  
-                  >
-                  <i class='fa-duotone fa-ellipsis-v fa-fw'></i>更多
+                <a class="menuitem flat-box faa-parent animated-hover" href="/" onclick="return false;" title="更多">
+                  <i class="fa-duotone fa-ellipsis-v fa-fw"></i>更多
                 </a>
                 
                   <ul class="list-v">
@@ -2524,13 +2469,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box header toggle-mode-btn">
-                  <i class='fa-solid fa-moon fa-fw'></i>暗黑模式
+                  <i class="fa-solid fa-moon fa-fw"></i>暗黑模式
                 </a>
-              <li>
+              </li><li>
             
           
                     
-                  </ul>
+                  </li></ul>
                 
               </li>
             
@@ -2553,12 +2498,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper post search' style="display: ;">
+      <div id="half" class="cover-wrapper post search" style="display: ;">
         
   <div id="parallax-window"></div>
 
-<div class='cover-body'>
-  <div class='top'>
+<div class="cover-body">
+  <div class="top">
     
     
       <p class="title">Jerry Gao</p>
@@ -2567,37 +2512,28 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <p class="subtitle">一个集博客和工具资讯分享于一体的平台</p>
     
   </div>
-  <div class='bottom'>
+  <div class="bottom">
     
       <div class="m_search">
         <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="搜一下" />
+          <input type="text" class="input u-search-input" placeholder="搜一下">
           <i class="icon fa-solid fa-search fa-fw"></i>
         </form>
       </div>
     
-    <div class='menu navigation'>
-      <div class='list-h'>
+    <div class="menu navigation">
+      <div class="list-h">
         
           
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
+            <a href="/archives/" active-action="action-archives">
               <p>博客</p>
             </a>
           
-            <a href="/categories/"
-              
-              
-              active-action="action-categories">
+            <a href="/categories/" active-action="action-categories">
               <p>分类</p>
             </a>
           
-            <a href="/about/"
-              
-              
-              active-action="action-about">
+            <a href="/about/" active-action="action-about">
               <p>关于</p>
             </a>
           
@@ -2616,8 +2552,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-<div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+<div id="l_main" class>
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://jerryblogs.com/2023/08/09/GKE的Prometheus/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
@@ -2641,12 +2577,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <h1 class="title" itemprop="name headline">
         GKE的Prometheus
       </h1>
-      <div class='new-meta-box'>
+      <div class="new-meta-box">
         
           
             
-<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <a itemprop="url" class='author' target="_blank" href="https://github.com/dreamcoin1998/" rel="nofollow noopener">
+<div class="new-meta-item author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class="author" target="_blank" href="https://github.com/dreamcoin1998/" rel="external nofollow noopener noreferrer">
     <img itemprop="image" src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
     <p itemprop="name">Jerry Gao</p>
   </a>
@@ -2656,7 +2592,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             
-  <div class='new-meta-item category'>
+  <div class="new-meta-item category">
     <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
     <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/">运维开发</a>
     
@@ -2675,7 +2611,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
             <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-08-09T14:51:52+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
     <p>发布于：Aug 9, 2023</p>
   </a>
@@ -2705,7 +2641,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h3><p>Prometheus是一个云原生计算基金会项目，是一个系统和服务监控系统。它以给定的时间间隔从配置的目标收集指标，评估规则表达式，显示结果，并可以在观察到指定条件时触发警报。Prometheus是Kubeernetes的事实标准。Prometheus仓库地址：<a target="_blank" rel="noopener" href="https://github.com/prometheus/prometheus%E3%80%82">https://github.com/prometheus/prometheus。</a></p>
+    <div class="story post-story"><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="Prometheus"><a href="#Prometheus" class="headerlink" title="Prometheus"></a>Prometheus</h3><p>Prometheus是一个云原生计算基金会项目，是一个系统和服务监控系统。它以给定的时间间隔从配置的目标收集指标，评估规则表达式，显示结果，并可以在观察到指定条件时触发警报。Prometheus是Kubeernetes的事实标准。Prometheus仓库地址：<a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/prometheus/prometheus%E3%80%82">https://github.com/prometheus/prometheus。</a></p>
 <p><img src="https://github.com/prometheus/prometheus/raw/main/documentation/images/architecture.svg" class="lazyload" data-srcset="https://github.com/prometheus/prometheus/raw/main/documentation/images/architecture.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Architecture overview 体系结构概述"></p>
 <p>Prometheus包含以下组件：</p>
 <ul>
@@ -2718,7 +2654,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </li>
 <li><strong>Exporters</strong>：这些是外部进程，用于将现有的第三方服务和应用程序指标转换为Prometheus可以抓取的格式。例如，node_exporter用于提取操作系统级指标。</li>
 <li><strong>Pushgateway</strong>：用于短暂的批处理作业。由于 Prometheus 本质上是一个抓取模型，因此 Pushgateway 允许短暂的任务推送指标，以便 Prometheus 可以随后抓取<ul>
-<li><a target="_blank" rel="noopener" href="https://github.com/prometheus/pushgateway">Prometheus Pushgateway仓库</a>。允许临时和批处理作业向 Prometheus 公开其指标，这些类型的作业可能存在的时间不够长，无法抓取，因此他们可以将其指标推送到 Pushgateway，然后，Pushgateway将这些指标公开给Prometheus。</li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/prometheus/pushgateway">Prometheus Pushgateway仓库</a>。允许临时和批处理作业向 Prometheus 公开其指标，这些类型的作业可能存在的时间不够长，无法抓取，因此他们可以将其指标推送到 Pushgateway，然后，Pushgateway将这些指标公开给Prometheus。</li>
 </ul>
 </li>
 <li><strong>AlertManager</strong>：管理警报。当 Prometheus 检测到某些条件满足预先配置的规则时，它会向 AlertManager 发送警报，然后 AlertManager 负责通知或采取其他操作。</li>
@@ -2732,7 +2668,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <li><strong>数据存储由 Monarch 处理</strong>，它会将所有 Prometheus 数据存储 24 个月，不产生额外费用。</li>
 </ul>
 <p>Grafana 连接到全局 Monarch 数据存储区，而不是连接到各个 Prometheus 服务器。</p>
-</div><div class="story post-story"><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="代管式搜集器"><a href="#代管式搜集器" class="headerlink" title="代管式搜集器"></a>代管式搜集器</h3><p>以下默认已经启用了 <a target="_blank" rel="noopener" href="https://console.cloud.google.com/apis/dashboard?hl=zh-cn">Cloud Monitoring API</a> 的 <a target="_blank" rel="noopener" href="https://console.cloud.google.com/projectcreate?hl=zh-cn">Google Cloud 项目</a>，<a target="_blank" rel="noopener" href="https://cloud.google.com/kubernetes-engine/docs/deploy-app-cluster?hl=zh-cn">创建了GKE集群</a>并在本地设置好了<a target="_blank" rel="noopener" href="https://cloud.google.com/sdk/docs/components?hl=zh-cn">gcloud和kubectl工具</a>。</p>
+</div><div class="story post-story"><h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><h3 id="代管式搜集器"><a href="#代管式搜集器" class="headerlink" title="代管式搜集器"></a>代管式搜集器</h3><p>以下默认已经启用了 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://console.cloud.google.com/apis/dashboard?hl=zh-cn">Cloud Monitoring API</a> 的 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://console.cloud.google.com/projectcreate?hl=zh-cn">Google Cloud 项目</a>，<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/kubernetes-engine/docs/deploy-app-cluster?hl=zh-cn">创建了GKE集群</a>并在本地设置好了<a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/sdk/docs/components?hl=zh-cn">gcloud和kubectl工具</a>。</p>
 <h4 id="启用代管式搜集器"><a href="#启用代管式搜集器" class="headerlink" title="启用代管式搜集器"></a>启用代管式搜集器</h4><p>启用代管式收集会在集群中安装以下组件：</p>
 <ul>
 <li>gmp-operator Deployment，用于为 Managed Service for Prometheus 部署 Kubernetes Operator。</li>
@@ -2749,7 +2685,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <h5 id="启用目标状态"><a href="#启用目标状态" class="headerlink" title="启用目标状态"></a>启用目标状态</h5><p>启用目标状态可以检查资源的目标状态，通过如下启动：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">monitoring.googleapis.com/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">OperatorConfig</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">    <span class="attr">namespace:</span> <span class="string">gmp-public</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">config</span></span><br><span class="line"><span class="attr">features:</span></span><br><span class="line">    <span class="attr">targetStatus:</span></span><br><span class="line">    <span class="attr">enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="查询应用注入的指标"><a href="#查询应用注入的指标" class="headerlink" title="查询应用注入的指标"></a>查询应用注入的指标</h4><p>参见 <a target="_blank" rel="noopener" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#gmp-in-monitoring">https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#gmp-in-monitoring</a></p>
+<h4 id="查询应用注入的指标"><a href="#查询应用注入的指标" class="headerlink" title="查询应用注入的指标"></a>查询应用注入的指标</h4><p>参见 <a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#gmp-in-monitoring">https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#gmp-in-monitoring</a></p>
 <h3 id="配置Prometheus和Grafana"><a href="#配置Prometheus和Grafana" class="headerlink" title="配置Prometheus和Grafana"></a>配置Prometheus和Grafana</h3><h4 id="部署Prometheus前端页面"><a href="#部署Prometheus前端页面" class="headerlink" title="部署Prometheus前端页面"></a>部署Prometheus前端页面</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">apps/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Deployment</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">frontend</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">replicas:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">matchLabels:</span></span><br><span class="line">      <span class="attr">app:</span> <span class="string">frontend</span></span><br><span class="line">  <span class="attr">template:</span></span><br><span class="line">    <span class="attr">metadata:</span></span><br><span class="line">      <span class="attr">labels:</span></span><br><span class="line">        <span class="attr">app:</span> <span class="string">frontend</span></span><br><span class="line">    <span class="attr">spec:</span></span><br><span class="line">      <span class="attr">automountServiceAccountToken:</span> <span class="literal">true</span></span><br><span class="line">      <span class="attr">affinity:</span></span><br><span class="line">        <span class="attr">nodeAffinity:</span></span><br><span class="line">          <span class="attr">requiredDuringSchedulingIgnoredDuringExecution:</span></span><br><span class="line">            <span class="attr">nodeSelectorTerms:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="attr">matchExpressions:</span></span><br><span class="line">              <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">kubernetes.io/arch</span></span><br><span class="line">                <span class="attr">operator:</span> <span class="string">In</span></span><br><span class="line">                <span class="attr">values:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">arm64</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">amd64</span></span><br><span class="line">              <span class="bullet">-</span> <span class="attr">key:</span> <span class="string">kubernetes.io/os</span></span><br><span class="line">                <span class="attr">operator:</span> <span class="string">In</span></span><br><span class="line">                <span class="attr">values:</span></span><br><span class="line">                <span class="bullet">-</span> <span class="string">linux</span></span><br><span class="line">      <span class="attr">containers:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">frontend</span></span><br><span class="line">        <span class="attr">env:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">AUTH_USERNAME</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">AUTH_USERNAME</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">AUTH_PASSWORD</span></span><br><span class="line">          <span class="attr">value:</span> <span class="string">AUTH_PASSWORD</span></span><br><span class="line">        <span class="attr">image:</span> <span class="string">gke.gcr.io/prometheus-engine/frontend:v0.7.0-gke.0</span></span><br><span class="line">        <span class="attr">args:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&quot;--web.listen-address=:9090&quot;</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">&quot;--query.project-id=$PROJECT_ID&quot;</span></span><br><span class="line">        <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web</span></span><br><span class="line">          <span class="attr">containerPort:</span> <span class="number">9090</span></span><br><span class="line">        <span class="attr">readinessProbe:</span></span><br><span class="line">          <span class="attr">httpGet:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">/-/ready</span></span><br><span class="line">            <span class="attr">port:</span> <span class="string">web</span></span><br><span class="line">        <span class="attr">securityContext:</span></span><br><span class="line">          <span class="attr">allowPrivilegeEscalation:</span> <span class="literal">false</span></span><br><span class="line">          <span class="attr">capabilities:</span></span><br><span class="line">            <span class="attr">drop:</span></span><br><span class="line">            <span class="bullet">-</span> <span class="string">all</span></span><br><span class="line">          <span class="attr">privileged:</span> <span class="literal">false</span></span><br><span class="line">          <span class="attr">runAsGroup:</span> <span class="number">1000</span></span><br><span class="line">          <span class="attr">runAsNonRoot:</span> <span class="literal">true</span></span><br><span class="line">          <span class="attr">runAsUser:</span> <span class="number">1000</span></span><br><span class="line">        <span class="attr">livenessProbe:</span></span><br><span class="line">          <span class="attr">httpGet:</span></span><br><span class="line">            <span class="attr">path:</span> <span class="string">/-/healthy</span></span><br><span class="line">            <span class="attr">port:</span> <span class="string">web</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">Service</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">frontend</span></span><br><span class="line"><span class="attr">spec:</span></span><br><span class="line">  <span class="attr">clusterIP:</span> <span class="string">None</span></span><br><span class="line">  <span class="attr">selector:</span></span><br><span class="line">    <span class="attr">app:</span> <span class="string">frontend</span></span><br><span class="line">  <span class="attr">ports:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">web</span></span><br><span class="line">    <span class="attr">port:</span> <span class="number">9090</span></span><br></pre></td></tr></table></figure>
 
 <p>修改上述AUTH_USERNAME，AUTH_PASSWORD，然后将$PROJECT_ID修改为字面量，如果不知道可以通过<code>gcloud projects list</code>查看。</p>
@@ -2757,9 +2693,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <p>然后可以在本地访问<code>http://localhost:3000</code>，即可看到Grafana页面。</p>
 </div><div class="story post-story"><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
-<li><a target="_blank" rel="noopener" href="https://cloud.google.com/stackdriver/docs/managed-prometheus?hl=zh-cn">Google Cloud Managed Service for Prometheus</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/setup-managed?hl=zh-cn">代管式收集使用入门</a></li>
-<li><a target="_blank" rel="noopener" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#ui-grafana">配置查询页面</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/stackdriver/docs/managed-prometheus?hl=zh-cn">Google Cloud Managed Service for Prometheus</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/setup-managed?hl=zh-cn">代管式收集使用入门</a></li>
+<li><a target="_blank" rel="external nofollow noopener noreferrer" href="https://cloud.google.com/stackdriver/docs/managed-prometheus/query?hl=zh-cn#ui-grafana">配置查询页面</a></li>
 </ul>
 
 </div>
@@ -2767,7 +2703,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
   
     
-    <div class='footer'>
+    <div class="footer">
        <!-- 参考资料、相关资料等 -->
       
        <!-- 相关文章 -->
@@ -2782,12 +2718,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
 
 
-  <div class='article-meta' id="bottom">
-    <div class='new-meta-box'>
+  <div class="article-meta" id="bottom">
+    <div class="new-meta-box">
       
         
           <div class="new-meta-item date" itemprop="dateModified" datetime="2023-08-11T11:24:30+08:00">
-  <a class='notlink'>
+  <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>本页文档最后更新于：Aug 11, 2023</p>
   </a>
@@ -2810,11 +2746,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class="-mob-share-list share-body">
     
       
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qq" title rel="external nofollow noopener noreferrer" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2822,11 +2754,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-qzone" title rel="external nofollow noopener noreferrer" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2834,11 +2762,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary="
-          
-          >
+        <a class="-mob-share-weibo" title rel="external nofollow noopener noreferrer" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jerryblogs.com/2023/08/09/GKE%E7%9A%84Prometheus/&title=GKE的Prometheus - Jerry的小站&summary=">
           
             <img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
           
@@ -2869,15 +2793,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
-        <a class='prev' href='/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/'>
-          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>内存资源的服务质量（QoS）</p>
-          <p class='content'>什么是QoS（服务质量）？QoS，Quality of service，即服务质量。它是对服务整体性能的描述或测量。特别是网络用户所看到的性能。为了定量测量服务质量，通常会考虑网络服务的以下几个...</p>
+        <a class="prev" href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/">
+          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>内存资源的服务质量（QoS）</p>
+          <p class="content">什么是QoS（服务质量）？QoS，Quality of service，即服务质量。它是对服务整体性能的描述或测量。特别是网络用户所看到的性能。为了定量测量服务质量，通常会考虑网络服务的以下几个...</p>
         </a>
       
       
-        <a class='next' href='/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/'>
-          <p class='title'>docker-checkpoint-容器运行时快照<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>介绍checkpoint&#x2F;restore和restore与CRIUcheckpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件...</p>
+        <a class="next" href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/">
+          <p class="title">docker-checkpoint-容器运行时快照<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">介绍checkpoint&#x2F;restore和restore与CRIUcheckpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件...</p>
         </a>
       
     </div>
@@ -2895,7 +2819,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <span hidden>
       <meta itemprop="discussionUrl" content="/2023/08/09/GKE%E7%9A%84Prometheus/index.html#comments">
     </span>
-    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    <p ct><i class="fa-solid fa-comments"></i> 评论</p>
     
 
     <div id="layoutHelper-comments"></div>
@@ -2908,7 +2832,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 </div>
-<aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
+<aside id="l_side" itemscope itemtype="http://schema.org/WPSideBar">
   
 
   
@@ -2927,12 +2851,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
   <header>
     
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+      <a href="/blog/tags/"><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
       <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
     </div>
   </section>
@@ -2948,16 +2872,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+  <section class="widget toc-wrapper desktop mobile " id="toc-div">
     
   <header>
     
-      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class="name">本文目录</span>
     
   </header>
 
 
-    <div class='content'>
+    <div class="content">
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Prometheus"><span class="toc-number">1.1.</span> <span class="toc-text">Prometheus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Google-Cloud-Managed-Service-for-Prometheus"><span class="toc-number">1.2.</span> <span class="toc-text">Google Cloud Managed Service for Prometheus</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-number">2.</span> <span class="toc-text">部署</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%AE%A1%E5%BC%8F%E6%90%9C%E9%9B%86%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">代管式搜集器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E4%BB%A3%E7%AE%A1%E5%BC%8F%E6%90%9C%E9%9B%86%E5%99%A8"><span class="toc-number">2.1.1.</span> <span class="toc-text">启用代管式搜集器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEPodMonitoring%E8%B5%84%E6%BA%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">配置PodMonitoring资源</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%90%AF%E7%94%A8%E7%9B%AE%E6%A0%87%E7%8A%B6%E6%80%81"><span class="toc-number">2.1.2.1.</span> <span class="toc-text">启用目标状态</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%BA%94%E7%94%A8%E6%B3%A8%E5%85%A5%E7%9A%84%E6%8C%87%E6%A0%87"><span class="toc-number">2.1.3.</span> <span class="toc-text">查询应用注入的指标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEPrometheus%E5%92%8CGrafana"><span class="toc-number">2.2.</span> <span class="toc-text">配置Prometheus和Grafana</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2Prometheus%E5%89%8D%E7%AB%AF%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.2.1.</span> <span class="toc-text">部署Prometheus前端页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Grafana%E9%A1%B5%E9%9D%A2"><span class="toc-number">2.2.2.</span> <span class="toc-text">Grafana页面</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3"><span class="toc-number">3.</span> <span class="toc-text">参考文档</span></a></li></ol>
     </div>
   </section>
@@ -3039,7 +2963,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         </div>
         
   
-  <footer class="footer clearfix"  itemscope itemtype="http://schema.org/WPFooter">
+  <footer class="footer clearfix" itemscope itemtype="http://schema.org/WPFooter">
     <br><br>
     
       
@@ -3047,18 +2971,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
 
   
-    <meting-js
-      theme='#1BCDFC'
-      autoplay='false'
-      volume='0.4'
-      loop='all'
-      order='random'
-      fixed='false'
-      list-max-height='320px'
-      server='netease'
-      type='playlist'
-      id='2774493345'
-      list-folded='true'>
+    <meting-js theme="#1BCDFC" autoplay="false" volume="0.4" loop="all" order="random" fixed="false" list-max-height="320px" server="netease" type="playlist" id="2774493345" list-folded="true">
     </meting-js>
   
 
@@ -3067,13 +2980,13 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <p>Uses <a target="_blank" rel="noopener" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="noopener" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
+        <p>Uses <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/hexo-theme-volantis/#5.7.7">Volantis</a> as theme. You can find <a href="GitHub">source</a> in <a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/volantis-x/volantis-docs">https://github.com/volantis-x/volantis-docs</a>.</p>
 
       
     
       
-        <div class='copyright'>
-        <p><a target="_blank" rel="noopener" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
+        <div class="copyright">
+        <p><a target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/">Copyright © Since 2023 Jerry Gao</a></p>
 
         </div>
       
@@ -3560,7 +3473,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp"];
   let index = 0;
   let IntervalParallax = null;
 
