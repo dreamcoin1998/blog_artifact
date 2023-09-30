@@ -3,22 +3,22 @@
 
 
     <sitemap>
-        <loc>http://jerryblogs.com/post-sitemap.xml</loc>
+        <loc>https://jerryblogs.com/post-sitemap.xml</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://jerryblogs.com/page-sitemap.xml</loc>
+        <loc>https://jerryblogs.com/page-sitemap.xml</loc>
         <lastmod>2023-07-05T08:46:22.169Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://jerryblogs.com/category-sitemap.xml</loc>
+        <loc>https://jerryblogs.com/category-sitemap.xml</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
     </sitemap>
 
     <sitemap>
-        <loc>http://jerryblogs.com/tag-sitemap.xml</loc>
+        <loc>https://jerryblogs.com/tag-sitemap.xml</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
     </sitemap>
 
