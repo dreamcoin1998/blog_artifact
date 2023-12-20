@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://jerryblogs.com/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/</loc>
+        <lastmod>2023-12-20T06:27:24.435Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jerryblogs.com/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/</loc>
+        <lastmod>2023-12-20T06:09:09.601Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://jerryblogs.com/2023/12/19/activemq%E6%90%AD%E5%BB%BA/</loc>
+        <lastmod>2023-12-19T10:19:55.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://jerryblogs.com/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
         <changefreq>weekly</changefreq>

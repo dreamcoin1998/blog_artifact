@@ -9,6 +9,13 @@
 
 
     <url>
+        <loc>https://jerryblogs.com/categories/%25E6%2595%25B0%25E6%258D%25AE%25E5%25BA%2593/</loc>
+        <lastmod>2023-12-20T06:27:24.435Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://jerryblogs.com/categories/Kubernetes/%25E6%25BA%2590%25E7%25A0%2581%25E5%2588%2586%25E6%259E%2590/</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
         <changefreq>weekly</changefreq>
