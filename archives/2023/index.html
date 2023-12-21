@@ -1865,7 +1865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703053812198),
+    lastupdate: new Date(1703158449210),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2585,7 +2585,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/达梦数据库搭建/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/postgresql数据库-SSL搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2603,21 +2603,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
-        达梦数据库搭建
+      <a href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93-SSL%E6%90%AD%E5%BB%BA/" itemprop="url">
+        postgresql数据库+SSL搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        选择镜像1docker pull dm8_single:v8.1.2.128_ent_x86_64_ctm_pack4
+        Postgresql是一个功能强大的开源对象关系数据库管理系统(ORDBMS)，它是以加州大学计算机系开发的POSTGRES，4.2版本为基础的对象关系数据库管理系统。POSTGRES的许多领先概念只是在商业数据库中实现，而PostgreSQL是一个真正的开源数据库，它的源代码是开放的，任何人都可以免费使用。
+特性：
 
-Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为例
-
-创建PVC
-
-12345678910111213kind: PersistentVolumeClaimapiVersion: v1metadata:  na...
+复杂的查询
+支持多版本并发控制
+支持外键、触发器、视图、事务
+支持函数和...
       
     
   </div>
@@ -2633,7 +2633,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-12-20T14:08:24+08:00">2023-12-20</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T18:50:28+08:00">2023-12-21</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
@@ -2646,7 +2646,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
       </div>
       
         <div>
-          <a class="readmore" href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93-SSL%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2662,7 +2662,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/19/activemq搭建/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/postgresql数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2680,15 +2680,21 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/" itemprop="url">
-        activemq搭建
+      <a href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        postgresql数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        Apache ActiveMQ® 是最流行的开源、多协议、基于 Java 的消息代理。它支持行业标准协议，因此用户可以从多种语言和平台的客户端选择中获益。可从 JavaScript、C、C++、Python、.Net 等语言编写的客户端进行连接。使用无处不在的 AMQP 协议集成多平台应用程序。通过 webockets 使用 STOMP 在网络应用程序之间交换信息。使用 MQTT 管理物联网...
+        Postgresql是一个功能强大的开源对象关系数据库管理系统(ORDBMS)，它是以加州大学计算机系开发的POSTGRES，4.2版本为基础的对象关系数据库管理系统。POSTGRES的许多领先概念只是在商业数据库中实现，而PostgreSQL是一个真正的开源数据库，它的源代码是开放的，任何人都可以免费使用。
+特性：
+
+复杂的查询
+支持多版本并发控制
+支持外键、触发器、视图、事务
+支持函数和...
       
     
   </div>
@@ -2704,7 +2710,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-12-19T20:48:12+08:00">2023-12-19</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T18:42:38+08:00">2023-12-21</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
@@ -2717,7 +2723,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
       </div>
       
         <div>
-          <a class="readmore" href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2733,7 +2739,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/19/clickhouse搭建/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/mssql数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2751,15 +2757,16 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/" itemprop="url">
-        clickhouse搭建
+      <a href="/2023/12/21/mssql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        mssql数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        Clickhouse简介ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。它是一个列式存储数据库，即将来自同一列的数据存储在一起。这与传统的行式存储数据库不同，后者将来自同一行的数据存储在一起。列式存储数据库的优点是可以显著提高特定类型的查询性能，例如，只选择特定列的查询，或者只选择特定列的聚合函数。列式存储数据库的缺点是更新数据的速度较慢，因为数据通常以追...
+        Mssql 是微软的数据库，它的安装和使用都比较简单，但是在安装的时候需要注意一些问题，否则会出现一些问题。
+Kubernetes 部署123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869...
       
     
   </div>
@@ -2775,7 +2782,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-12-19T18:20:36+08:00">2023-12-19</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T18:23:58+08:00">2023-12-21</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
@@ -2788,7 +2795,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
       </div>
       
         <div>
-          <a class="readmore" href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/mssql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2804,7 +2811,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/09/03/内存资源的服务质量/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/mariadb数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2822,15 +2829,16 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/" itemprop="url">
-        内存资源的服务质量（QoS）
+      <a href="/2023/12/21/mariadb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        mariadb数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        什么是QoS（服务质量）？QoS，Quality of service，即服务质量。它是对服务整体性能的描述或测量。特别是网络用户所看到的性能。为了定量测量服务质量，通常会考虑网络服务的以下几个方面，例如丢包、比特率、吞吐量、传输延迟、可用性、抖动等。在计算机网络和其他分组交换电信网络领域，服务质量是指流量优先级和资源预留控制机制，而不是所实现的服务质量。服务质量是指为不同的应用程序、用户或...
+        MariaDB数据库是MySQL数据库的一个分支，主要由开源社区在维护，采用GPL授权许可 MariaDB数据库是MySQL数据库的一个分支，主要由开源社区在维护，采用GPL授权许可。
+Kubernetes部署12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505...
       
     
   </div>
@@ -2846,20 +2854,20 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-09-03T19:57:52+08:00">2023-09-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T18:04:32+08:00">2023-12-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/mariadb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2875,7 +2883,7 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/08/09/GKE的Prometheus/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/kafka数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2893,17 +2901,19 @@ Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为�
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/08/09/GKE%E7%9A%84Prometheus/" itemprop="url">
-        GKE的Prometheus
+      <a href="/2023/12/21/kafka%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        kafka数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        概述PrometheusPrometheus是一个云原生计算基金会项目，是一个系统和服务监控系统。它以给定的时间间隔从配置的目标收集指标，评估规则表达式，显示结果，并可以在观察到指定条件时触发警报。Prometheus是Kubeernetes的事实标准。Prometheus仓库地址：https://github.com/prometheus/prometheus。
+        Kafka 不是一个传统的关系型数据库，而是一个分布式的流式事件流平台。它由Apache软件基金会开发，用于构建实时数据流应用程序和数据管道。以下是 Kafka 的一些主要特性和概念：
 
-Prometheus包含...
+发布-订阅模型： Kafka采用了发布-订阅模型，其中数据生产者（发布者）将消息发送到主题（Topic），而数据消费者（订阅者）从主题中读取消息。
+
+分布式系统： Kafka是一个分布式系统，可以横向扩展以...
       
     
   </div>
@@ -2919,24 +2929,20 @@ Prometheus包含...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-08-09T14:51:52+08:00">2023-08-09</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T15:26:56+08:00">2023-12-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/">运维开发</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">运维开发</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/08/09/GKE%E7%9A%84Prometheus/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/kafka%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2952,7 +2958,7 @@ Prometheus包含...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/07/04/docker-checkpoint-容器运行时快照/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/mysql数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2970,15 +2976,16 @@ Prometheus包含...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/" itemprop="url">
-        docker-checkpoint-容器运行时快照
+      <a href="/2023/12/21/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        mysql数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        介绍checkpoint&#x2F;restore和restore与CRIUcheckpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件集合，使你可以从checkpoint恢复容器的状态。checkpoint基于CRIU实现，CRIU是一个Linux应用程序，在用户空间将一个进程树冻结并将其状态保存到磁盘，使得容器或应用程序可以实时迁...
+        Mysql是一个关系型数据库管理系统，由瑞典MySQL AB公司开发，目前属于Oracle公司。MySQL是最流行的关系型数据库管理系统之一，在WEB应用方面MySQL是最好的RDBMS(Relational Database Management System，关系数据库管理系统)应用软件之一。
+构建镜像123456789FROM docker.io/bitnami/mysql:5.7US...
       
     
   </div>
@@ -2994,20 +3001,20 @@ Prometheus包含...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-07-04T19:24:44+08:00">2023-07-04</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T12:14:49+08:00">2023-12-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Docker/">Docker</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Docker/" itemprop="url"><span itemprop="name">Docker</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3023,7 +3030,7 @@ Prometheus包含...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/30/pflag-flag库的直接替代/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/21/hive数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3041,16 +3048,17 @@ Prometheus包含...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/" itemprop="url">
-        pflag-flag库的直接替代
+      <a href="/2023/12/21/hive%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        hive数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        为什么要使用pflagGolang是一门性能十分强大语言。当我们在用Golang开发一个命令行程序的时候，我们经常会用到官方的flag库，但是官方的flag库使用并编译运行过后，你会发现它与我们经常使用的POSIX&#x2F;GNU风格的命令行程序有所不同。比如说：
-12345678&gt;&gt;&gt; go run artifact.go -hUsage of /var/folders...
+        Hive是一个基于Hadoop的数据仓库工具，可以将结构化的数据文件映射为一张数据库表，并提供完整的SQL查询功能，可以将SQL语句转换为MapReduce任务进行运行。
+构建镜像目录结构
+1234567891011121314151617.├── Dockerfile├── bin│   └── entrypoint.sh├── conf│   ├── hadoop│   │   ├── ...
       
     
   </div>
@@ -3066,20 +3074,20 @@ Prometheus包含...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-06-30T17:18:07+08:00">2023-06-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-21T11:21:23+08:00">2023-12-21</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Golang/">Golang</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/" itemprop="url">
+          <a class="readmore" href="/2023/12/21/hive%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3095,7 +3103,7 @@ Prometheus包含...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/30/Kubernetes中的Kubelet组件/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/gbase8s数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3113,18 +3121,18 @@ Prometheus包含...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/" itemprop="url">
-        Kubernetes中的Kubelet组件
+      <a href="/2023/12/20/gbase8s%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        gbase8s数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        概述Kubelet是Kubernetes集群中的核心节点，运行在每一个节点之上，负责管理节点的容器运行时。
+        GBase 8s数据库是一款基于informix研发的数据库，保留了大部分原生的语法、特性及字段类型，并且引入了大量oracle的优势特性。
+镜像选择1docker pull liaosnet/gbase8s:3.3.0_2_amd64
 
-节点注册：在启动时将节点注册到控制平面，以便主控制平面知道该节点的存在
-容器启动与监控（Container Startup and Monitoring）：kubelet负责启动和监控在节点上运行的容器。它根据从主控制平面接收到的Pod定义，创建并管理相应的容器。它监视容器的运行状态...
+Kubernetes 部署1234567891011121314151617181920212223242526272829303132333435363...
       
     
   </div>
@@ -3140,24 +3148,20 @@ Prometheus包含...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-06-30T02:34:14+08:00">2023-06-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-20T18:47:59+08:00">2023-12-20</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/" itemprop="url">
+          <a class="readmore" href="/2023/12/20/gbase8s%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3173,7 +3177,7 @@ Prometheus包含...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/29/cobra-一个强大的cli构建工具/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/gbase8a数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3191,18 +3195,19 @@ Prometheus包含...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" itemprop="url">
-        cobra-一个强大的cli构建工具
+      <a href="/2023/12/20/gbase8a%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        gbase8a数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        概述Cobra用于构建一个强大的现代cli应用程序的工具，它被Kubernetes、github cli、Hugo等著名的项目所使用。
-作为一个使用广泛的工具，Cobra支持智能建议（app srver… did you mean app server?），自动生成shell&#x2F;bash&#x2F;sh等，自动生成帮助信息…可以说是一个非常强大的工具。
-该项目的项目地址如下：
-htt...
+        GBase 8a数据库是一款基于Mysql数据库研发的分析型数据库，对Mysql的语法、特性、字段类型基本兼容。
+官网地址
+选择镜像1docker pull shihd/gbase8a:1.0
+
+Kubernetes 部署12345678910111213141516171819202122232425262728293031323334353637383940414243444546474...
       
     
   </div>
@@ -3218,20 +3223,20 @@ htt...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-06-29T17:24:50+08:00">2023-06-29</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-20T18:26:58+08:00">2023-12-20</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Golang/">Golang</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" itemprop="url">
+          <a class="readmore" href="/2023/12/20/gbase8a%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3247,7 +3252,7 @@ htt...
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/26/Chatgpt-go/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/gaussdb数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -3265,18 +3270,19 @@ htt...
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/06/26/Chatgpt-go/" itemprop="url">
-        一个简单的chatgpt-go库，支持自定义角色和保留上下文
+      <a href="/2023/12/20/gaussdb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        gaussdb数据库搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        发现现在chatgpt go库比较少，几个月前自己简单手撸了一个，可以比较方便的使用和集成到您的项目当中。
-项目地址
-可以比较方便的集成到您的项目当中，使用方式比较简单：
-12345678910111213var MongkeyKing = ChatMode&#123;    ModeName: &quot;孙悟空&quot;,    PreMessages: []Message&#123;...
+        GaussDB是华为公司自主研发的分布式数据库，是一款高性能、高可靠、高可用的分布式数据库产品，支持PB级数据存储，支持在线扩展，支持多种数据类型，支持多种数据模型，支持多种数据访问方式，支持多种数据计算方式，支持多种数据安全保护方式。
+GaussDB 介绍
+选择镜像1docker pull enmotech/opengauss:2.1.0
+
+Kubernetes 部署service和pvc...
       
     
   </div>
@@ -3292,20 +3298,20 @@ htt...
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-06-26T09:08:21+08:00">2023-06-26</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-20T18:00:56+08:00">2023-12-20</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Chatgpt/">Chatgpt</a>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Chatgpt/" itemprop="url"><span itemprop="name">Chatgpt</span></a>
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/06/26/Chatgpt-go/" itemprop="url">
+          <a class="readmore" href="/2023/12/20/gaussdb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3326,7 +3332,7 @@ htt...
       <div class="prev-next">
         
         <p class="current">
-          1 / 2
+          1 / 3
         </p>
         
           <a class="next" rel="next" href="/archives/2023/page/2/">
@@ -3360,7 +3366,7 @@ htt...
 
 
     <div class="content">
-      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.86px; color: #868686">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
+      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 20.25px; color: #6f6f6f">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.25px; color: #919191">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 21.5px; color: #666">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 22.75px; color: #5e5e5e">Linux</a> <a href="/tags/Python/" style="font-size: 17.75px; color: #808080">Python</a> <a href="/tags/Unix/" style="font-size: 19px; color: #777">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 24px; color: #555">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.25px; color: #919191">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.25px; color: #919191">面试经历</a>
     </div>
   </section>
 
@@ -3383,7 +3389,7 @@ htt...
 
 
   <div class="content">
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-20</time><span>数据库</span></div><span>达梦数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-20</time><span>数据库</span></div><span>clickhouse搭建</span></a></li><li><a class="widget-last" href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-19</time><span>数据库</span></div><span>activemq搭建</span></a></li><li><a class="widget-last" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-09-11</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/"><div class="item"><time>2023-09-04</time><span>Kubernetes</span></div><span>内存资源的服务质量（QoS）</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93-SSL%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>postgresql数据库+SSL搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>postgresql数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/mssql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>mssql数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/mariadb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>mariadb数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/kafka%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>kafka数据库搭建</span></a></li></ul>
   </div>
 </section>
 
@@ -3429,7 +3435,7 @@ htt...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>49 篇</div>
+          <div>60 篇</div>
         </div>
       
 
@@ -3450,7 +3456,7 @@ htt...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-12-20 日</div>
+          <div id="last-update-show">2023-12-21 日</div>
         </div>
       
     </div>
@@ -4035,7 +4041,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 

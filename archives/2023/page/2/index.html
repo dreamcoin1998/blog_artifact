@@ -1865,7 +1865,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1703053812198),
+    lastupdate: new Date(1703158449210),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2561,7 +2561,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/05/25/Docker推拉自建仓库比较慢的问题/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/doris数据库搭建/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2579,16 +2579,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/05/25/Docker%E6%8E%A8%E6%8B%89%E8%87%AA%E5%BB%BA%E4%BB%93%E5%BA%93%E6%AF%94%E8%BE%83%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
-        Docker推拉自建仓库比较慢的问题
+      <a href="/2023/12/20/doris%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        doris单节点搭建
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        背景及描述内网是一个Kubernetes集群，在集群中部署一个自建的私有镜像仓库。启动一个业务Pod，拉取该私有镜像仓库的镜像（该镜像2GB左右，20层，其中有一层是1.73GB），发现该镜像拉取比较慢，需要3分钟左右。
-结论自建私有镜像仓库和业务pod运行在同一个pod，理论上拉取速度会比较快，但是同一时刻存在多个镜像正在被拉取，镜像的拉取过程需要先把镜像下载下来，然后再解压缩该镜像。在这...
+        Apache Doris 是基于 MPP 架构的新一代开源实时数据仓库，使用更简便，性能更高，适用于大数据分析。
+doris 文档
+构建镜像Doris BE目录结构：
+12345.├── Dockerfile└── resource    ├── apache-doris-be-1.1.4-bin-x86_64.tar.gz    └── init_be.sh
+
+
+下载文件
+
+1wget h...
       
     
   </div>
@@ -2604,7 +2611,450 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-05-25T11:34:46+08:00">2023-05-25</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-20T14:52:12+08:00">2023-12-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/12/20/doris%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/20/达梦数据库搭建/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+        达梦数据库搭建
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        国产数据库，由武汉达梦数据库股份有限公司研发。
+
+支持自动故障切换
+支持事务级读写负载分离
+支持读写分配比例可调整
+读多写少业务场景下的性能近线性提升
+
+选择镜像1docker pull dm8_single:v8.1.2.128_ent_x86_64_ctm_pack4
+
+Kubernetes 部署service和pvc都以部署在Google Cloud的Kubernetes平台为例
+
+创...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-20T14:08:24+08:00">2023-12-20</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/19/activemq搭建/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/" itemprop="url">
+        activemq搭建
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        Apache ActiveMQ® 是最流行的开源、多协议、基于 Java 的消息代理。它支持行业标准协议，因此用户可以从多种语言和平台的客户端选择中获益。可从 JavaScript、C、C++、Python、.Net 等语言编写的客户端进行连接。使用无处不在的 AMQP 协议集成多平台应用程序。通过 webockets 使用 STOMP 在网络应用程序之间交换信息。使用 MQTT 管理物联网...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-19T20:48:12+08:00">2023-12-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/12/19/clickhouse搭建/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/" itemprop="url">
+        clickhouse搭建
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        Clickhouse简介ClickHouse是一个用于联机分析(OLAP)的列式数据库管理系统(DBMS)。它是一个列式存储数据库，即将来自同一列的数据存储在一起。这与传统的行式存储数据库不同，后者将来自同一行的数据存储在一起。列式存储数据库的优点是可以显著提高特定类型的查询性能，例如，只选择特定列的查询，或者只选择特定列的聚合函数。列式存储数据库的缺点是更新数据的速度较慢，因为数据通常以追...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-12-19T18:20:36+08:00">2023-12-19</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url"><span itemprop="name">数据库</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/09/03/内存资源的服务质量/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/" itemprop="url">
+        内存资源的服务质量（QoS）
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        什么是QoS（服务质量）？QoS，Quality of service，即服务质量。它是对服务整体性能的描述或测量。特别是网络用户所看到的性能。为了定量测量服务质量，通常会考虑网络服务的以下几个方面，例如丢包、比特率、吞吐量、传输延迟、可用性、抖动等。在计算机网络和其他分组交换电信网络领域，服务质量是指流量优先级和资源预留控制机制，而不是所实现的服务质量。服务质量是指为不同的应用程序、用户或...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-09-03T19:57:52+08:00">2023-09-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/08/09/GKE的Prometheus/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/08/09/GKE%E7%9A%84Prometheus/" itemprop="url">
+        GKE的Prometheus
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        概述PrometheusPrometheus是一个云原生计算基金会项目，是一个系统和服务监控系统。它以给定的时间间隔从配置的目标收集指标，评估规则表达式，显示结果，并可以在观察到指定条件时触发警报。Prometheus是Kubeernetes的事实标准。Prometheus仓库地址：https://github.com/prometheus/prometheus。
+
+Prometheus包含...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-08-09T14:51:52+08:00">2023-08-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/">运维开发</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Kubernetes/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">运维开发</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/08/09/GKE%E7%9A%84Prometheus/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/07/04/docker-checkpoint-容器运行时快照/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/" itemprop="url">
+        docker-checkpoint-容器运行时快照
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        介绍checkpoint&#x2F;restore和restore与CRIUcheckpoint和restore是一个实验性的功能，它允许讲一个正在运行的容器冻结，并且将其状态转换成磁盘上的文件集合，使你可以从checkpoint恢复容器的状态。checkpoint基于CRIU实现，CRIU是一个Linux应用程序，在用户空间将一个进程树冻结并将其状态保存到磁盘，使得容器或应用程序可以实时迁...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-07-04T19:24:44+08:00">2023-07-04</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/Docker/">Docker</a>
@@ -2617,7 +3067,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class="readmore" href="/2023/05/25/Docker%E6%8E%A8%E6%8B%89%E8%87%AA%E5%BB%BA%E4%BB%93%E5%BA%93%E6%AF%94%E8%BE%83%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="url">
+          <a class="readmore" href="/2023/07/04/docker-checkpoint-%E5%AE%B9%E5%99%A8%E8%BF%90%E8%A1%8C%E6%97%B6%E5%BF%AB%E7%85%A7/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2633,7 +3083,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/25/Kubernetes-Scheduler的插件/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/30/pflag-flag库的直接替代/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2651,21 +3101,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/25/Kubernetes-Scheduler%E7%9A%84%E6%8F%92%E4%BB%B6/" itemprop="url">
-        Kubernetes-Scheduler的插件
+      <a href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/" itemprop="url">
+        pflag-flag库的直接替代
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        概述
-插件是如何注册的？
-Scheduler中有哪些调度器？
-如何写一个调度器？
-
-源码解析注册过程根据上一篇文章的代码：
-1234567891011121314151617181920212223242526272829303132333435363738394041func (r Registry) Register(name string, factory PluginFactory)...
+        为什么要使用pflagGolang是一门性能十分强大语言。当我们在用Golang开发一个命令行程序的时候，我们经常会用到官方的flag库，但是官方的flag库使用并编译运行过后，你会发现它与我们经常使用的POSIX&#x2F;GNU风格的命令行程序有所不同。比如说：
+12345678&gt;&gt;&gt; go run artifact.go -hUsage of /var/folders...
       
     
   </div>
@@ -2681,7 +3126,81 @@ Scheduler中有哪些调度器？
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-25T21:42:08+08:00">2023-04-25</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-06-30T17:18:07+08:00">2023-06-30</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2023/06/30/pflag-flag%E5%BA%93%E7%9A%84%E7%9B%B4%E6%8E%A5%E6%9B%BF%E4%BB%A3/" itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/30/Kubernetes中的Kubelet组件/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/" itemprop="url">
+        Kubernetes中的Kubelet组件
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        概述Kubelet是Kubernetes集群中的核心节点，运行在每一个节点之上，负责管理节点的容器运行时。
+
+节点注册：在启动时将节点注册到控制平面，以便主控制平面知道该节点的存在
+容器启动与监控（Container Startup and Monitoring）：kubelet负责启动和监控在节点上运行的容器。它根据从主控制平面接收到的Pod定义，创建并管理相应的容器。它监视容器的运行状态...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-06-30T02:34:14+08:00">2023-06-30</time>
         
           <span class="dot"></span>
           <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
@@ -2698,7 +3217,7 @@ Scheduler中有哪些调度器？
       </div>
       
         <div>
-          <a class="readmore" href="/2023/04/25/Kubernetes-Scheduler%E7%9A%84%E6%8F%92%E4%BB%B6/" itemprop="url">
+          <a class="readmore" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -2714,7 +3233,7 @@ Scheduler中有哪些调度器？
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/25/Kubernetes中的SchedulingQueue/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/06/29/cobra-一个强大的cli构建工具/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2732,16 +3251,18 @@ Scheduler中有哪些调度器？
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/25/Kubernetes%E4%B8%AD%E7%9A%84SchedulingQueue/" itemprop="url">
-        Kubernetes中的SchedulingQueue
+      <a href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" itemprop="url">
+        cobra-一个强大的cli构建工具
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        概述从Scheduler启动主循环的函数，我们可以看到，使用了sched.SchedulingQueue.Run()，调用了SchedulingQueue的Run方法，我们来看看SchedulingQueue做了什么
-SchedulingQueue1234567891011121314151617181920212223242526272829303132//SchedulingQueue ...
+        概述Cobra用于构建一个强大的现代cli应用程序的工具，它被Kubernetes、github cli、Hugo等著名的项目所使用。
+作为一个使用广泛的工具，Cobra支持智能建议（app srver… did you mean app server?），自动生成shell&#x2F;bash&#x2F;sh等，自动生成帮助信息…可以说是一个非常强大的工具。
+该项目的项目地址如下：
+htt...
       
     
   </div>
@@ -2757,525 +3278,20 @@ SchedulingQueue1234567891011121314151617181920212223242526272829303132//Scheduli
             <meta itemprop="url" content="https://github.com/dreamcoin1998/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2023-04-25T01:48:50+08:00">2023-04-25</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-06-29T17:24:50+08:00">2023-06-29</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class="readmore" href="/2023/04/25/Kubernetes%E4%B8%AD%E7%9A%84SchedulingQueue/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/24/Kubernetes的scheduler插件/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/24/Kubernetes%E7%9A%84scheduler%E6%8F%92%E4%BB%B6/" itemprop="url">
-        Kubernetes如何启动Scheduler
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        概述
-Kubernetes如何启动Scheduler
-
-源码解析Scheduler上一篇文章文章我们讲了Schuduler的主循环，这一节我们讲讲kube-scheduler如何启动。
-Setup123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-24T23:00:31+08:00">2023-04-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/04/24/Kubernetes%E7%9A%84scheduler%E6%8F%92%E4%BB%B6/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/22/kubernetes中如何进行调度/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/" itemprop="url">
-        kubernetes中如何进行调度
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        概述
-K8s中是如何调度的？
-K8s中调度的具体实现？
-
-K8s如何调度PodPod的调度主要分为两个阶段，主要是调度周期和绑定周期，调度周期决定Pod被调度到哪一个节点，绑定周期将决策运用到集群。调度周期和绑定周期成为“调度上下文”。
-调度周期
-发现未被调度的Pod：调度器通过K8s的watch机制来发现集群中新创建且尚未被调度到节点的Pod。kube-scheduler位于集群控制面，是...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-22T18:55:53+08:00">2023-04-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/04/22/kubernetes%E4%B8%AD%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%B0%83%E5%BA%A6/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/22/如何编译开发k8s/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/" itemprop="url">
-        如何编译开发k8s
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        概述
-如何获取代码？
-怎么跑起来（编译）？
-如何测试？
-目录结构是什么？
-
-代码地址kubernetes代码地址托管在Github上，代码地址为：https://github.com/kubernetes/kubernetes
-如何编译主要有两种方式进行编译：
-
-本地Go语言环境构建：12345mkdir -p $GOPATH/src/k8s.iocd $GOPATH/src/k8s.iog...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-22T03:32:47+08:00">2023-04-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Kubernetes/">Kubernetes</a><span class="sep"></span><a class="category-link" href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/">源码分析</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/" itemprop="url"><span itemprop="name">Kubernetes</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Kubernetes/%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/" itemprop="url"><span itemprop="name">源码分析</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/04/22/%E5%A6%82%E4%BD%95%E7%BC%96%E8%AF%91%E5%BC%80%E5%8F%91k8s/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/03/Go-Zero框架解析/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/03/Go-Zero%E6%A1%86%E6%9E%B6%E8%A7%A3%E6%9E%90/" itemprop="url">
-        Go-Zero框架解析
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        服务治理布隆过滤器关注的问题
-布隆过滤器在微服务中能解决什么问题？
-
-布隆过滤器在go-zero中的实现
-
-布隆过滤器在go-zero中如何使用
-
-
-问题解答布隆过滤器在微服务中能解决什么问题？解决缓存穿透的问题。
-
-什么是缓存穿透？
-缓存穿透是指一个缓存系统无法缓存某些查询请求，导致这些请求都需要从数据库或其他服务中获取数据，从而导致缓存系统的压力过大，甚至造成宕机。缓存穿透通常是由于恶意...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T14:11:00+08:00">2023-04-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Go/">Go</a><span class="sep"></span><a class="category-link" href="/categories/Go/Go-Zero/">Go-Zero</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Go/" itemprop="url"><span itemprop="name">Go</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Go/Go-Zero/" itemprop="url"><span itemprop="name">Go-Zero</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/04/03/Go-Zero%E6%A1%86%E6%9E%B6%E8%A7%A3%E6%9E%90/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/04/03/Grafana/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/04/03/Grafana/" itemprop="url">
-        Grafana
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        Grafana
-是什么？
-
-怎么做到的？
-
-怎么用？
-
-
-1. 是什么？对指标、日志和metrics的查询，可视化和告警。
-
-包括sms&#x2F;email等多种告警方式，可以通过钩子自定义告警规则和告警方式
-
-支持dashboard模版，方便重用可视化模版
-
-支持dashboard插件
-
-支持 LDAP and OAuth认证方式
-
-
-商业版和云版包括社区版没有的功能以及7 * 24 *...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-03T01:58:54+08:00">2023-04-03</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/">运维开发</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" itemprop="url"><span itemprop="name">运维开发</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/04/03/Grafana/" itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class="post-wrapper">
-            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.com/2023/03/15/PEP-703/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Jerry的小站">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Jerry的小站">
-    <meta itemprop="description" content="一个集博客和工具咨询分享于一体的平台">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title" itemprop="name headline">
-      <a href="/2023/03/15/PEP-703/" itemprop="url">
-        PEP-703
-      </a>
-    </h2>
-  
-  <div class="md article-desc" itemprop="articleBody">
-    
-      
-        PEP703中讲到的nogilPEP703由nogil分支作者编写，其中描述了
-
-biased reference counting（偏向引用计数），描述了引用计数的设计方式，该设计方式避免同一线程原子化对饮用计数的读写
-
-本地引用计数(“local” reference count)：本线程所拥有的引用计数
-
-共享引用计数(“shared” reference count)：其他线程使用原...
-      
-    
-  </div>
-  
-    <div class="meta-v3" line_style="solid">
-      <div>
-        
-          
-          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
-            <meta itemprop="name" content="Jerry Gao">
-            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-03-15T23:01:26+08:00">2023-03-15</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Python/">Python</a><span class="sep"></span><a class="category-link" href="/categories/Python/Python-PEP-%E5%90%88%E9%9B%86/">Python PEP 合集</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Python/" itemprop="url"><span itemprop="name">Python</span></a>
-            </span>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Python/Python-PEP-%E5%90%88%E9%9B%86/" itemprop="url"><span itemprop="name">Python PEP 合集</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class="readmore" href="/2023/03/15/PEP-703/" itemprop="url">
+          <a class="readmore" href="/2023/06/29/cobra-%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84cli%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7/" itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3302,8 +3318,14 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
           </a>
         
         <p class="current">
-          2 / 2
+          2 / 3
         </p>
+        
+          <a class="next" rel="next" href="/archives/2023/page/3/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -3330,7 +3352,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
 
 
     <div class="content">
-      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 21.14px; color: #686868">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 22.57px; color: #5f5f5f">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 24px; color: #555">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Unix/" style="font-size: 19.71px; color: #727272">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 16.86px; color: #868686">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
+      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 20.25px; color: #6f6f6f">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.25px; color: #919191">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 21.5px; color: #666">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 22.75px; color: #5e5e5e">Linux</a> <a href="/tags/Python/" style="font-size: 17.75px; color: #808080">Python</a> <a href="/tags/Unix/" style="font-size: 19px; color: #777">Unix</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.5px; color: #888">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 24px; color: #555">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.25px; color: #919191">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.25px; color: #919191">面试经历</a>
     </div>
   </section>
 
@@ -3353,7 +3375,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
 
 
   <div class="content">
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/12/20/%E8%BE%BE%E6%A2%A6%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-20</time><span>数据库</span></div><span>达梦数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/19/clickhouse%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-20</time><span>数据库</span></div><span>clickhouse搭建</span></a></li><li><a class="widget-last" href="/2023/12/19/activemq%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-19</time><span>数据库</span></div><span>activemq搭建</span></a></li><li><a class="widget-last" href="/2023/06/30/Kubernetes%E4%B8%AD%E7%9A%84Kubelet%E7%BB%84%E4%BB%B6/"><div class="item"><time>2023-09-11</time><span>Kubernetes</span></div><span>Kubernetes中的Kubelet组件</span></a></li><li><a class="widget-last" href="/2023/09/03/%E5%86%85%E5%AD%98%E8%B5%84%E6%BA%90%E7%9A%84%E6%9C%8D%E5%8A%A1%E8%B4%A8%E9%87%8F/"><div class="item"><time>2023-09-04</time><span>Kubernetes</span></div><span>内存资源的服务质量（QoS）</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93-SSL%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>postgresql数据库+SSL搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/postgresql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>postgresql数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/mssql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>mssql数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/mariadb%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>mariadb数据库搭建</span></a></li><li><a class="widget-last" href="/2023/12/21/kafka%E6%95%B0%E6%8D%AE%E5%BA%93%E6%90%AD%E5%BB%BA/"><div class="item"><time>2023-12-21</time><span>数据库</span></div><span>kafka数据库搭建</span></a></li></ul>
   </div>
 </section>
 
@@ -3399,7 +3421,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>49 篇</div>
+          <div>60 篇</div>
         </div>
       
 
@@ -3420,7 +3442,7 @@ biased reference counting（偏向引用计数），描述了引用计数的设�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2023-12-20 日</div>
+          <div id="last-update-show">2023-12-21 日</div>
         </div>
       
     </div>
@@ -4005,7 +4027,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp"];
   let index = 0;
   let IntervalParallax = null;
 
