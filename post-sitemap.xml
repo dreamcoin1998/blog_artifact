@@ -9,6 +9,14 @@
 
 
     <url>
+        <loc>https://jerryblogs.com/2024/04/02/docker-compose%E6%8A%A5%E9%94%99%EF%BC%9AConflict-The-container-name-is-already-in-use-by-container/</loc>
+        <lastmod>2024-04-03T08:48:06.467Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://jerryblogs.com/2024/03/01/redis%E5%93%A8%E5%85%B5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/</loc>
         <lastmod>2024-03-01T07:57:54.122Z</lastmod>
         <changefreq>weekly</changefreq>

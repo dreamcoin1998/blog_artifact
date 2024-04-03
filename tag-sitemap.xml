@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://jerryblogs.com/tags/Docker/</loc>
+        <lastmod>2024-04-03T08:48:06.467Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://jerryblogs.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
         <lastmod>2024-03-01T07:57:54.122Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>https://jerryblogs.com/tags/Kubernetes/</loc>
         <lastmod>2023-09-11T13:52:45.717Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://jerryblogs.com/tags/Docker/</loc>
-        <lastmod>2023-07-04T12:01:37.911Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
