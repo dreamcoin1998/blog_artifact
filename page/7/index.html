@@ -1772,7 +1772,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1744120185286),
+    lastupdate: new Date(1744280989156),
     sidebar: {
       for_page: ["tagcloud","lastupdate","text","webinfo"],
       for_post: ["toc","tagcloud"],
@@ -2467,7 +2467,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.netlify.app/2020/10/31/unix-thread/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.netlify.app/2020/10/31/unix-fileio/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2485,17 +2485,18 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2020/10/31/unix-thread/" itemprop="url">
-        Unix环境高级编程-线程
+      <a href="/2020/10/31/unix-fileio/" itemprop="url">
+        Unix环境高级编程-文件IO
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        线程线程概念每个线程都包含有表示执行环境所必需的信息，其中包括进程中标识线程的线程ID、一组寄存器值、栈、调度优先级和策略、信号屏蔽字、error变量以及线程私有数据。一个进程的所有信息对线程都是共享的，包括可执行程序的代码、程序的全局内存和堆内存、栈以及文件描述符。
-线程同步互斥量本质上是一把锁，在访问共享资源之前对互斥量进行加锁操作，访问完成后释放互斥量。
-避免死锁死锁系统中若干线程形成...
+        文件IOopen read write lseek close
+文件描述符文件描述符是一个非负整数。当打开或者创建一个文件时，内核向进程返回一个文件描述符。当读写一个文件时，使用open或者create返回的
+文件描述符变化范围是0~OPEN_MAX-1，早期的Unix文件系统实现采用上限值是19，即允许每个进程最多打开20个文件，但现在很多系统将其上限增加至63.
+在Linux里面，每个进...
       
     
   </div>
@@ -2528,7 +2529,84 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       </div>
       
         <div>
-          <a class="readmore" href="/2020/10/31/unix-thread/" itemprop="url">
+          <a class="readmore" href="/2020/10/31/unix-fileio/" itemprop="url">
+            Read More
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class="post-wrapper">
+            <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.netlify.app/2020/10/31/unix-process/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Jerry的小站">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Jerry的小站">
+    <meta itemprop="description" content="上帝就是真理，真理就是上帝">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title" itemprop="name headline">
+      <a href="/2020/10/31/unix-process/" itemprop="url">
+        Unix环境高级编程-进程
+      </a>
+    </h2>
+  
+  <div class="md article-desc" itemprop="articleBody">
+    
+      
+        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
+ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
+ID为2的进程是页守护进程，负责虚拟存储器系...
+      
+    
+  </div>
+  
+    <div class="meta-v3" line_style="solid">
+      <div>
+        
+          
+          <a class="avatar" target="_blank" rel="external nofollow noopener noreferrer" href="https://github.com/dreamcoin1998/"><img src="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/apple-touch-icon.png">
+            <meta itemprop="name" content="Jerry Gao">
+            <meta itemprop="url" content="https://github.com/dreamcoin1998/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2020-10-31T20:36:31+08:00">2020-10-31</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Linux/">Linux</a><span class="sep"></span><a class="category-link" href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/">Unix环境高级编程</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
+            </span>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Linux/Unix%E7%8E%AF%E5%A2%83%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" itemprop="url"><span itemprop="name">Unix环境高级编程</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class="readmore" href="/2020/10/31/unix-process/" itemprop="url">
             Read More
           </a>
         </div>
@@ -2626,7 +2704,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class="post-wrapper">
             <div class="post post-v3 white-box reveal shadow floatable blur" itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://jerryblogs.netlify.app/2020/10/31/unix-process/">
+  <link itemprop="mainEntityOfPage" href="https://jerryblogs.netlify.app/2020/10/31/unix-thread/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Jerry的小站">
   </span>
@@ -2644,17 +2722,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title" itemprop="name headline">
-      <a href="/2020/10/31/unix-process/" itemprop="url">
-        Unix环境高级编程-进程
+      <a href="/2020/10/31/unix-thread/" itemprop="url">
+        Unix环境高级编程-线程
       </a>
     </h2>
   
   <div class="md article-desc" itemprop="articleBody">
     
       
-        进程标识ID为0的进程通常是调度进程，常常被称为交换进程，是内核的一部分，并不执行磁盘中的程序，常被称作系统进程。
-ID为1的进程是init进程，在自举结束时由内核调用。init进程通常读取与进程有关的初始化文件（&#x2F;etc&#x2F;init.d等）并将系统引导到一个状态。init进程不会终止，他是一个用户进程，但是以超级用户特权运行。
-ID为2的进程是页守护进程，负责虚拟存储器系...
+        线程线程概念每个线程都包含有表示执行环境所必需的信息，其中包括进程中标识线程的线程ID、一组寄存器值、栈、调度优先级和策略、信号屏蔽字、error变量以及线程私有数据。一个进程的所有信息对线程都是共享的，包括可执行程序的代码、程序的全局内存和堆内存、栈以及文件描述符。
+线程同步互斥量本质上是一把锁，在访问共享资源之前对互斥量进行加锁操作，访问完成后释放互斥量。
+避免死锁死锁系统中若干线程形成...
       
     
   </div>
@@ -2687,7 +2765,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       </div>
       
         <div>
-          <a class="readmore" href="/2020/10/31/unix-process/" itemprop="url">
+          <a class="readmore" href="/2020/10/31/unix-thread/" itemprop="url">
             Read More
           </a>
         </div>
@@ -2899,7 +2977,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
 
 
     <div class="content">
-      <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 19.71px; color: #727272">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 21.14px; color: #686868">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 22.57px; color: #5f5f5f">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Stirling-PDF/" style="font-size: 14px; color: #999">Stirling-PDF</a> <a href="/tags/Unix/" style="font-size: 18.29px; color: #7c7c7c">Unix</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 14px; color: #999">工具分享</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 24px; color: #555">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
+      <a href="/tags/AI/" style="font-size: 14px; color: #999">AI</a> <a href="/tags/Chatgpt/" style="font-size: 14px; color: #999">Chatgpt</a> <a href="/tags/Docker/" style="font-size: 19.71px; color: #727272">Docker</a> <a href="/tags/Go/" style="font-size: 14px; color: #999">Go</a> <a href="/tags/Golang/" style="font-size: 15.43px; color: #8f8f8f">Golang</a> <a href="/tags/Kubernetes/" style="font-size: 21.14px; color: #686868">Kubernetes</a> <a href="/tags/Linux/" style="font-size: 22.57px; color: #5f5f5f">Linux</a> <a href="/tags/Python/" style="font-size: 18.29px; color: #7c7c7c">Python</a> <a href="/tags/Stirling-PDF/" style="font-size: 14px; color: #999">Stirling-PDF</a> <a href="/tags/Unix/" style="font-size: 18.29px; color: #7c7c7c">Unix</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB/" style="font-size: 14px; color: #999">工具分享</a> <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 16.86px; color: #868686">操作系统</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 24px; color: #555">数据库</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 14px; color: #999">设计模式</a> <a href="/tags/%E8%BF%90%E7%BB%B4%E5%BC%80%E5%8F%91/" style="font-size: 15.43px; color: #8f8f8f">运维开发</a> <a href="/tags/%E9%9D%A2%E8%AF%95%E7%BB%8F%E5%8E%86/" style="font-size: 15.43px; color: #8f8f8f">面试经历</a>
     </div>
   </section>
 
@@ -2922,7 +3000,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
 
 
   <div class="content">
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2025/04/08/Python%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9A%E7%94%A8deque%E5%8A%A0%E9%80%9F%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E5%9B%9E%E6%B5%8B%E5%BC%95%E6%93%8E/"><div class="item"><time>2025-04-08</time><span>Python</span></div><span>Python性能优化实战：用deque加速事件驱动回测引擎</span></a></li><li><a class="widget-last" href="/2025/01/06/%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%BC%8F/"><div class="item"><time>2025-01-06</time><span>设计模式</span></div><span>状态机模式</span></a></li><li><a class="widget-last" href="/2024/04/02/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB%EF%BC%9AStirling-PDF%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84PDF%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7/"><div class="item"><time>2024-04-03</time><span>工具分享</span></div><span>工具分享：Stirling-PDF，一个强大的PDF文件操作工具</span></a></li><li><a class="widget-last" href="/2024/04/02/docker-compose%E6%8A%A5%E9%94%99%EF%BC%9AConflict-The-container-name-is-already-in-use-by-container/"><div class="item"><time>2024-04-03</time><span>Docker</span></div><span>docker-compose报错：Conflict. The container name is already in use by container</span></a></li><li><a class="widget-last" href="/2024/03/01/redis%E5%93%A8%E5%85%B5%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"><div class="item"><time>2024-03-01</time><span>数据库</span></div><span>redis单节点+哨兵集群搭建</span></a></li></ul>
+    <ul class="list entry navigation"><li><a class="widget-last" href="/2023/12/20/%E5%85%B3%E4%BA%8EGamma%E7%9A%84%E8%AF%A6%E7%BB%86FAQ%E6%8A%A5%E5%91%8A%EF%BC%8C%E6%B6%B5%E7%9B%96%E4%BA%86%E4%BB%8E%E7%94%A8%E6%88%B7%E5%A2%9E%E9%95%BF%E3%80%81%E4%BA%A7%E5%93%81%E5%BC%80%E5%8F%91%E3%80%81%E5%9B%A2%E9%98%9F%E8%83%8C%E6%99%AF%E5%88%B0%E5%B8%82%E5%9C%BA%E7%AD%96%E7%95%A5%E5%92%8C%E6%9C%AA%E6%9D%A5%E5%8F%91%E5%B1%95%E7%9A%84%E5%85%B3%E9%94%AE%E4%BF%A1%E6%81%AF/"><div class="item"><time>2025-04-10</time><span>AI</span></div><span>关于Gamma的详细FAQ报告，涵盖了从用户增长、产品开发、团队背景到市场策略和未来发展的关键信息</span></a></li><li><a class="widget-last" href="/2025/04/08/Python%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98%EF%BC%9A%E7%94%A8deque%E5%8A%A0%E9%80%9F%E4%BA%8B%E4%BB%B6%E9%A9%B1%E5%8A%A8%E5%9B%9E%E6%B5%8B%E5%BC%95%E6%93%8E/"><div class="item"><time>2025-04-08</time><span>Python</span></div><span>Python性能优化实战：用deque加速事件驱动回测引擎</span></a></li><li><a class="widget-last" href="/2025/01/06/%E7%8A%B6%E6%80%81%E6%9C%BA%E6%A8%A1%E5%BC%8F/"><div class="item"><time>2025-01-06</time><span>设计模式</span></div><span>状态机模式</span></a></li><li><a class="widget-last" href="/2024/04/02/%E5%B7%A5%E5%85%B7%E5%88%86%E4%BA%AB%EF%BC%9AStirling-PDF%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%BC%BA%E5%A4%A7%E7%9A%84PDF%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%B7%A5%E5%85%B7/"><div class="item"><time>2024-04-03</time><span>工具分享</span></div><span>工具分享：Stirling-PDF，一个强大的PDF文件操作工具</span></a></li><li><a class="widget-last" href="/2024/04/02/docker-compose%E6%8A%A5%E9%94%99%EF%BC%9AConflict-The-container-name-is-already-in-use-by-container/"><div class="item"><time>2024-04-03</time><span>Docker</span></div><span>docker-compose报错：Conflict. The container name is already in use by container</span></a></li></ul>
   </div>
 </section>
 
@@ -2968,7 +3046,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>65 篇</div>
+          <div>66 篇</div>
         </div>
       
 
@@ -2989,7 +3067,7 @@ ID为2的进程是页守护进程，负责虚拟存储器系...
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-04-08 日</div>
+          <div id="last-update-show">2025-04-10 日</div>
         </div>
       
     </div>
@@ -3575,7 +3653,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp"];
   let index = 0;
   let IntervalParallax = null;
 
